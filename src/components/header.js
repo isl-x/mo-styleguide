@@ -2,12 +2,12 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { PURPLE, WHITE } from "../utils/colors"
+import { SLATE, WHITE } from "../utils/colors"
 import Grid from "../utils/components/Grid"
 import { LARGE } from "../utils/spacing"
 
 const HeaderWrapper = styled.header`
-  background-color: ${PURPLE};
+  background-color: ${SLATE};
   padding: ${LARGE}px 0;
   width: 100%;
   color: ${WHITE};

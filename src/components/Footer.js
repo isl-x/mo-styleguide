@@ -2,11 +2,11 @@ import React from "react"
 import styled from "styled-components"
 
 import Grid from "../utils/components/Grid"
-import { PURPLE, WHITE } from "../utils/colors"
+import { SLATE, WHITE } from "../utils/colors"
 import { MEDIUM } from "../utils/spacing"
 
 const FooterWrapper = styled.footer`
-  background-color: ${PURPLE};
+  background-color: ${SLATE};
   color: ${WHITE};
   padding: ${MEDIUM}px 0;
 `

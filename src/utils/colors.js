@@ -11,20 +11,16 @@
  */
 
 /* BRAND */
-export const LIGHT_PURPLE = "#A389F4"
-export const PURPLE = "#7E5BEF"
-export const DARK_PURPLE = "#592DEA"
-
-export const LIGHT_PINK = "#FF7CE5"
-export const PINK = "#FF49DB"
-export const DARK_PINK = "#FF16D1"
+export const LIGHT_SLATE = ""
+export const SLATE = "#1d2c3c"
+export const DARK_SLATE = ""
 
 /* GREYS */
 export const WHITE = "#ffffff"
 
-export const LIGHT_CHARCOAL = "#848891"
-export const CHARCOAL = "#2f3238"
-export const DARK_CHARCOAL = "#191b1f"
+export const LIGHT_SMOKE = "#eef2f7"
+export const SMOKE = ""
+export const DARK_SMOKE = ""
 
 /* UI */
 export const NEUTRAL = "#1FB6FF"

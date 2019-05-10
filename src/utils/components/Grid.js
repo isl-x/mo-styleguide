@@ -1,4 +1,3 @@
-// Define our grid here and port it around as necessary
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
