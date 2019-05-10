@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Styleguide`,
     brand: `Lorem Ipsum Brand`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Come find all the guidelines your heart desires`,
     author: `ISL`,
   },
   plugins: [
@@ -19,11 +19,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Styleguide Base`,
+        short_name: `Base`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: ``,
+        theme_color: ``,
         display: `minimal-ui`,
         icon: `src/assets/gatsby-icon.png`, // This path is relative to the root of the site.
       },

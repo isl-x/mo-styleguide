@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
-export const Reset = createGlobalStyle`
+const Reset = createGlobalStyle`
     html {
         font-family: sans-serif;
         -ms-text-size-adjust: 100%;
@@ -65,7 +65,6 @@ export const Reset = createGlobalStyle`
     }
     h1 {
         font-size: 2em;
-        margin: 0.67em 0;
     }
     mark {
         background-color: #ff0;
@@ -203,6 +202,7 @@ export const Reset = createGlobalStyle`
     }
     body {
         color: hsla(0, 0%, 0%, 0.8);
+        min-height: 100vh;
         font-family: georgia, serif;
         font-weight: normal;
         word-wrap: break-word;
@@ -224,14 +224,8 @@ export const Reset = createGlobalStyle`
         margin-bottom: 1.45rem;
     }
     h1 {
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 0;
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 0;
-        margin-bottom: 1.45rem;
+        margin: 0;
+        padding: 0;
         color: inherit;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -624,3 +618,5 @@ export const Reset = createGlobalStyle`
         }
     }
 `
+
+export default Reset
