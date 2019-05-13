@@ -4,7 +4,7 @@ import { Link as GatsbyLink } from "gatsby"
 
 // Override default Gatsby Link to make it very generic
 const Link = ({ children, to }) => (
-  <GatsbyLink to={to} style={{ textDecoration: "none" }}>
+  <GatsbyLink to={to} style={{ textDecoration: "none", color: "inherit" }}>
     {children}
   </GatsbyLink>
 )

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
@@ -7,13 +8,24 @@ import Link from "../utils/components/Link"
 
 import Image from "./Image"
 
+/* LINK CONTAINER */
+
 export const SectionLinkContainer = styled.div`
   display: grid;
   min-height: 50vh;
   margin: 0 auto;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: ${props => `repeat(${props.colCount}, 1fr)`};
   grid-gap: ${NORMAL}px;
 `
+
+SectionLinkContainer.propTypes = {
+  colCount: PropTypes.number.isRequired,
+}
+SectionLinkContainer.defaultProps = {
+  colCount: 4,
+}
+
+/* INDIVIDUAL LINKS */
 
 const SectionLinkBase = styled.div`
   background: ${LIGHT_SMOKE};
@@ -25,10 +37,10 @@ const SectionLinkBase = styled.div`
 // Used to style the link contents themselves
 const SectionLinkWrapper = styled.div`
   text-align: center;
-  width: 50%;
+  width: 30%;
 `
 
-export const SectionLink = ({ pageUrl, children, imgsrc }) => (
+export const SectionLink = ({ imgsrc, pageUrl, children }) => (
   <SectionLinkBase>
     <SectionLinkWrapper>
       <Link to={pageUrl}>
@@ -39,4 +51,11 @@ export const SectionLink = ({ pageUrl, children, imgsrc }) => (
   </SectionLinkBase>
 )
 
-// TODO: Do the prop types for section link
+SectionLink.propTypes = {
+  imgsrc: PropTypes.string.isRequired,
+  pageUrl: PropTypes.string.isRequired,
+  children: PropTypes.node,
+}
+SectionLink.defaultProps = {
+  imgsrc: "font-awesome-default.png",
+}

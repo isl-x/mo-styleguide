@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
@@ -16,5 +17,9 @@ const Footer = ({ children }) => (
     <Grid>{children}</Grid>
   </FooterWrapper>
 )
+
+Footer.propTypes = {
+  children: PropTypes.node,
+}
 
 export default Footer

@@ -11,21 +11,11 @@ const IndexPage = () => (
       <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
         Test
       </SectionLink>
-      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
-        Test
-      </SectionLink>
-      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
-        Test
-      </SectionLink>
-      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
-        Test
-      </SectionLink>
-      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
-        Test
-      </SectionLink>
-      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
-        Test
-      </SectionLink>
+      <SectionLink pageUrl="/">Test</SectionLink>
+      <SectionLink pageUrl="/">Test</SectionLink>
+      <SectionLink pageUrl="/">Test</SectionLink>
+      <SectionLink pageUrl="/">Test</SectionLink>
+      <SectionLink pageUrl="/">Test</SectionLink>
     </SectionLinkContainer>
   </Layout>
 )

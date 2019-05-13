@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -48,4 +49,8 @@ export default class Image extends React.Component {
       />
     )
   }
+}
+
+Image.propTypes = {
+  imgsrc: PropTypes.string.isRequired,
 }

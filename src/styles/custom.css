@@ -1,0 +1,10 @@
+.example {
+  border: 4px solid salmon;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.example__button {
+  max-width: 100px;
+}
