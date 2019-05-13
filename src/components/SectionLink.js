@@ -22,12 +22,20 @@ const SectionLinkBase = styled.div`
   align-items: center;
 `
 
-export const SectionLink = ({ pageUrl, children }) => (
+// Used to style the link contents themselves
+const SectionLinkWrapper = styled.div`
+  text-align: center;
+  width: 50%;
+`
+
+export const SectionLink = ({ pageUrl, children, imgsrc }) => (
   <SectionLinkBase>
-    <Link to={pageUrl}>
-      <Image />
-      {children}
-    </Link>
+    <SectionLinkWrapper>
+      <Link to={pageUrl}>
+        <Image imgsrc={imgsrc} />
+        {children}
+      </Link>
+    </SectionLinkWrapper>
   </SectionLinkBase>
 )
 

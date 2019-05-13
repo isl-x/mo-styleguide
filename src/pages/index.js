@@ -8,12 +8,24 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <SectionLinkContainer>
-      <SectionLink pageUrl="/">Test</SectionLink>
-      <SectionLink pageUrl="/">Test</SectionLink>
-      <SectionLink pageUrl="/">Test</SectionLink>
-      <SectionLink pageUrl="/">Test</SectionLink>
-      <SectionLink pageUrl="/">Test</SectionLink>
-      <SectionLink pageUrl="/">Test</SectionLink>
+      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
+        Test
+      </SectionLink>
+      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
+        Test
+      </SectionLink>
+      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
+        Test
+      </SectionLink>
+      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
+        Test
+      </SectionLink>
+      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
+        Test
+      </SectionLink>
+      <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
+        Test
+      </SectionLink>
     </SectionLinkContainer>
   </Layout>
 )
