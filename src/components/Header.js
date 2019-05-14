@@ -17,11 +17,7 @@ const HeaderWrapper = styled.header`
 const Header = ({ siteSubText, siteMainText, isIndex }) => (
   <HeaderWrapper>
     <Grid>
-      {isIndex ? (
-        <span>{siteSubText}</span>
-      ) : (
-        <Link href="/">{siteSubText}</Link>
-      )}
+      {isIndex ? <span>{siteSubText}</span> : <Link to="/">{siteSubText}</Link>}
       <h1>{siteMainText}</h1>
     </Grid>
   </HeaderWrapper>

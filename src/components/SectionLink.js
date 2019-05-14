@@ -14,7 +14,8 @@ export const SectionLinkContainer = styled.div`
   display: grid;
   min-height: 50vh;
   margin: 0 auto;
-  grid-template-columns: ${props => `repeat(${props.colCount}, 1fr)`};
+  grid-template-columns: ${props =>
+    `repeat(auto-fit, minmax(${100 / (props.colCount + 1)}%, 1fr))`};
   grid-gap: ${NORMAL}px;
 `
 
@@ -37,7 +38,7 @@ const SectionLinkBase = styled.div`
 // Used to style the link contents themselves
 const SectionLinkWrapper = styled.div`
   text-align: center;
-  width: 30%;
+  min-width: 30%;
 `
 
 export const SectionLink = ({ imgsrc, pageUrl, children }) => (
