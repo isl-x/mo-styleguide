@@ -52,7 +52,7 @@ const ColorDetails = styled.div`
 `
 
 const ColorName = styled.h3`
-  min-width: 50%;
+  min-width: 40%;
   padding: ${SMALL}px 0 0 ${SMALL}px;
 `
 
