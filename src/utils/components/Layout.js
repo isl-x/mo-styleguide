@@ -7,6 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 
 import Reset from "./Reset"
@@ -14,6 +15,13 @@ import Grid from "./Grid"
 
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
+
+const LayoutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -28,7 +36,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <LayoutWrapper>
         <Reset />
         <Header
           siteTitle={data.site.siteMetadata.title}
@@ -38,7 +46,7 @@ const Layout = ({ children }) => (
           <main>{children}</main>
         </Grid>
         <Footer>Lorem Ipsum Footer</Footer>
-      </>
+      </LayoutWrapper>
     )}
   />
 )
