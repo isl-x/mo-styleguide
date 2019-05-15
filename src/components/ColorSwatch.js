@@ -7,7 +7,6 @@ import { LIGHT_SMOKE } from "../utils/colors"
 import { DEVICE } from "../utils/breakpoints"
 
 /* SWATCH DETAILS */
-export const ColorSwatchTitle = styled.h2``
 export const ColorSwatchDescription = styled.p``
 
 /* SWATCH CONTAINER */

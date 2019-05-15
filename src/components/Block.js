@@ -1,7 +1,9 @@
+import PropTypes from "prop-types"
+import React from "react"
 import styled from "styled-components"
 import { LARGE } from "../utils/spacing"
 
-const Block = styled.div`
+const BlockBase = styled.div`
   margin: ${LARGE}px 0;
 
   &:first-of-type {
@@ -12,5 +14,17 @@ const Block = styled.div`
     margin-bottom: 0;
   }
 `
+
+const Block = ({ title, children }) => (
+  <BlockBase>
+    <h2>{title}</h2>
+    {children}
+  </BlockBase>
+)
+
+Block.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node,
+}
 
 export default Block

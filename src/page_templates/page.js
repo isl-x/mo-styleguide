@@ -5,7 +5,6 @@ import SEO from "../utils/components/Seo"
 import {
   ColorSwatchContainer,
   ColorSwatch,
-  ColorSwatchTitle,
   ColorSwatchDescription,
 } from "../components/ColorSwatch"
 import Text from "../components/Text"
@@ -20,8 +19,7 @@ const BasePage = () => (
     */}
 
     {/* COLOR SWATCH */}
-    <Block>
-      <ColorSwatchTitle>Test</ColorSwatchTitle>
+    <Block title="Colors">
       <ColorSwatchDescription>A test description</ColorSwatchDescription>
       <ColorSwatchContainer>
         <ColorSwatch
@@ -39,8 +37,8 @@ const BasePage = () => (
     </Block>
 
     {/* TEXT */}
-    <Block>
-      <Text title="Placeholder for guideline">
+    <Block title="Placeholder for guideline">
+      <Text>
         This is an example of using text
         <Image imgsrc="random-wide-image.png" />
         And having text continue after an image
