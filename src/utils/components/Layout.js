@@ -15,6 +15,7 @@ import Grid from "./Grid"
 
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
+import ContextualNav from "./ContextualNav"
 
 const LayoutWrapper = styled.div`
   display: flex;
@@ -35,24 +36,29 @@ const Layout = ({ children, title, isIndex }) => (
         }
       }
     `}
-    render={data => (
-      <LayoutWrapper>
-        <Reset />
-        <Header
-          siteMainText={title ? title : data.site.siteMetadata.title}
-          siteSubText={
-            isIndex
-              ? data.site.siteMetadata.brand
-              : `<- Back to ${data.site.siteMetadata.title}`
-          }
-          isIndex={isIndex}
-        />
-        <Grid headerFooterOffset>
-          <main>{children}</main>
-        </Grid>
-        <Footer>Lorem Ipsum Footer</Footer>
-      </LayoutWrapper>
-    )}
+    render={data => {
+      const massagedTitle = title ? title : data.site.siteMetadata.title
+
+      return (
+        <LayoutWrapper>
+          <Reset />
+          {isIndex ? null : <ContextualNav title={massagedTitle} />}
+          <Header
+            siteMainText={massagedTitle}
+            siteSubText={
+              isIndex
+                ? data.site.siteMetadata.brand
+                : `<- Back to ${data.site.siteMetadata.title}`
+            }
+            isIndex={isIndex}
+          />
+          <Grid headerFooterOffset>
+            <main>{children}</main>
+          </Grid>
+          <Footer>Lorem Ipsum Footer</Footer>
+        </LayoutWrapper>
+      )
+    }}
   />
 )
 

@@ -16,7 +16,7 @@ const BlockBase = styled.div`
 `
 
 const Block = ({ title, children }) => (
-  <BlockBase>
+  <BlockBase data-type="block" data-title={title}>
     <h2>{title}</h2>
     {children}
   </BlockBase>
