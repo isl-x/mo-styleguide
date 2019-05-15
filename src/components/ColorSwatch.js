@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { SMALL } from "../utils/spacing"
 import { LIGHT_SMOKE } from "../utils/colors"
+import { DEVICE } from "../utils/breakpoints"
 
 /* SWATCH DETAILS */
 export const ColorSwatchTitle = styled.h2``
@@ -18,6 +19,10 @@ export const ColorSwatchContainer = styled.div`
   grid-template-columns: ${props =>
     `repeat(auto-fit, minmax(${100 / (props.colCount + 1)}%, 1fr))`};
   grid-gap: ${SMALL}px;
+
+  @media ${DEVICE.TABLET_DOWN} {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 `
 
 ColorSwatchContainer.propTypes = {
