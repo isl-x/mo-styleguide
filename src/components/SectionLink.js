@@ -64,5 +64,5 @@ SectionLink.propTypes = {
   children: PropTypes.node,
 }
 SectionLink.defaultProps = {
-  imgsrc: "font-awesome-default.png",
+  imgsrc: "gatsby-astronaut.png",
 }
