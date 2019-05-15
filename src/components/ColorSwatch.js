@@ -66,14 +66,14 @@ const ColorDetailsContainer = styled.div`
   justify-content: center;
 `
 
-export const ColorSwatch = ({ title, hex, rbg, cmyk, pms }) => (
+export const ColorSwatch = ({ title, hex, rgb, cmyk, pms }) => (
   <ColorSwatchBase>
     <ColorExample color={hex} />
     <ColorDetails>
       <ColorName>{title}</ColorName>
       <ColorDetailsContainer>
         <span>HEX: {hex}</span>
-        <span>RBG: {rbg}</span>
+        <span>RGB: {rgb}</span>
         <span>CMYK: {cmyk}</span>
         <span>PMS: {pms}</span>
       </ColorDetailsContainer>
