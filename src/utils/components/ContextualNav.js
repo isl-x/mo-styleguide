@@ -4,8 +4,10 @@ import { throttle } from "lodash"
 
 import Grid from "./Grid"
 import { SLATE, WHITE } from "../colors"
-import { NORMAL } from "../spacing"
+import { NORMAL, SMALL } from "../spacing"
+import { S } from "../font-sizes"
 import { HIGH_PRIORITY_Z_INDEX } from "../z-index"
+import { DEVICE } from "../breakpoints"
 
 const ContextualNavContainer = styled.div`
   height: 10vh;
@@ -33,16 +35,21 @@ const Title = styled.h1`
   border-right: solid 1px white;
   padding-right: ${NORMAL}px;
   margin-right: ${NORMAL}px;
+
+  @media ${DEVICE.PHONE_ONLY} {
+    ${S}
+  }
 `
 
+const DROPDOWN_MIN_W = "5rem"
 const Dropdown = styled.div`
   height: 100%;
-  min-width: 5rem;
+  min-width: ${DROPDOWN_MIN_W};
   display: flex;
   align-items: center;
 
   &::after {
-    margin-left: 10px;
+    margin-left: ${SMALL}px;
     border-radius: 2px;
     border-bottom: 3px solid ${WHITE};
     border-right: 3px solid ${WHITE};
@@ -64,7 +71,9 @@ const DropdownContents = styled.ul`
   position: absolute;
   margin: 0;
   top: 100%;
-  min-width: 5rem;
+  min-width: ${DROPDOWN_MIN_W};
+  max-height: 300px;
+  overflow-y: scroll;
   list-style: none;
   background-color: ${SLATE};
 
@@ -73,6 +82,11 @@ const DropdownContents = styled.ul`
   }
 `
 
+const DropdownItem = styled.li`
+  padding: ${SMALL}px;
+`
+
+const NAV_OFFSET = 100
 class ContextualNav extends React.Component {
   state = {
     current: 0,
@@ -102,9 +116,6 @@ class ContextualNav extends React.Component {
       }, 250)
     )
 
-    // NOTE: We should probably handle going through the tab nav and releasing
-    // the focus on tabbing
-
     // Populate the list of items in the visible dropdown for the nav
     const blockElements = document.querySelectorAll('[data-type="block"]')
     if (blockElements) {
@@ -124,22 +135,26 @@ class ContextualNav extends React.Component {
     this.setState({ dropdownActive: false })
   }
 
-  onClick = (i, e) => {
+  onClickOrKeyPress = (i, e) => {
+    // Do nothing with non-'enter' keypress
+    if ((e.type === "keypress") & (e.key !== "Enter")) return
+
     this.setState({
       isScrolling: true,
       current: i,
     })
 
+    // NOTE: This is slightly fragile in that the same 'title' will cause problems
     const title = e.currentTarget.innerHTML
     const el = document.querySelector(`[data-title="${title}"]`)
     if (!el) return
 
-    // NOTE: We need to update the browser history probably.
+    // TODO: We need to update the browser history probably.
     // Granted anchoring may not work super well because we aren't using IDs
     // const href = window.location.pathname + "#" + title
 
     const rect = el.getBoundingClientRect()
-    const top = rect.top + (window.scrollY || window.pageYOffset) - 100
+    const top = rect.top + (window.scrollY || window.pageYOffset) - NAV_OFFSET
 
     window.scrollTo({
       top,
@@ -154,29 +169,34 @@ class ContextualNav extends React.Component {
   }
 
   onScroll = throttle(e => {
-    let { current, isScrolling } = this.state
+    let { current, isScrolling, dropdownActive } = this.state
     if (isScrolling) return
 
     const anchors = Array.from(document.querySelectorAll("[data-type='block']"))
     anchors.forEach((anchor, i) => {
       const anchorOffsetTop = anchor.getBoundingClientRect().top
       // Check to see if the top most point is well out of view
-      // NOTE: Handling a quick scroll zooming past the 200 mark for the
+      // NOTE: Handling a quick scroll zooming past the 100 mark for the
       // first entry
-      if (i === 0 && anchorOffsetTop > 200) {
+      if (i === 0 && anchorOffsetTop > NAV_OFFSET) {
         current = i
         // Then do normal check to see which anchor should display
-        // if no the first one
-      } else if (anchorOffsetTop < 200) {
+        // if not the first one
+      } else if (anchorOffsetTop < NAV_OFFSET) {
         current = i
       }
     })
 
+    const showNav = (window.scrollY || window.pageYOffset) > NAV_OFFSET
+    if (!showNav) this.refs["contextual-nav-dropdown"].blur()
     this.setState({
       current,
-      showing: this.props.mainNav
-        ? true
-        : (window.scrollY || window.pageYOffset) > 240,
+      showing: showNav,
+      dropdownActive: dropdownActive
+        ? showNav === false
+          ? false
+          : dropdownActive
+        : dropdownActive,
       isScrolling: false,
     })
   }, 500)
@@ -193,7 +213,7 @@ class ContextualNav extends React.Component {
             <Dropdown
               className={dropdownActive ? "active" : null}
               ref="contextual-nav-dropdown"
-              tabIndex={0}
+              tabIndex={showing ? 0 : -1}
               onClick={this.openDropdown}
               onFocus={this.openDropdown}
             >
@@ -201,13 +221,14 @@ class ContextualNav extends React.Component {
               <DropdownContents>
                 {blocks.map((block, i) => {
                   return (
-                    <li
+                    <DropdownItem
                       key={i}
                       tabIndex={0}
-                      onClick={this.onClick.bind(this, i)}
+                      onClick={this.onClickOrKeyPress.bind(this, i)}
+                      onKeyPress={this.onClickOrKeyPress.bind(this, i)}
                     >
                       {block}
-                    </li>
+                    </DropdownItem>
                   )
                 })}
               </DropdownContents>
