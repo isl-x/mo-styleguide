@@ -12,9 +12,19 @@ const FooterWrapper = styled.footer`
   padding: ${MEDIUM}px 0;
 `
 
+const FooterContents = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const FooterLink = styled.a``
+const FooterDivider = styled.div``
+
 const Footer = ({ children }) => (
   <FooterWrapper>
-    <Grid>{children}</Grid>
+    <Grid>
+      <FooterContents>{children}</FooterContents>
+    </Grid>
   </FooterWrapper>
 )
 

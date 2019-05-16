@@ -27,17 +27,36 @@ const LayoutWrapper = styled.div`
 const Layout = ({ children, title, isIndex }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query SiteDataQuery {
         site {
           siteMetadata {
             title
             brand
+            homePageLinks {
+              pageUrl
+              imgsrc
+              linkText
+            }
           }
         }
       }
     `}
     render={data => {
       const massagedTitle = title ? title : data.site.siteMetadata.title
+
+      // Construct the footer links
+      const siteLinks = data.site.siteMetadata.homePageLinks
+      const currentPageIndex = siteLinks.findIndex(
+        link => link.pageUrl === window.location.pathname
+      )
+      let nextPage = null
+      let previousPage = null
+      if (currentPageIndex !== -1) {
+        if (siteLinks.length >= currentPageIndex + 1)
+          nextPage = siteLinks[currentPageIndex + 1]
+        if (currentPageIndex - 1 >= 0)
+          previousPage = siteLinks[currentPageIndex - 1]
+      }
 
       return (
         <LayoutWrapper>
@@ -55,7 +74,10 @@ const Layout = ({ children, title, isIndex }) => (
           <Grid headerFooterOffset>
             <main>{children}</main>
           </Grid>
-          <Footer>Lorem Ipsum Footer</Footer>
+          <Footer>
+            {previousPage.linkText}
+            {nextPage.linkText}
+          </Footer>
         </LayoutWrapper>
       )
     }}
