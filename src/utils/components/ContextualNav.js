@@ -86,7 +86,7 @@ const DropdownItem = styled.li`
   padding: ${SMALL}px;
 `
 
-const NAV_OFFSET = 100
+export const NAV_OFFSET = 100
 class ContextualNav extends React.Component {
   state = {
     current: 0,
@@ -119,7 +119,9 @@ class ContextualNav extends React.Component {
     // Populate the list of items in the visible dropdown for the nav
     const blockElements = document.querySelectorAll('[data-type="block"]')
     if (blockElements) {
-      const blocks = Array.from(blockElements).map(el => el.dataset.title)
+      const blocks = Array.from(blockElements).map(el => {
+        return { title: el.dataset.title, id: el.id }
+      })
       this.setState({ blocks: blocks })
     }
   }
@@ -144,17 +146,14 @@ class ContextualNav extends React.Component {
       current: i,
     })
 
-    // NOTE: This is slightly fragile in that the same 'title' will cause problems
-    const title = e.currentTarget.innerHTML
-    const el = document.querySelector(`[data-title="${title}"]`)
+    const id = e.currentTarget.dataset.target
+    const el = document.getElementById(`${id}`)
     if (!el) return
 
-    // TODO: We need to update the browser history probably.
-    // Granted anchoring may not work super well because we aren't using IDs
-    // const href = window.location.pathname + "#" + title
+    window.history.replaceState({}, "", window.location.pathname + "#" + id)
 
     const rect = el.getBoundingClientRect()
-    const top = rect.top + (window.scrollY || window.pageYOffset) - NAV_OFFSET
+    const top = rect.top + (window.scrollY || window.pageYOffset)
 
     window.scrollTo({
       top,
@@ -182,7 +181,7 @@ class ContextualNav extends React.Component {
         current = i
         // Then do normal check to see which anchor should display
         // if not the first one
-      } else if (anchorOffsetTop < NAV_OFFSET) {
+      } else if (anchorOffsetTop < NAV_OFFSET + 50) {
         current = i
       }
     })
@@ -217,17 +216,18 @@ class ContextualNav extends React.Component {
               onClick={this.openDropdown}
               onFocus={this.openDropdown}
             >
-              {blocks[current]}
+              {blocks[current] ? blocks[current].title : null}
               <DropdownContents>
                 {blocks.map((block, i) => {
                   return (
                     <DropdownItem
                       key={i}
                       tabIndex={0}
+                      data-target={block.id}
                       onClick={this.onClickOrKeyPress.bind(this, i)}
                       onKeyPress={this.onClickOrKeyPress.bind(this, i)}
                     >
-                      {block}
+                      {block.title}
                     </DropdownItem>
                   )
                 })}
