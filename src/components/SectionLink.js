@@ -2,8 +2,9 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { NORMAL } from "../utils/spacing"
+import { NORMAL, SMALL } from "../utils/spacing"
 import { LIGHT_SMOKE } from "../utils/colors"
+import { DEVICE } from "../utils/breakpoints"
 import Link from "../utils/components/Link"
 
 import Image from "./Image"
@@ -14,8 +15,13 @@ export const SectionLinkContainer = styled.div`
   display: grid;
   min-height: 50vh;
   margin: 0 auto;
-  grid-template-columns: ${props => `repeat(${props.colCount}, 1fr)`};
+  grid-template-columns: ${props =>
+    `repeat(auto-fit, minmax(${100 / (props.colCount + 1)}%, 1fr))`};
   grid-gap: ${NORMAL}px;
+
+  @media ${DEVICE.TABLET_DOWN} {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 `
 
 SectionLinkContainer.propTypes = {
@@ -37,7 +43,8 @@ const SectionLinkBase = styled.div`
 // Used to style the link contents themselves
 const SectionLinkWrapper = styled.div`
   text-align: center;
-  width: 30%;
+  min-width: 30%;
+  padding: ${SMALL}px;
 `
 
 export const SectionLink = ({ imgsrc, pageUrl, children }) => (

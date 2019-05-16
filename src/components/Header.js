@@ -3,8 +3,9 @@ import React from "react"
 import styled from "styled-components"
 
 import { SLATE, WHITE } from "../utils/colors"
-import Grid from "../utils/components/Grid"
 import { LARGE } from "../utils/spacing"
+import Grid from "../utils/components/Grid"
+import Link from "../utils/components/Link"
 
 const HeaderWrapper = styled.header`
   background-color: ${SLATE};
@@ -13,23 +14,25 @@ const HeaderWrapper = styled.header`
   color: ${WHITE};
 `
 
-const Header = ({ siteBrand, siteTitle }) => (
+const Header = ({ siteSubText, siteMainText, isIndex }) => (
   <HeaderWrapper>
     <Grid>
-      <span>{siteBrand}</span>
-      <h1>{siteTitle}</h1>
+      {isIndex ? <span>{siteSubText}</span> : <Link to="/">{siteSubText}</Link>}
+      <h1>{siteMainText}</h1>
     </Grid>
   </HeaderWrapper>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-  siteBrand: PropTypes.string,
+  siteMainText: PropTypes.string,
+  siteSubText: PropTypes.string,
+  isIndex: PropTypes.bool,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
-  siteBrand: ``,
+  siteMainText: ``,
+  siteSubText: ``,
+  isIndex: false,
 }
 
 export default Header

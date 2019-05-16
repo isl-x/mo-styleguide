@@ -23,7 +23,7 @@ const LayoutWrapper = styled.div`
   min-height: 100vh;
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, title, isIndex }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -39,8 +39,13 @@ const Layout = ({ children }) => (
       <LayoutWrapper>
         <Reset />
         <Header
-          siteTitle={data.site.siteMetadata.title}
-          siteBrand={data.site.siteMetadata.brand}
+          siteMainText={title ? title : data.site.siteMetadata.title}
+          siteSubText={
+            isIndex
+              ? data.site.siteMetadata.brand
+              : `<- Back to ${data.site.siteMetadata.title}`
+          }
+          isIndex={isIndex}
         />
         <Grid headerFooterOffset>
           <main>{children}</main>
@@ -53,6 +58,13 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  isIndex: PropTypes.bool,
+  title: PropTypes.string,
+}
+
+Layout.defaultProps = {
+  title: "",
+  isIndex: false,
 }
 
 export default Layout

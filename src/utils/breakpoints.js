@@ -1,14 +1,15 @@
-export const size = {
-  phoneUpperBoundary: 600,
-  tabletUpperBoundary: 900,
-  tabletLandscapeUpperBoundary: 1200,
-  desktopUpperBoundary: 1800,
+export const SIZE = {
+  PHONE_UPPER_BOUNDARY: 600,
+  TABLET_UPPER_BOUNDARY: 900,
+  TABLET_LANDSCAPE_UPPER_BOUNDARY: 1200,
+  DESKTOP_UPPER_BOUNDARY: 1800,
 }
 
-export const device = {
-  phoneOnly: `(max-width: ${size.phoneUpperBoundary - 1}px)`,
-  tabletOnly: `(min-width: ${size.phoneUpperBoundary}px) and (max-width: ${
-    size.tabletLandscapeUpperBoundary
+export const DEVICE = {
+  PHONE_ONLY: `(max-width: ${SIZE.PHONE_UPPER_BOUNDARY - 1}px)`,
+  TABLET_DOWN: `(max-width: ${SIZE.TABLET_LANDSCAPE_UPPER_BOUNDARY}px)`,
+  TABLET_ONLY: `(min-width: ${SIZE.PHONE_UPPER_BOUNDARY}px) and (max-width: ${
+    SIZE.TABLET_LANDSCAPE_UPPER_BOUNDARY
   }px)`,
-  desktopOnly: `(min-width: ${size.tabletLandscapeUpperBoundary}px)`,
+  DESKTOP_ONLY: `(min-width: ${SIZE.TABLET_LANDSCAPE_UPPER_BOUNDARY}px)`,
 }

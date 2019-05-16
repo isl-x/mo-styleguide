@@ -5,7 +5,7 @@ import SEO from "../utils/components/Seo"
 import { SectionLinkContainer, SectionLink } from "../components/SectionLink"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout isIndex>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <SectionLinkContainer>
       <SectionLink pageUrl="/" imgsrc="gatsby-astronaut.png">
