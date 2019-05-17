@@ -10,6 +10,7 @@ import {
 import Text from "../components/Text"
 import Image from "../components/Image"
 import Block from "../components/Block"
+import Download from "../components/Download"
 
 const BasePage = () => (
   <Layout title="Test Page">
@@ -43,6 +44,11 @@ const BasePage = () => (
         <Image imgsrc="random-wide-image.png" />
         And having text continue after an image
       </Text>
+    </Block>
+
+    {/* DOWNLOAD */}
+    <Block title="Downloads">
+      <Download fileName="gatsby-astronaut">Logos</Download>
     </Block>
   </Layout>
 )
