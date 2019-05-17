@@ -7,7 +7,7 @@ import {
   ColorSwatch,
   ColorSwatchDescription,
 } from "../components/ColorSwatch"
-import Text from "../components/Text"
+import Basic from "../components/Basic"
 import Image from "../components/Image"
 import Block from "../components/Block"
 import Download from "../components/Download"
@@ -39,11 +39,16 @@ const BasePage = () => (
 
     {/* TEXT */}
     <Block title="Placeholder for guideline">
-      <Text>
+      <Basic>
         This is an example of using text
         <Image imgsrc="random-wide-image.png" />
         And having text continue after an image
-      </Text>
+      </Basic>
+    </Block>
+
+    {/* IMAGE */}
+    <Block title="Images">
+      <Image imgsrc="random-wide-image.png" />
     </Block>
 
     {/* DOWNLOAD */}

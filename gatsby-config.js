@@ -22,7 +22,7 @@ module.exports = {
        * imgsrc:     Needs to be a ".png" file in the assets folder
        * linkText:   Whatever you'd like the visible text to say
        */
-      { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test" },
+      { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Colors" },
       { pageUrl: "/page", imgsrc: "gatsby-astronaut.png", linkText: "Test2" },
       { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test3" },
       { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test4" },

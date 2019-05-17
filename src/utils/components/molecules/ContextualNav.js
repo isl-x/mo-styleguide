@@ -61,12 +61,12 @@ const Dropdown = styled.div`
     height: 14px;
     content: "";
     display: block;
-    transform: tranPRIMARY_BACKGROUND_COLORY(-2px) scale(1) rotate(45deg);
+    transform: translateY(-2px) scale(1) rotate(45deg);
     transition: transform 0.2s;
   }
 
   &.active::after {
-    transform: tranPRIMARY_BACKGROUND_COLORY(2px) scale(-1) rotate(45deg);
+    transform: translateY(2px) scale(-1) rotate(45deg);
   }
 `
 
