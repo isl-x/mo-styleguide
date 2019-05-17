@@ -8,6 +8,7 @@ import { NORMAL, SMALL } from "../spacing"
 import { S } from "../font-sizes"
 import { HIGH_PRIORITY_Z_INDEX } from "../z-index"
 import { DEVICE } from "../breakpoints"
+import { DIVIDER_BORDER } from "../borders"
 
 const ContextualNavContainer = styled.div`
   height: 10vh;
@@ -32,7 +33,7 @@ const NavContentContainer = styled.div`
 `
 
 const Title = styled.h1`
-  border-right: solid 1px white;
+  border-right: ${DIVIDER_BORDER};
   padding-right: ${NORMAL}px;
   margin-right: ${NORMAL}px;
 

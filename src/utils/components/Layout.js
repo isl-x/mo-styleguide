@@ -74,10 +74,11 @@ const Layout = ({ children, title, isIndex }) => (
           <Grid headerFooterOffset>
             <main>{children}</main>
           </Grid>
-          <Footer>
-            {previousPage.linkText}
-            {nextPage.linkText}
-          </Footer>
+          <Footer
+            nextPage={nextPage}
+            previousPage={previousPage}
+            isIndex={isIndex}
+          />
         </LayoutWrapper>
       )
     }}
