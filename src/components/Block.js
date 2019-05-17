@@ -4,7 +4,7 @@ import styled from "styled-components"
 import slugify from "slugify"
 
 import { LARGE } from "../utils/spacing"
-import { NAV_OFFSET } from "../utils/components/ContextualNav"
+import { NAV_OFFSET } from "../utils/components/molecules/ContextualNav"
 
 const BlockBase = styled.div`
   margin: ${LARGE}px 0;

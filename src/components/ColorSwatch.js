@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { SMALL } from "../utils/spacing"
-import { LIGHT_SMOKE } from "../utils/colors"
+import { LINK_BACKGROUND_COLOR } from "../utils/colors"
 import { DEVICE } from "../utils/breakpoints"
 
 /* SWATCH DETAILS */
@@ -34,7 +34,7 @@ ColorSwatchContainer.defaultProps = {
 /* INDIVIDUAL SWATCH PALETTES */
 
 const ColorSwatchBase = styled.div`
-  background: ${LIGHT_SMOKE};
+  background: ${LINK_BACKGROUND_COLOR};
   display: flex;
   flex-direction: column;
   justify-content: center;

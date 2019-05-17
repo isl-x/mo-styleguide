@@ -1,19 +1,20 @@
 import React from "react"
 
-import Layout from "../utils/components/Layout"
-import SEO from "../utils/components/Seo"
+import Layout from "../utils/components/organisms/Layout"
+import SEO from "../utils/components/atoms/Seo"
 import {
   ColorSwatchContainer,
   ColorSwatch,
   ColorSwatchDescription,
 } from "../components/ColorSwatch"
-import Text from "../components/Text"
+import Basic from "../components/Basic"
 import Image from "../components/Image"
 import Block from "../components/Block"
+import Download from "../components/Download"
 
 const BasePage = () => (
   <Layout title="Test Page">
-    <SEO title="Test Page" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Test Page" keywords={[`styleguide`, `design`, `base`]} />
     {/* Put all blocks here 
         Those that are shown below are meerly examples and are intended to be deleted as needed
     */}
@@ -38,11 +39,21 @@ const BasePage = () => (
 
     {/* TEXT */}
     <Block title="Placeholder for guideline">
-      <Text>
+      <Basic>
         This is an example of using text
         <Image imgsrc="random-wide-image.png" />
         And having text continue after an image
-      </Text>
+      </Basic>
+    </Block>
+
+    {/* IMAGE */}
+    <Block title="Images">
+      <Image imgsrc="random-wide-image.png" />
+    </Block>
+
+    {/* DOWNLOAD */}
+    <Block title="Downloads">
+      <Download fileName="gatsby-astronaut">Logos</Download>
     </Block>
   </Layout>
 )

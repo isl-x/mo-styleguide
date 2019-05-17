@@ -2,19 +2,23 @@ import React from "react"
 import styled from "styled-components"
 import { throttle } from "lodash"
 
-import Grid from "./Grid"
-import { SLATE, WHITE } from "../colors"
-import { NORMAL, SMALL } from "../spacing"
-import { S } from "../font-sizes"
-import { HIGH_PRIORITY_Z_INDEX } from "../z-index"
-import { DEVICE } from "../breakpoints"
+import Grid from "../atoms/Grid"
+import {
+  PRIMARY_BACKGROUND_COLOR,
+  PRIMARY_FOREGROUND_COLOR,
+} from "../../colors"
+import { NORMAL, SMALL } from "../../spacing"
+import { S } from "../../font-sizes"
+import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
+import { DEVICE } from "../../breakpoints"
+import { DIVIDER_BORDER } from "../../borders"
 
 const ContextualNavContainer = styled.div`
   height: 10vh;
   width: 100%;
   top: 0;
   position: fixed;
-  background-color: ${SLATE};
+  background-color: ${PRIMARY_BACKGROUND_COLOR};
   transform: translateY(-100%);
   transition: 0.3s transform;
   z-index: ${HIGH_PRIORITY_Z_INDEX};
@@ -28,11 +32,11 @@ const NavContentContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  color: ${WHITE};
+  color: ${PRIMARY_FOREGROUND_COLOR};
 `
 
 const Title = styled.h1`
-  border-right: solid 1px white;
+  border-right: ${DIVIDER_BORDER};
   padding-right: ${NORMAL}px;
   margin-right: ${NORMAL}px;
 
@@ -51,8 +55,8 @@ const Dropdown = styled.div`
   &::after {
     margin-left: ${SMALL}px;
     border-radius: 2px;
-    border-bottom: 3px solid ${WHITE};
-    border-right: 3px solid ${WHITE};
+    border-bottom: 3px solid ${PRIMARY_FOREGROUND_COLOR};
+    border-right: 3px solid ${PRIMARY_FOREGROUND_COLOR};
     width: 14px;
     height: 14px;
     content: "";
@@ -75,7 +79,7 @@ const DropdownContents = styled.ul`
   max-height: 300px;
   overflow-y: scroll;
   list-style: none;
-  background-color: ${SLATE};
+  background-color: ${PRIMARY_BACKGROUND_COLOR};
 
   ${Dropdown}.active & {
     display: block;
