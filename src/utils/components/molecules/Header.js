@@ -2,10 +2,10 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { SLATE, WHITE } from "../utils/colors"
-import { LARGE } from "../utils/spacing"
-import Grid from "../utils/components/Grid"
-import Link from "../utils/components/Link"
+import { SLATE, WHITE } from "../../colors"
+import { LARGE } from "../../spacing"
+import Grid from "../atoms/Grid"
+import Link from "../atoms/Link"
 
 const HeaderWrapper = styled.header`
   background-color: ${SLATE};

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import { SMALL, LARGE } from "../spacing"
+import { SMALL, LARGE } from "../../spacing"
 
 const Grid = styled.div`
   max-width: 1400px;

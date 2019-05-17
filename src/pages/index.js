@@ -1,9 +1,12 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-import Layout from "../utils/components/Layout"
-import SEO from "../utils/components/Seo"
-import { SectionLinkContainer, SectionLink } from "../components/SectionLink"
+import Layout from "../utils/components/organisms/Layout"
+import SEO from "../utils/components/atoms/Seo"
+import {
+  SectionLinkContainer,
+  SectionLink,
+} from "../utils/components/molecules/SectionLink"
 
 const IndexPage = () => (
   <StaticQuery

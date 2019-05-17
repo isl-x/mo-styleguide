@@ -2,13 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { throttle } from "lodash"
 
-import Grid from "./Grid"
-import { SLATE, WHITE } from "../colors"
-import { NORMAL, SMALL } from "../spacing"
-import { S } from "../font-sizes"
-import { HIGH_PRIORITY_Z_INDEX } from "../z-index"
-import { DEVICE } from "../breakpoints"
-import { DIVIDER_BORDER } from "../borders"
+import Grid from "../atoms/Grid"
+import { SLATE, WHITE } from "../../colors"
+import { NORMAL, SMALL } from "../../spacing"
+import { S } from "../../font-sizes"
+import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
+import { DEVICE } from "../../breakpoints"
+import { DIVIDER_BORDER } from "../../borders"
 
 const ContextualNavContainer = styled.div`
   height: 10vh;

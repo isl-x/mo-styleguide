@@ -2,12 +2,12 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import Grid from "../utils/components/Grid"
-import { SLATE, WHITE } from "../utils/colors"
-import { MEDIUM, TINY } from "../utils/spacing"
-import { DIVIDER_BORDER } from "../utils/borders"
-import { XS, S, M, L } from "../utils/font-sizes"
-import { DEVICE } from "../utils/breakpoints"
+import Grid from "../atoms/Grid"
+import { SLATE, WHITE } from "../../colors"
+import { MEDIUM, TINY } from "../../spacing"
+import { DIVIDER_BORDER } from "../../borders"
+import { XS, S, M, L } from "../../font-sizes"
+import { DEVICE } from "../../breakpoints"
 
 const FooterWrapper = styled.footer`
   background-color: ${SLATE};

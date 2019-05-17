@@ -10,12 +10,12 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 
-import Reset from "./Reset"
-import Grid from "./Grid"
+import Reset from "../atoms/Reset"
+import Grid from "../atoms/Grid"
 
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
-import ContextualNav from "./ContextualNav"
+import Header from "../molecules/Header"
+import Footer from "../molecules/Footer"
+import ContextualNav from "../molecules/ContextualNav"
 
 const LayoutWrapper = styled.div`
   display: flex;
