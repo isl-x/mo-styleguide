@@ -1,4 +1,10 @@
 module.exports = {
+  /**
+   * User configurable content
+   *
+   * siteMetadata - Content that is rendered around the site
+   * gatsby-plugin-manifest - Metadata that shows about the site to browsers, search, and devices
+   */
   siteMetadata: {
     title: `Styleguide`,
     brand: `Lorem Ipsum Brand`,
@@ -31,8 +37,8 @@ module.exports = {
         name: `Styleguide Base`,
         short_name: `Base`,
         start_url: `/`,
-        background_color: ``,
-        theme_color: ``,
+        background_color: `#fff`,
+        theme_color: `#1d2c3c`,
         display: `minimal-ui`,
         icon: `src/assets/gatsby-icon.png`, // This path is relative to the root of the site.
       },

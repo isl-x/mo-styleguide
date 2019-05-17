@@ -31,7 +31,7 @@ const IndexPage = () => (
           <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
           <SectionLinkContainer>
             {links.map((link, i) => (
-              <SectionLink pageUrl={link.pageUrl} imgsrc={link.imgsrc}>
+              <SectionLink key={i} pageUrl={link.pageUrl} imgsrc={link.imgsrc}>
                 {link.linkText}
               </SectionLink>
             ))}
