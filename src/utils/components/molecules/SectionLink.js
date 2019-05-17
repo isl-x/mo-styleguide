@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { NORMAL, SMALL } from "../../spacing"
-import { LIGHT_SMOKE } from "../../colors"
+import { LINK_BACKGROUND_COLOR } from "../../colors"
 import { DEVICE } from "../../breakpoints"
 import Link from "../atoms/Link"
 
@@ -34,7 +34,7 @@ SectionLinkContainer.defaultProps = {
 /* INDIVIDUAL LINKS */
 
 const SectionLinkBase = styled.div`
-  background: ${LIGHT_SMOKE};
+  background: ${LINK_BACKGROUND_COLOR};
   display: flex;
   justify-content: center;
   align-items: center;

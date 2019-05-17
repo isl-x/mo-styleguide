@@ -3,7 +3,10 @@ import styled from "styled-components"
 import { throttle } from "lodash"
 
 import Grid from "../atoms/Grid"
-import { SLATE, WHITE } from "../../colors"
+import {
+  PRIMARY_BACKGROUND_COLOR,
+  PRIMARY_FOREGROUND_COLOR,
+} from "../../colors"
 import { NORMAL, SMALL } from "../../spacing"
 import { S } from "../../font-sizes"
 import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
@@ -15,7 +18,7 @@ const ContextualNavContainer = styled.div`
   width: 100%;
   top: 0;
   position: fixed;
-  background-color: ${SLATE};
+  background-color: ${PRIMARY_BACKGROUND_COLOR};
   transform: translateY(-100%);
   transition: 0.3s transform;
   z-index: ${HIGH_PRIORITY_Z_INDEX};
@@ -29,7 +32,7 @@ const NavContentContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  color: ${WHITE};
+  color: ${PRIMARY_FOREGROUND_COLOR};
 `
 
 const Title = styled.h1`
@@ -52,18 +55,18 @@ const Dropdown = styled.div`
   &::after {
     margin-left: ${SMALL}px;
     border-radius: 2px;
-    border-bottom: 3px solid ${WHITE};
-    border-right: 3px solid ${WHITE};
+    border-bottom: 3px solid ${PRIMARY_FOREGROUND_COLOR};
+    border-right: 3px solid ${PRIMARY_FOREGROUND_COLOR};
     width: 14px;
     height: 14px;
     content: "";
     display: block;
-    transform: translateY(-2px) scale(1) rotate(45deg);
+    transform: tranPRIMARY_BACKGROUND_COLORY(-2px) scale(1) rotate(45deg);
     transition: transform 0.2s;
   }
 
   &.active::after {
-    transform: translateY(2px) scale(-1) rotate(45deg);
+    transform: tranPRIMARY_BACKGROUND_COLORY(2px) scale(-1) rotate(45deg);
   }
 `
 
@@ -76,7 +79,7 @@ const DropdownContents = styled.ul`
   max-height: 300px;
   overflow-y: scroll;
   list-style: none;
-  background-color: ${SLATE};
+  background-color: ${PRIMARY_BACKGROUND_COLOR};
 
   ${Dropdown}.active & {
     display: block;

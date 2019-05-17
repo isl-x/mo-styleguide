@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import { PRIMARY_TEXT_COLOR } from "../../colors"
 
 const Reset = createGlobalStyle`
     html {
@@ -201,7 +202,7 @@ const Reset = createGlobalStyle`
         box-sizing: inherit;
     }
     body {
-        color: hsla(0, 0%, 0%, 0.8);
+        color: ${PRIMARY_TEXT_COLOR};
         min-height: 100vh;
         font-family: georgia, serif;
         font-weight: normal;

@@ -14,7 +14,7 @@ import Download from "../components/Download"
 
 const BasePage = () => (
   <Layout title="Test Page">
-    <SEO title="Test Page" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Test Page" keywords={[`styleguide`, `design`, `base`]} />
     {/* Put all blocks here 
         Those that are shown below are meerly examples and are intended to be deleted as needed
     */}

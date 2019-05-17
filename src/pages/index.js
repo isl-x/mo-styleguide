@@ -14,6 +14,7 @@ const IndexPage = () => (
       query HomePageQuery {
         site {
           siteMetadata {
+            homePageDesktopColumnCount
             homePageLinks {
               pageUrl
               imgsrc
@@ -25,11 +26,12 @@ const IndexPage = () => (
     `}
     render={data => {
       const links = data.site.siteMetadata.homePageLinks
+      const colCount = data.site.siteMetadata.homePageDesktopColumnCount
 
       return (
         <Layout isIndex>
           <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-          <SectionLinkContainer>
+          <SectionLinkContainer colCount={colCount}>
             {links.map((link, i) => (
               <SectionLink key={i} pageUrl={link.pageUrl} imgsrc={link.imgsrc}>
                 {link.linkText}

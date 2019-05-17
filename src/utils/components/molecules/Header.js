@@ -2,16 +2,19 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { SLATE, WHITE } from "../../colors"
+import {
+  PRIMARY_BACKGROUND_COLOR,
+  PRIMARY_FOREGROUND_COLOR,
+} from "../../colors"
 import { LARGE } from "../../spacing"
 import Grid from "../atoms/Grid"
 import Link from "../atoms/Link"
 
 const HeaderWrapper = styled.header`
-  background-color: ${SLATE};
+  background-color: ${PRIMARY_BACKGROUND_COLOR};
   padding: ${LARGE}px 0;
   width: 100%;
-  color: ${WHITE};
+  color: ${PRIMARY_FOREGROUND_COLOR};
 `
 
 const Header = ({ siteSubText, siteMainText, isIndex }) => (

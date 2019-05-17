@@ -3,7 +3,10 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 
-import { WHITE, SLATE } from "../utils/colors"
+import {
+  PRIMARY_FOREGROUND_COLOR,
+  PRIMARY_BACKGROUND_COLOR,
+} from "../utils/colors"
 import { S } from "../utils/font-sizes"
 import { SMALL } from "../utils/spacing"
 
@@ -15,14 +18,14 @@ const DownloadBase = styled.a`
   justify-content: space-between;
   padding: ${SMALL}px;
   width: 10rem;
-  background: ${WHITE};
-  border: 2px solid ${SLATE};
+  background: ${PRIMARY_FOREGROUND_COLOR};
+  border: 2px solid ${PRIMARY_BACKGROUND_COLOR};
   transition: all 0.2s;
 
   &:hover,
   &:focus {
-    color: ${WHITE};
-    background-color: ${SLATE};
+    color: ${PRIMARY_FOREGROUND_COLOR};
+    background-color: ${PRIMARY_BACKGROUND_COLOR};
   }
 `
 
