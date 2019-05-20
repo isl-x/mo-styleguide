@@ -23,7 +23,11 @@ module.exports = {
        * linkText:   Whatever you'd like the visible text to say
        */
       { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Colors" },
-      { pageUrl: "/page", imgsrc: "gatsby-astronaut.png", linkText: "Test2" },
+      {
+        pageUrl: "/example",
+        imgsrc: "gatsby-astronaut.png",
+        linkText: "Test2",
+      },
       { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test3" },
       { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test4" },
       { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test5" },

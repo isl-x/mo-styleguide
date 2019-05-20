@@ -24,66 +24,81 @@ const LayoutWrapper = styled.div`
   min-height: 100vh;
 `
 
-const Layout = ({ children, title, isIndex }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteDataQuery {
-        site {
-          siteMetadata {
-            title
-            brand
-            homePageLinks {
-              pageUrl
-              imgsrc
-              linkText
+class Layout extends React.Component {
+  state = {
+    currentPageRoute: null,
+  }
+
+  componentDidMount() {
+    this.setState({ currentPageRoute: window.location.pathname })
+  }
+
+  render() {
+    const { children, title, isIndex } = this.props
+    const { currentPageRoute } = this.state
+
+    return (
+      <StaticQuery
+        query={graphql`
+          query SiteDataQuery {
+            site {
+              siteMetadata {
+                title
+                brand
+                homePageLinks {
+                  pageUrl
+                  imgsrc
+                  linkText
+                }
+              }
             }
           }
-        }
-      }
-    `}
-    render={data => {
-      const massagedTitle = title ? title : data.site.siteMetadata.title
+        `}
+        render={data => {
+          const massagedTitle = title ? title : data.site.siteMetadata.title
 
-      // Construct the footer links
-      const siteLinks = data.site.siteMetadata.homePageLinks
-      const currentPageIndex = siteLinks.findIndex(
-        link => link.pageUrl === window.location.pathname
-      )
-      let nextPage = null
-      let previousPage = null
-      if (currentPageIndex !== -1) {
-        if (siteLinks.length >= currentPageIndex + 1)
-          nextPage = siteLinks[currentPageIndex + 1]
-        if (currentPageIndex - 1 >= 0)
-          previousPage = siteLinks[currentPageIndex - 1]
-      }
+          // Construct the footer links
+          const siteLinks = data.site.siteMetadata.homePageLinks
+          const currentPageIndex = siteLinks.findIndex(
+            link => link.pageUrl === currentPageRoute
+          )
+          let nextPage = null
+          let previousPage = null
+          if (currentPageIndex !== -1) {
+            if (siteLinks.length >= currentPageIndex + 1)
+              nextPage = siteLinks[currentPageIndex + 1]
+            if (currentPageIndex - 1 >= 0)
+              previousPage = siteLinks[currentPageIndex - 1]
+          }
 
-      return (
-        <LayoutWrapper>
-          <Reset />
-          {isIndex ? null : <ContextualNav title={massagedTitle} />}
-          <Header
-            siteMainText={massagedTitle}
-            siteSubText={
-              isIndex
-                ? data.site.siteMetadata.brand
-                : `<- Back to ${data.site.siteMetadata.title}`
-            }
-            isIndex={isIndex}
-          />
-          <Grid headerFooterOffset>
-            <main>{children}</main>
-          </Grid>
-          <Footer
-            nextPage={nextPage}
-            previousPage={previousPage}
-            isIndex={isIndex}
-          />
-        </LayoutWrapper>
-      )
-    }}
-  />
-)
+          return (
+            <LayoutWrapper>
+              <Reset />
+              {isIndex ? null : <ContextualNav title={massagedTitle} />}
+              <Header
+                siteMainText={massagedTitle}
+                siteSubText={
+                  isIndex
+                    ? data.site.siteMetadata.brand
+                    : `<- Back to ${data.site.siteMetadata.title}`
+                }
+                isIndex={isIndex}
+              />
+              <Grid headerFooterOffset>
+                <main>{children}</main>
+              </Grid>
+              <Footer
+                nextPage={nextPage}
+                previousPage={previousPage}
+                isIndex={isIndex}
+              />
+            </LayoutWrapper>
+          )
+        }}
+      />
+    )
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
