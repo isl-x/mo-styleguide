@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 import { PRIMARY_TEXT_COLOR } from "../../colors"
 import { PRIMARY_WOFF, HEADERS_WOFF } from "../../fonts"
-import { USE_HELVETICA } from "../../../../gatsby-config-styles"
+import { USE_OTHER_FONT_BASE } from "../../../../gatsby-config-styles"
 
 const Reset = createGlobalStyle`
     @font-face {
@@ -18,7 +18,9 @@ const Reset = createGlobalStyle`
     }
 
     html {
-        font: 112.5%/1.45em ${USE_HELVETICA ? "helvetica" : "Primary"};
+        font: 112.5%/1.45em ${
+          USE_OTHER_FONT_BASE ? USE_OTHER_FONT_BASE : "Primary"
+        };
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
     }
@@ -241,7 +243,7 @@ const Reset = createGlobalStyle`
         margin: 0;
         padding: 0;
         color: inherit;
-        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
+        font-family: ${USE_OTHER_FONT_BASE ? USE_OTHER_FONT_BASE : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 2.25rem;
@@ -257,7 +259,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
+        font-family: ${USE_OTHER_FONT_BASE ? USE_OTHER_FONT_BASE : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 1.62671rem;
@@ -273,7 +275,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
+        font-family: ${USE_OTHER_FONT_BASE ? USE_OTHER_FONT_BASE : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 1.38316rem;
@@ -289,7 +291,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
+        font-family: ${USE_OTHER_FONT_BASE ? USE_OTHER_FONT_BASE : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 1rem;
@@ -305,7 +307,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
+        font-family: ${USE_OTHER_FONT_BASE ? USE_OTHER_FONT_BASE : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 0.85028rem;
@@ -321,7 +323,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
+        font-family: ${USE_OTHER_FONT_BASE ? USE_OTHER_FONT_BASE : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 0.78405rem;
