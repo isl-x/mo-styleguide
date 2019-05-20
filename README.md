@@ -44,4 +44,4 @@ new to programming (i.e. do a lot of copy pasting), but technically you can get 
 - All assets in the asset folder need to be named unique names. Even those files in sub-folders need to be unique.
 
 ## Deployment
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/istrategylabs/styleguide-base)
