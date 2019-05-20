@@ -12,6 +12,7 @@ import { MEDIUM, TINY } from "../../spacing"
 import { DIVIDER_BORDER } from "../../borders"
 import { XS, S, M, L } from "../../font-sizes"
 import { DEVICE } from "../../breakpoints"
+import Link from "../atoms/Link"
 
 const FooterWrapper = styled.footer`
   background-color: ${PRIMARY_BACKGROUND_COLOR};
@@ -20,17 +21,10 @@ const FooterWrapper = styled.footer`
 `
 
 const FooterContents = styled.div`
+  ${L}
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
-
-const FooterLink = styled.a`
-  ${L}
-  text-decoration: none;
-  cursor: pointer;
-  color: inherit;
-  text-align: ${props => props.textAlign};
 
   @media ${DEVICE.PHONE_ONLY} {
     ${M}
@@ -76,19 +70,19 @@ const Footer = ({ previousPage, nextPage, isIndex }) => (
             ) : (
               <FooterContents>
                 {previousPage ? (
-                  <FooterLink href={previousPage.pageUrl} textAlign="right">
+                  <Link to={previousPage.pageUrl} textAlign="right">
                     <FooterLinkContext>Previous</FooterLinkContext>
                     {`<- ${previousPage.linkText}`}
-                  </FooterLink>
+                  </Link>
                 ) : (
                   <div />
                 )}
                 <FooterDivider />
                 {nextPage ? (
-                  <FooterLink href={nextPage.pageUrl}>
+                  <Link to={nextPage.pageUrl}>
                     <FooterLinkContext>Next</FooterLinkContext>
                     {`${nextPage.linkText} ->`}
-                  </FooterLink>
+                  </Link>
                 ) : (
                   <div />
                 )}
