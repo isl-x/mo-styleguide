@@ -1,4 +1,12 @@
 {
-    "name": "Styleguide Base",
-    "description": "A base style guide that can be re-tooled as needed"
-  }
+  "name": "Styleguide Base",
+  "description": "A base style guide that can be re-tooled as needed",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ]
+}
