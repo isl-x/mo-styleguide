@@ -40,8 +40,8 @@ Super simple. Follow this easy three step process:
 3. Edit and remove blocks as desired! We recommend you stick within the framework of the example blocks if you are very
 new to programming (i.e. do a lot of copy pasting), but technically you can get really custom with anything and everything.
 
-## Deployment
-Grab a developer! It's a very quick process (This will change in the future!)
-
 ## Troubleshooting
 - All assets in the asset folder need to be named unique names. Even those files in sub-folders need to be unique.
+
+## Deployment
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
