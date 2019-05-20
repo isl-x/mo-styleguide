@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { throttle } from "lodash"
 
 import Grid from "../atoms/Grid"
+import Hamburger from "../atoms/Hamburger"
 import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
@@ -12,6 +13,7 @@ import { S } from "../../font-sizes"
 import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
 import { DEVICE } from "../../breakpoints"
 import { DIVIDER_BORDER } from "../../borders"
+import SlideOutMenu from "../atoms/SlideOutMenu"
 
 const ContextualNavContainer = styled.div`
   height: 10vh;
@@ -37,7 +39,7 @@ const NavContentContainer = styled.div`
 
 const Title = styled.h1`
   border-right: ${DIVIDER_BORDER};
-  padding-right: ${NORMAL}px;
+  padding: 0 ${NORMAL}px;
   margin-right: ${NORMAL}px;
 
   @media ${DEVICE.PHONE_ONLY} {
@@ -95,6 +97,7 @@ class ContextualNav extends React.Component {
   state = {
     current: 0,
     dropdownActive: false,
+    slideOutActive: false,
     showing: false,
     blocks: [],
     isScrolling: false,
@@ -137,8 +140,10 @@ class ContextualNav extends React.Component {
   openDropdown = () => {
     this.setState({ dropdownActive: true })
   }
-  closeDropdown = () => {
-    this.setState({ dropdownActive: false })
+
+  openSlideout = () => {
+    console.log("the hell/")
+    this.setState({ slideOutActive: !this.state.slideOutActive })
   }
 
   onClickOrKeyPress = (i, e) => {
@@ -205,13 +210,21 @@ class ContextualNav extends React.Component {
   }, 500)
 
   render() {
-    const { dropdownActive, showing, blocks, current } = this.state
+    const {
+      dropdownActive,
+      slideOutActive,
+      showing,
+      blocks,
+      current,
+    } = this.state
     const { title } = this.props
 
     return (
       <ContextualNavContainer className={showing ? "showing" : null}>
+        <SlideOutMenu active={slideOutActive} />
         <Grid>
           <NavContentContainer>
+            <Hamburger active={slideOutActive} onClick={this.openSlideout} />
             <Title>{title}</Title>
             <Dropdown
               className={dropdownActive ? "active" : null}
