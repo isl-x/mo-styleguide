@@ -16,6 +16,7 @@ all of the modern tools we developers use to make editing all the easier.
 ## Development
 Run the following to get the server up and running!
 ```bash
+nvm use
 npm install
 npm run start
 ```
