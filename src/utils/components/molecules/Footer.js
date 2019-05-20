@@ -36,6 +36,7 @@ const FooterLinkContext = styled.span`
   display: block;
   opacity: 0.8;
   margin-bottom: ${TINY}px;
+  text-align: ${props => (props.textAlign ? props.textAlign : "inherit")};
 
   @media ${DEVICE.PHONE_ONLY} {
     ${XS}
@@ -70,8 +71,10 @@ const Footer = ({ previousPage, nextPage, isIndex }) => (
             ) : (
               <FooterContents>
                 {previousPage ? (
-                  <Link to={previousPage.pageUrl} textAlign="right">
-                    <FooterLinkContext>Previous</FooterLinkContext>
+                  <Link to={previousPage.pageUrl}>
+                    <FooterLinkContext textAlign="right">
+                      Previous
+                    </FooterLinkContext>
                     {`<- ${previousPage.linkText}`}
                   </Link>
                 ) : (

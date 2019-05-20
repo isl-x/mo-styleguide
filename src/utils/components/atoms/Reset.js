@@ -1,9 +1,24 @@
 import { createGlobalStyle } from "styled-components"
 import { PRIMARY_TEXT_COLOR } from "../../colors"
+import { PRIMARY_WOFF, HEADERS_WOFF } from "../../fonts"
+import { USE_HELVETICA } from "../../../../gatsby-config-styles"
 
 const Reset = createGlobalStyle`
+    @font-face {
+        font-family: 'Primary';
+        font-style: normal;
+        font-weight: normal;
+        src: url(${PRIMARY_WOFF}) format('woff');
+    }
+    @font-face {
+        font-family: 'Headers';
+        font-style: normal;
+        font-weight: normal;
+        src: url(${HEADERS_WOFF}) format('woff');
+    }
+
     html {
-        font-family: sans-serif;
+        font: 112.5%/1.45em ${USE_HELVETICA ? "helvetica" : "Primary"};
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
     }
@@ -188,7 +203,6 @@ const Reset = createGlobalStyle`
         font: inherit;
     }
     html {
-    font: 112.5%/1.45em georgia, serif;
         box-sizing: border-box;
         overflow-y: scroll;
     }
@@ -204,7 +218,6 @@ const Reset = createGlobalStyle`
     body {
         color: ${PRIMARY_TEXT_COLOR};
         min-height: 100vh;
-        font-family: georgia, serif;
         font-weight: normal;
         word-wrap: break-word;
         font-kerning: normal;
@@ -228,8 +241,7 @@ const Reset = createGlobalStyle`
         margin: 0;
         padding: 0;
         color: inherit;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 2.25rem;
@@ -245,8 +257,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 1.62671rem;
@@ -262,8 +273,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 1.38316rem;
@@ -279,8 +289,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 1rem;
@@ -296,8 +305,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 0.85028rem;
@@ -313,8 +321,7 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
         color: inherit;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: ${USE_HELVETICA ? "helvetica" : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
         font-size: 0.78405rem;

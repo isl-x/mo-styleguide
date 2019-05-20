@@ -13,3 +13,7 @@ export const COLORS = {
   // The background color for the links on the Home page
   LINK_BACKGROUND_COLOR: "#eef2f7",
 }
+
+// Switch to true if you'd like the fonts to be helvetica globally
+// and not use custom fonts at all
+export const USE_HELVETICA = false
