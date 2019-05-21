@@ -11,7 +11,7 @@ import Image from "../../../components/Image"
 
 /* LINK CONTAINER */
 
-export const SectionLinkContainer = styled.div`
+const SectionLinkContainer = styled.div`
   display: grid;
   min-height: 50vh;
   margin: 0 auto;
@@ -23,13 +23,6 @@ export const SectionLinkContainer = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 `
-
-SectionLinkContainer.propTypes = {
-  colCount: PropTypes.number.isRequired,
-}
-SectionLinkContainer.defaultProps = {
-  colCount: 4,
-}
 
 /* INDIVIDUAL LINKS */
 
@@ -47,7 +40,7 @@ const SectionLinkWrapper = styled.div`
   padding: ${SMALL}px;
 `
 
-export const SectionLink = ({ imgsrc, pageUrl, children }) => (
+const SectionLink = ({ imgsrc, pageUrl, children }) => (
   <SectionLinkBase>
     <SectionLinkWrapper>
       <Link to={pageUrl}>
@@ -66,3 +59,22 @@ SectionLink.propTypes = {
 SectionLink.defaultProps = {
   imgsrc: "gatsby-astronaut.png",
 }
+
+SectionLinkContainer.propTypes = {
+  colCount: PropTypes.number.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.shape({
+      type: PropTypes.oneOf([SectionLink]),
+    }),
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        type: PropTypes.oneOf([SectionLink]),
+      })
+    ),
+  ]),
+}
+SectionLinkContainer.defaultProps = {
+  colCount: 4,
+}
+
+export { SectionLinkContainer, SectionLink }

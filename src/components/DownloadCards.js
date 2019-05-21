@@ -27,13 +27,6 @@ const DownloadCardsContainer = styled.div`
   }
 `
 
-DownloadCardsContainer.propTypes = {
-  columns: PropTypes.number,
-}
-DownloadCardsContainer.defaultProps = {
-  columns: 3,
-}
-
 /** DOWNLOAD CARD GRID ITEM **/
 const CardBase = styled.a`
   text-decoration: none;
@@ -98,6 +91,23 @@ DownloadCard.propTypes = {
   title: PropTypes.string.isRequired,
   imgsrc: PropTypes.string.isRequired,
   fileName: PropTypes.string.isRequired,
+}
+
+DownloadCardsContainer.propTypes = {
+  columns: PropTypes.number,
+  children: PropTypes.oneOfType([
+    PropTypes.shape({
+      type: PropTypes.oneOf([DownloadCard]),
+    }),
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        type: PropTypes.oneOf([DownloadCard]),
+      })
+    ),
+  ]),
+}
+DownloadCardsContainer.defaultProps = {
+  columns: 3,
 }
 
 export { DownloadCardsContainer, DownloadCardsDescription, DownloadCard }
