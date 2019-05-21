@@ -11,6 +11,11 @@ import Basic from "../components/Basic"
 import Image from "../components/Image"
 import Block from "../components/Block"
 import DownloadButton from "../components/DownloadButton"
+import {
+  DownloadCardsContainer,
+  DownloadCardsDescription,
+  DownloadCard,
+} from "../components/DownloadCards"
 
 const BasePage = () => (
   <Layout title="Test Page">
@@ -54,6 +59,30 @@ const BasePage = () => (
     {/* DOWNLOAD BUTTON */}
     <Block title="Downloads">
       <DownloadButton fileName="gatsby-astronaut">Logos</DownloadButton>
+    </Block>
+
+    {/* DOWNLOAD CARDS */}
+    <Block title="Download Cards">
+      <DownloadCardsDescription>
+        This is the downloads cards block
+      </DownloadCardsDescription>
+      <DownloadCardsContainer columns={2}>
+        <DownloadCard
+          title="test"
+          imgsrc="random-wide-image.png"
+          fileName="gatsby-astronaut"
+        />
+        <DownloadCard
+          title="test"
+          imgsrc="random-wide-image.png"
+          fileName="gatsby-astronaut"
+        />
+        <DownloadCard
+          title="test"
+          imgsrc="random-wide-image.png"
+          fileName="gatsby-astronaut"
+        />
+      </DownloadCardsContainer>
     </Block>
   </Layout>
 )

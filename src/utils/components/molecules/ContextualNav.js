@@ -50,6 +50,7 @@ const Title = styled.h1`
 
 const DROPDOWN_MIN_W = "5rem"
 const Dropdown = styled.div`
+  cursor: pointer;
   height: 100%;
   min-width: ${DROPDOWN_MIN_W};
   display: flex;
