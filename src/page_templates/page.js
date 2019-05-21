@@ -88,7 +88,12 @@ const BasePage = () => (
 
     {/* FONTS */}
     <Block title="Fonts">
-      <Font fontName="The Font" sample="Aa" sampleSize="120px">
+      <Font
+        fontName="The Font"
+        fontFileName="noelle"
+        sample="Aa"
+        sampleSize="120px"
+      >
         <FontUsageGuideline>thing</FontUsageGuideline>
         <FontUsageGuideline>thing</FontUsageGuideline>
         <FontUsageGuideline>thing</FontUsageGuideline>
