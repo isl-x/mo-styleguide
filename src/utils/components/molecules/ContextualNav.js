@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import { throttle } from "lodash"
@@ -142,7 +143,6 @@ class ContextualNav extends React.Component {
   }
 
   openSlideout = () => {
-    console.log("the hell/")
     this.setState({ slideOutActive: !this.state.slideOutActive })
   }
 
@@ -221,7 +221,7 @@ class ContextualNav extends React.Component {
 
     return (
       <ContextualNavContainer className={showing ? "showing" : null}>
-        <SlideOutMenu active={slideOutActive} />
+        <SlideOutMenu active={slideOutActive && showing} />
         <Grid>
           <NavContentContainer>
             <Hamburger active={slideOutActive} onClick={this.openSlideout} />
@@ -255,6 +255,10 @@ class ContextualNav extends React.Component {
       </ContextualNavContainer>
     )
   }
+}
+
+ContextualNav.propTypes = {
+  title: PropTypes.string.isRequired,
 }
 
 export default ContextualNav
