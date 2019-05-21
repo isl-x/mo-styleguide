@@ -142,7 +142,7 @@ class ContextualNav extends React.Component {
     this.setState({ dropdownActive: true })
   }
 
-  openSlideout = () => {
+  toggleSlideout = () => {
     this.setState({ slideOutActive: !this.state.slideOutActive })
   }
 
@@ -224,7 +224,7 @@ class ContextualNav extends React.Component {
         <SlideOutMenu active={slideOutActive && showing} />
         <Grid>
           <NavContentContainer>
-            <Hamburger active={slideOutActive} onClick={this.openSlideout} />
+            <Hamburger active={slideOutActive} onClick={this.toggleSlideout} />
             <Title>{title}</Title>
             <Dropdown
               className={dropdownActive ? "active" : null}

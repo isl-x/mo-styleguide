@@ -13,6 +13,7 @@ import {
 import { NORMAL } from "../../spacing"
 import { XL } from "../../font-sizes"
 import Link from "./Link"
+import { DEVICE } from "../../breakpoints"
 
 const BodyStyles = createGlobalStyle`
     html {
@@ -65,6 +66,10 @@ const Menu = styled.ul`
     left: 0;
     content: "";
     transform: translateX(-70%);
+
+    @media ${DEVICE.TABLET_DOWN} {
+      transform: translateX(-20%);
+    }
   }
 `
 
@@ -105,7 +110,7 @@ const SlideOutMenu = ({ active }) => (
             style={active ? { transform: "translateX(0%)" } : null}
           >
             <Grid>
-              <MenuContainer>
+              <MenuContainer style={active ? null : { display: "none" }}>
                 <MenuSubText>Jump to</MenuSubText>
                 <Menu>
                   {siteLinks &&
