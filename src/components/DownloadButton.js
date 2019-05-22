@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import { StaticQuery, graphql } from "gatsby"
 
 import {
   PRIMARY_FOREGROUND_COLOR,
@@ -9,6 +8,7 @@ import {
 } from "../utils/colors"
 import { S } from "../utils/font-sizes"
 import { SMALL } from "../utils/spacing"
+import { useSiteFiles } from "../utils/hooks"
 
 const DownloadBase = styled.a`
   ${S}
@@ -29,38 +29,23 @@ const DownloadBase = styled.a`
   }
 `
 
-const DownloadButton = ({ children, fileName }) => (
-  <StaticQuery
-    query={graphql`
-      query AllFilesQuery {
-        allFile {
-          edges {
-            node {
-              publicURL
-              name
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      const completeFile = data.allFile.edges
-        ? data.allFile.edges.find(file => file.node.name === fileName)
-        : null
+const DownloadButton = ({ children, fileName }) => {
+  const { edges } = useSiteFiles()
+  const completeFile = edges
+    ? edges.find(file => file.node.name === fileName)
+    : null
 
-      return (
-        <DownloadBase
-          role="button"
-          download
-          href={completeFile ? completeFile.node.publicURL : null}
-        >
-          <span>{children}</span>
-          <span>:)</span>
-        </DownloadBase>
-      )
-    }}
-  />
-)
+  return (
+    <DownloadBase
+      role="button"
+      download
+      href={completeFile ? completeFile.node.publicURL : null}
+    >
+      <span>{children}</span>
+      <span>:)</span>
+    </DownloadBase>
+  )
+}
 
 DownloadButton.propTypes = {
   children: PropTypes.node.isRequired,

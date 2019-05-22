@@ -1,11 +1,11 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import { StaticQuery, graphql } from "gatsby"
 
 import { PRIMARY_TEXT_COLOR } from "../utils/colors"
 import { NORMAL, TINY, XXXLARGE } from "../utils/spacing"
 import { DEVICE } from "../utils/breakpoints"
+import { useSiteFiles } from "../utils/hooks"
 
 /** BASE CONTAINER FOR THE BLOCK **/
 const FontContainer = styled.div`
@@ -94,50 +94,35 @@ const Font = ({
   noUpper,
   noLower,
   noNumbers,
-}) => (
-  <StaticQuery
-    query={graphql`
-      query AllDownloadFilesQueryAgain {
-        allFile {
-          edges {
-            node {
-              publicURL
-              name
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      const completeFile = data.allFile.edges
-        ? data.allFile.edges.find(file => file.node.name === fontFileName)
-        : null
+}) => {
+  const { edges } = useSiteFiles()
+  const completeFile = edges
+    ? edges.find(file => file.node.name === fontFileName)
+    : null
 
-      return (
-        <FontContainer url={completeFile.node.publicURL} name={fontName}>
-          <FontSampleContainer>
-            <FontSample sampleSize={sampleSize} fontName={fontName}>
-              {sample}
-            </FontSample>
-            <h4>{fontName}</h4>
-          </FontSampleContainer>
-          <div>
-            <FontExampleContainer fontName={fontName}>
-              {noUpper ? null : (
-                <FontExample>ABCDEFGHIJKLMNOPQRSTUVWXYZ</FontExample>
-              )}
-              {noLower ? null : (
-                <FontExample>abcdefghijklmnopqrstuvwxyz</FontExample>
-              )}
-              {noNumbers ? null : <FontExample>{"1234567890&%{}"}</FontExample>}
-            </FontExampleContainer>
-            <FontUsageContainer>{children}</FontUsageContainer>
-          </div>
-        </FontContainer>
-      )
-    }}
-  />
-)
+  return (
+    <FontContainer url={completeFile.node.publicURL} name={fontName}>
+      <FontSampleContainer>
+        <FontSample sampleSize={sampleSize} fontName={fontName}>
+          {sample}
+        </FontSample>
+        <h4>{fontName}</h4>
+      </FontSampleContainer>
+      <div>
+        <FontExampleContainer fontName={fontName}>
+          {noUpper ? null : (
+            <FontExample>ABCDEFGHIJKLMNOPQRSTUVWXYZ</FontExample>
+          )}
+          {noLower ? null : (
+            <FontExample>abcdefghijklmnopqrstuvwxyz</FontExample>
+          )}
+          {noNumbers ? null : <FontExample>{"1234567890&%{}"}</FontExample>}
+        </FontExampleContainer>
+        <FontUsageContainer>{children}</FontUsageContainer>
+      </div>
+    </FontContainer>
+  )
+}
 
 Font.propTypes = {
   fontName: PropTypes.string.isRequired,
