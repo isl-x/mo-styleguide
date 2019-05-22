@@ -18,13 +18,13 @@ module.exports = {
        * The links will render in the order below on the home page.
        *
        * pageUrl:    Should match the name of a file in your pages folder.
-       *             i.e. "page.js" would be "/page"
+       *             i.e. "page.js" would be "/page/" (NOTE: Add trailing slash)
        * imgsrc:     Needs to be a ".png" file in the assets folder
        * linkText:   Whatever you'd like the visible text to say
        */
       { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Colors" },
       {
-        pageUrl: "/example",
+        pageUrl: "/example/",
         imgsrc: "gatsby-astronaut.png",
         linkText: "Test2",
       },

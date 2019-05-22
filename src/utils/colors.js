@@ -1,8 +1,7 @@
-// Headers, footers, etc... (doing a CTRL+F is a good way to see all the places this is used)
-export const PRIMARY_BACKGROUND_COLOR = "#1d2c3c"
-// Basic (and other items) that goes on top of the PRIMARY_BACKGROUND_COLOR
-export const PRIMARY_FOREGROUND_COLOR = "#ffffff"
+import { COLORS } from "../../gatsby-config-styles"
 
-/******** SECONDARY REFERENCES *******/
-export const PRIMARY_TEXT_COLOR = "#000"
-export const LINK_BACKGROUND_COLOR = "#eef2f7"
+export const PRIMARY_BACKGROUND_COLOR = COLORS.PRIMARY_BACKGROUND_COLOR
+export const PRIMARY_FOREGROUND_COLOR = COLORS.PRIMARY_FOREGROUND_COLOR
+
+export const PRIMARY_TEXT_COLOR = COLORS.PRIMARY_TEXT_COLOR
+export const LINK_BACKGROUND_COLOR = COLORS.LINK_BACKGROUND_COLOR
