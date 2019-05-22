@@ -1,34 +1,100 @@
 import PropTypes from "prop-types"
 import React from "react"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 
-const FontStyle = createGlobalStyle`
-    @font-face {
-        font-family: ${props => `${props.name}`};
-        font-style: normal;
-        font-weight: normal;
-        src: url(${props => props.url}) format('woff');
-    }
-`
+import { PRIMARY_TEXT_COLOR } from "../utils/colors"
+import { NORMAL, TINY, XXXLARGE } from "../utils/spacing"
+import { DEVICE } from "../utils/breakpoints"
 
+/** BASE CONTAINER FOR THE BLOCK **/
 const FontContainer = styled.div`
-  font-family: ${props => `${props.fontName}`};
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  margin-bottom: ${NORMAL}px;
+
+  @media ${DEVICE.PHONE_ONLY} {
+    flex-direction: column;
+  }
+
+  @font-face {
+    font-family: ${props => `${props.name}`};
+    font-style: normal;
+    font-weight: normal;
+    src: url(${props => props.url}) format("woff");
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+`
+
+FontContainer.propTypes = {
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+}
+
+/** LARGE SAMPLE TEXT STYLES **/
+const FontSampleContainer = styled.div`
+  margin-right: ${XXXLARGE}px;
 `
 
 const FontSample = styled.div`
+  font-family: ${props => `${props.fontName}`};
   font-size: ${props => props.sampleSize};
   line-height: ${props => props.sampleSize};
 `
 
-const FontUsageGuideline = styled.li``
+FontSample.propTypes = {
+  fontName: PropTypes.string.isRequired,
+  sampleSize: PropTypes.string.isRequired,
+}
 
-const FontExample = styled.p``
+/** GUIDELINES AND EXAMPLES (RIGHT SIDE OF BLOCK) **/
+const FontUsageContainer = styled.ul`
+  margin: 0;
+`
 
-const Font = ({ fontName, fontFileName, sample, sampleSize, children }) => (
+const FontUsageGuideline = styled.li`
+  list-style: none;
+  opacity: 0.6;
+  margin-bottom: 0;
+
+  &:before {
+    height: 2px;
+    width: 10px;
+    content: "";
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    background: ${PRIMARY_TEXT_COLOR};
+    margin-right: ${NORMAL}px;
+  }
+`
+
+const FontExampleContainer = styled.div`
+  font-family: ${props => `${props.fontName}`};
+  margin-bottom: ${NORMAL}px;
+`
+
+FontExampleContainer.propTypes = {
+  fontName: PropTypes.string.isRequired,
+}
+
+const FontExample = styled.p`
+  margin-bottom: ${TINY}px;
+`
+
+const Font = ({
+  fontName,
+  fontFileName,
+  sample,
+  sampleSize,
+  children,
+  noUpper,
+  noLower,
+  noNumbers,
+}) => (
   <StaticQuery
     query={graphql`
       query AllDownloadFilesQueryAgain {
@@ -48,17 +114,24 @@ const Font = ({ fontName, fontFileName, sample, sampleSize, children }) => (
         : null
 
       return (
-        <FontContainer fontName={fontName}>
-          <FontStyle url={completeFile.node.publicURL} name={fontName} />
-          <div>
-            <FontSample sampleSize={sampleSize}>{sample}</FontSample>
+        <FontContainer url={completeFile.node.publicURL} name={fontName}>
+          <FontSampleContainer>
+            <FontSample sampleSize={sampleSize} fontName={fontName}>
+              {sample}
+            </FontSample>
             <h4>{fontName}</h4>
-          </div>
+          </FontSampleContainer>
           <div>
-            <FontExample>ABCDEFGHIJKLMNOPQRSTUVWXYZ</FontExample>
-            <FontExample>abcdefghijklmnopqrstuvwzyz</FontExample>
-            <FontExample>{"1234567890&%{}"}</FontExample>
-            <ul>{children}</ul>
+            <FontExampleContainer fontName={fontName}>
+              {noUpper ? null : (
+                <FontExample>ABCDEFGHIJKLMNOPQRSTUVWXYZ</FontExample>
+              )}
+              {noLower ? null : (
+                <FontExample>abcdefghijklmnopqrstuvwxyz</FontExample>
+              )}
+              {noNumbers ? null : <FontExample>{"1234567890&%{}"}</FontExample>}
+            </FontExampleContainer>
+            <FontUsageContainer>{children}</FontUsageContainer>
           </div>
         </FontContainer>
       )
@@ -81,10 +154,16 @@ Font.propTypes = {
       })
     ),
   ]),
+  noUpper: PropTypes.bool,
+  noLower: PropTypes.bool,
+  noNumbers: PropTypes.bool,
 }
 
 Font.defaultProps = {
   sampleSize: "120px",
+  noUpper: false,
+  noLower: false,
+  noNumbers: false,
 }
 
 export { Font, FontUsageGuideline }
