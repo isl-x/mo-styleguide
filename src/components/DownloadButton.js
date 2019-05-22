@@ -29,7 +29,7 @@ const DownloadBase = styled.a`
   }
 `
 
-const Download = ({ children, fileName }) => (
+const DownloadButton = ({ children, fileName }) => (
   <StaticQuery
     query={graphql`
       query AllFilesQuery {
@@ -62,9 +62,9 @@ const Download = ({ children, fileName }) => (
   />
 )
 
-Download.propTypes = {
+DownloadButton.propTypes = {
   children: PropTypes.node.isRequired,
   fileName: PropTypes.string.isRequired,
 }
 
-export default Download
+export default DownloadButton
