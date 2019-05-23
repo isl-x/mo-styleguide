@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import { StaticQuery, graphql } from "gatsby"
 
 import { SMALL, TINY } from "../utils/spacing"
 import { DEVICE } from "../utils/breakpoints"
@@ -10,6 +9,7 @@ import {
   PRIMARY_FOREGROUND_COLOR,
 } from "../utils/colors"
 import Image from "./Image"
+import { useSiteFiles } from "../utils/hooks"
 
 /** TEXT **/
 const DownloadCardsDescription = styled.p``
@@ -26,13 +26,6 @@ const DownloadCardsContainer = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 `
-
-DownloadCardsContainer.propTypes = {
-  columns: PropTypes.number,
-}
-DownloadCardsContainer.defaultProps = {
-  columns: 3,
-}
 
 /** DOWNLOAD CARD GRID ITEM **/
 const CardBase = styled.a`
@@ -56,48 +49,50 @@ const CardImageContainer = styled.div`
   }
 `
 
-const DownloadCard = ({ title, imgsrc, fileName }) => (
-  <StaticQuery
-    query={graphql`
-      query AllDownloadFilesQuery {
-        allFile {
-          edges {
-            node {
-              publicURL
-              name
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      const completeFile = data.allFile.edges
-        ? data.allFile.edges.find(file => file.node.name === fileName)
-        : null
+const DownloadCard = ({ title, imgsrc, fileName }) => {
+  const { edges } = useSiteFiles()
+  const completeFile = edges
+    ? edges.find(file => file.node.name === fileName)
+    : null
 
-      return (
-        <CardBase
-          role="button"
-          download
-          href={completeFile ? completeFile.node.publicURL : null}
-        >
-          <CardHeader>
-            <span>{title}</span>
-            <span>⬇</span>
-          </CardHeader>
-          <CardImageContainer>
-            <Image imgsrc={imgsrc} />
-          </CardImageContainer>
-        </CardBase>
-      )
-    }}
-  />
-)
+  return (
+    <CardBase
+      role="button"
+      download
+      href={completeFile ? completeFile.node.publicURL : null}
+    >
+      <CardHeader>
+        <span>{title}</span>
+        <span>⬇</span>
+      </CardHeader>
+      <CardImageContainer>
+        <Image imgsrc={imgsrc} />
+      </CardImageContainer>
+    </CardBase>
+  )
+}
 
 DownloadCard.propTypes = {
   title: PropTypes.string.isRequired,
   imgsrc: PropTypes.string.isRequired,
   fileName: PropTypes.string.isRequired,
+}
+
+DownloadCardsContainer.propTypes = {
+  columns: PropTypes.number,
+  children: PropTypes.oneOfType([
+    PropTypes.shape({
+      type: PropTypes.oneOf([DownloadCard]),
+    }),
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        type: PropTypes.oneOf([DownloadCard]),
+      })
+    ),
+  ]),
+}
+DownloadCardsContainer.defaultProps = {
+  columns: 3,
 }
 
 export { DownloadCardsContainer, DownloadCardsDescription, DownloadCard }

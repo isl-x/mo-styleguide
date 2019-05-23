@@ -7,11 +7,11 @@ import { LINK_BACKGROUND_COLOR } from "../utils/colors"
 import { DEVICE } from "../utils/breakpoints"
 
 /* SWATCH DETAILS */
-export const ColorSwatchDescription = styled.p``
+const ColorSwatchDescription = styled.p``
 
 /* SWATCH CONTAINER */
 
-export const ColorSwatchContainer = styled.div`
+const ColorSwatchContainer = styled.div`
   display: grid;
   grid-auto-rows: 300px;
   margin: 0 auto;
@@ -23,13 +23,6 @@ export const ColorSwatchContainer = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 `
-
-ColorSwatchContainer.propTypes = {
-  colCount: PropTypes.number.isRequired,
-}
-ColorSwatchContainer.defaultProps = {
-  colCount: 4,
-}
 
 /* INDIVIDUAL SWATCH PALETTES */
 
@@ -66,7 +59,7 @@ const ColorDetailsContainer = styled.div`
   justify-content: center;
 `
 
-export const ColorSwatch = ({ title, hex, rgb, cmyk, pms }) => (
+const ColorSwatch = ({ title, hex, rgb, cmyk, pms }) => (
   <ColorSwatchBase>
     <ColorExample color={hex} />
     <ColorDetails>
@@ -95,3 +88,22 @@ ColorSwatch.defaultProps = {
   cmyk: "-",
   pms: "-",
 }
+
+ColorSwatchContainer.propTypes = {
+  colCount: PropTypes.number.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.shape({
+      type: PropTypes.oneOf([ColorSwatch]),
+    }),
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        type: PropTypes.oneOf([ColorSwatch]),
+      })
+    ),
+  ]),
+}
+ColorSwatchContainer.defaultProps = {
+  colCount: 4,
+}
+
+export { ColorSwatchDescription, ColorSwatchContainer, ColorSwatch }

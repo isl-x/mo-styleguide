@@ -16,6 +16,7 @@ import {
   DownloadCardsDescription,
   DownloadCard,
 } from "../components/DownloadCards"
+import { Font, FontUsageGuideline } from "../components/Font"
 
 const BasePage = () => (
   <Layout title="Test Page">
@@ -83,6 +84,31 @@ const BasePage = () => (
           fileName="gatsby-astronaut"
         />
       </DownloadCardsContainer>
+    </Block>
+
+    {/* FONTS */}
+    <Block title="Fonts">
+      <Font
+        fontName="The Font"
+        fontFileName="the-font"
+        sample="Aa"
+        sampleSize="120px"
+      >
+        <FontUsageGuideline>Used for body</FontUsageGuideline>
+        <FontUsageGuideline>Regular/Italic weights only</FontUsageGuideline>
+        <FontUsageGuideline>Generous line spacing</FontUsageGuideline>
+      </Font>
+      <Font
+        fontName="The Other Font"
+        fontFileName="the-other-font"
+        sample="AA"
+        sampleSize="120px"
+        noLower
+      >
+        <FontUsageGuideline>Used for body</FontUsageGuideline>
+        <FontUsageGuideline>No lower case letters</FontUsageGuideline>
+        <FontUsageGuideline>Generous line spacing</FontUsageGuideline>
+      </Font>
     </Block>
   </Layout>
 )
