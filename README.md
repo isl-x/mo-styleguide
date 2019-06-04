@@ -1,4 +1,6 @@
-# mo-styleguide
+# styleguide-base
+![](src/utils/bin/read-me-picture.png)
+
 A base project for all of your styleguide needs!
 Intended to be able to be used by the not so technical and technical to quickly get a styleguide site up.
 
