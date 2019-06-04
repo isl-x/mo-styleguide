@@ -7,14 +7,15 @@ Intended to be able to be used by the not so technical and technical to quickly 
 ## Requirements
 - Node
 - NPM
-- (If you're unfamiliar with either of those let a dev know and we will help you get setup)
 
 We also highly encourage you use [VSCode](https://code.visualstudio.com/) for working on the project as
 it's the easiest way to get a terminal and code editor all running at the same time, while also getting
 all of the modern tools we developers use to make editing all the easier.
 
 ## Development
-Run the following to get the server up and running!
+1. Fork this project on Github
+2. Download the new repository
+3. Run the following to get the server up and running!
 ```bash
 nvm use
 npm install
@@ -32,6 +33,7 @@ npm run start
     - src/utils: This is the land where the light does not touch 🦁🛑 Enter at your own risk if you are not a developer!
 
 - gatsby-config.js: This is the file where a majority of the site configuration is done. Title, home page blocks, etc.
+- gatsby-config-styles.js: The place where base colors and fonts are specified.
 
 #### Making a new page
 Super simple. Follow this easy three step process:
