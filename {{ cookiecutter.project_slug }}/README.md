@@ -1,6 +1,7 @@
-# mo-styleguide
-A base project for all of your styleguide needs!
-Intended to be able to be used by the not so technical and technical to quickly get a styleguide site up.
+# {{ cookiecutter.project_name }}
+![](src/utils/bin/read-me-picture.png)
+
+{{ cookiecutter.description }}
 
 ## Requirements
 - Node

@@ -1,7 +1,7 @@
 {
-  "name": "styleguide-base",
+  "name": "{{ cookiecutter.project_name }}",
   "private": true,
-  "description": "ISL's style guide starter kit",
+  "description": "{{ cookiecutter.description }}",
   "version": "0.1.0",
   "author": "ISL",
   "engines": {
