@@ -13,9 +13,9 @@ it's the easiest way to get a terminal and code editor all running at the same t
 all of the modern tools we developers use to make editing all the easier.
 
 ## Development
-1. Fork this project on Github
+1. Click the "Use this template" GitHub button
 2. Download the new repository
-3. Run the following to get the server up and running!
+2. Run the following to get the server up and running!
 ```bash
 nvm use
 npm install
@@ -47,4 +47,4 @@ new to programming (i.e. do a lot of copy pasting), but technically you can get 
 - All assets in the asset folder need to be named unique names. Even those files in sub-folders need to be unique.
 
 ## Deployment
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/istrategylabs/styleguide-base)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/istrategylabs/mo-styleguide)
