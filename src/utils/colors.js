@@ -1,4 +1,4 @@
-import { COLORS } from "../../gatsby-config-styles"
+import { COLORS } from "../config"
 
 export const PRIMARY_BACKGROUND_COLOR = COLORS.PRIMARY_BACKGROUND_COLOR
 export const PRIMARY_FOREGROUND_COLOR = COLORS.PRIMARY_FOREGROUND_COLOR

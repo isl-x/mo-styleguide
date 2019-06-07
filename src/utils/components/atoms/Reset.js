@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 import { PRIMARY_TEXT_COLOR } from "../../colors"
 import { PRIMARY_WOFF, HEADERS_WOFF } from "../../fonts"
-import { USE_OTHER_FONT_BASE } from "../../../../gatsby-config-styles"
+import { USE_OTHER_FONT_BASE } from "../../../config"
 
 const Reset = createGlobalStyle`
     @font-face {

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
-import { StaticQuery } from "gatsby"
 
 import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
 import Grid from "./Grid"
@@ -14,6 +13,7 @@ import { NORMAL } from "../../spacing"
 import { XL } from "../../font-sizes"
 import Link from "./Link"
 import { DEVICE } from "../../breakpoints"
+import { HOME_PAGE } from "../../../config"
 
 const BodyStyles = createGlobalStyle`
     html {
@@ -81,53 +81,37 @@ const MenuItem = styled.li`
   margin-bottom: ${NORMAL}px;
 `
 
-const SlideOutMenu = ({ active }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteLinksQuery {
-        site {
-          siteMetadata {
-            homePageLinks {
-              pageUrl
-              linkText
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      const siteLinks = data.site.siteMetadata.homePageLinks
+const SlideOutMenu = ({ active }) => {
+  const siteLinks = HOME_PAGE.HOME_PAGE_LINKS
 
-      return (
+  return (
+    <>
+      {active ? (
         <>
-          {active ? (
-            <>
-              <BodyStyles />
-              <Background />
-            </>
-          ) : null}
-          <SlideOutContainer
-            style={active ? { transform: "translateX(0%)" } : null}
-          >
-            <Grid>
-              <MenuContainer style={active ? null : { display: "none" }}>
-                <MenuSubText>Jump to</MenuSubText>
-                <Menu>
-                  {siteLinks &&
-                    siteLinks.map((link, i) => (
-                      <MenuItem key={i}>
-                        <Link to={link.pageUrl}>{link.linkText}</Link>
-                      </MenuItem>
-                    ))}
-                </Menu>
-              </MenuContainer>
-            </Grid>
-          </SlideOutContainer>
+          <BodyStyles />
+          <Background />
         </>
-      )
-    }}
-  />
-)
+      ) : null}
+      <SlideOutContainer
+        style={active ? { transform: "translateX(0%)" } : null}
+      >
+        <Grid>
+          <MenuContainer style={active ? null : { display: "none" }}>
+            <MenuSubText>Jump to</MenuSubText>
+            <Menu>
+              {siteLinks &&
+                siteLinks.map((link, i) => (
+                  <MenuItem key={i}>
+                    <Link to={link.pageUrl}>{link.linkText}</Link>
+                  </MenuItem>
+                ))}
+            </Menu>
+          </MenuContainer>
+        </Grid>
+      </SlideOutContainer>
+    </>
+  )
+}
 
 SlideOutMenu.propTypes = {
   active: PropTypes.bool.isRequired,
