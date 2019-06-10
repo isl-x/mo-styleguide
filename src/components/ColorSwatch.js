@@ -102,7 +102,11 @@ const ColorDetails = styled.div`
       flex-basis: 80%;
       background: ${LINK_BACKGROUND_COLOR};
       align-items: center;
-      padding: ${NORMAL}px 0;
+      padding: ${NORMAL}px;
+
+      @media ${DEVICE.PHONE_ONLY} {
+        flex-wrap: wrap;
+      }
     `
 
     return `  
@@ -119,7 +123,13 @@ const ColorName = styled.h3`
       return `
       flex-basis: 25%;
       text-align: center;
-      margin: 0 ${TINY}px;
+      margin-right: ${TINY}px;
+      margin-bottom: 0;
+
+      @media ${DEVICE.PHONE_ONLY} {
+        text-align: left;
+        margin-bottom: ${TINY}px;
+      }
     `
 
     return `
