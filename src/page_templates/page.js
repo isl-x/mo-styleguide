@@ -17,6 +17,7 @@ import {
   DownloadCard,
 } from "../components/DownloadCards"
 import { Font, FontUsageGuideline } from "../components/Font"
+import FontScale from "../components/FontScale"
 
 const BasePage = () => (
   <Layout title="Test Page">
@@ -129,6 +130,28 @@ const BasePage = () => (
         <FontUsageGuideline>No lower case letters</FontUsageGuideline>
         <FontUsageGuideline>No upper case letters</FontUsageGuideline>
       </Font>
+    </Block>
+
+    {/* FONT SCALING */}
+    <Block title="Font Scaling">
+      <FontScale
+        fontName="The Other Font"
+        fontFileName="the-other-font"
+        fontWeight="normal"
+        letterSpacing="1.25px"
+        lineHeight="40px"
+        size="40px"
+        description="Super mega big"
+      />
+      <FontScale
+        fontName="The Other Font"
+        fontFileName="the-other-font"
+        fontWeight="normal"
+        letterSpacing="1.25px"
+        lineHeight="20px"
+        size="20px"
+        description="Super mega normal"
+      />
     </Block>
   </Layout>
 )
