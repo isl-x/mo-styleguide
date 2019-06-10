@@ -93,6 +93,7 @@ const BasePage = () => (
         fontFileName="the-font"
         sample="Aa"
         sampleSize="120px"
+        noNumbers
       >
         <FontUsageGuideline>Used for body</FontUsageGuideline>
         <FontUsageGuideline>Regular/Italic weights only</FontUsageGuideline>
@@ -103,11 +104,12 @@ const BasePage = () => (
         fontFileName="the-other-font"
         sample="AA"
         sampleSize="120px"
+        noUpper
         noLower
       >
         <FontUsageGuideline>Used for body</FontUsageGuideline>
         <FontUsageGuideline>No lower case letters</FontUsageGuideline>
-        <FontUsageGuideline>Generous line spacing</FontUsageGuideline>
+        <FontUsageGuideline>No upper case letters</FontUsageGuideline>
       </Font>
     </Block>
   </Layout>

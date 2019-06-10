@@ -10,7 +10,6 @@ import { DEVICE } from "../utils/breakpoints"
 const ColorSwatchDescription = styled.p``
 
 /* SWATCH CONTAINER */
-
 const ColorSwatchContainer = styled.div`
   display: grid;
   grid-auto-rows: 300px;
@@ -25,7 +24,6 @@ const ColorSwatchContainer = styled.div`
 `
 
 /* INDIVIDUAL SWATCH PALETTES */
-
 const ColorSwatchBase = styled.div`
   background: ${LINK_BACKGROUND_COLOR};
   display: flex;
