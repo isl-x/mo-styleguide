@@ -43,6 +43,24 @@ const BasePage = () => (
       </ColorSwatchContainer>
     </Block>
 
+    {/* SECONDARY COLOR SWATCH */}
+    <Block title="Colors Secondary">
+      <ColorSwatchDescription>A test description</ColorSwatchDescription>
+      <ColorSwatchContainer secondary>
+        <ColorSwatch
+          title="Aqua"
+          hex="#43d8f8"
+          rgb="18, 24, 32"
+          cmyk="81, 71, 58, 75"
+          pms="PMS Black 6 U"
+        />
+        <ColorSwatch title="Gray" hex="#8b8b8b" />
+        <ColorSwatch />
+        <ColorSwatch />
+        <ColorSwatch />
+      </ColorSwatchContainer>
+    </Block>
+
     {/* TEXT */}
     <Block title="Placeholder for guideline">
       <Basic>
