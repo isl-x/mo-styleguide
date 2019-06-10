@@ -118,7 +118,7 @@ const ColorDetails = styled.div`
 
 const ColorName = styled.h3`
   ${({ secondary }) => {
-    // 1/5 of the content is this first section
+    // 1/4 of the content is this first section
     if (secondary)
       return `
       flex-basis: 25%;
