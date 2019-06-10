@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { SMALL, TINY } from "../utils/spacing"
+import { NORMAL, SMALL, TINY } from "../utils/spacing"
 import { LINK_BACKGROUND_COLOR } from "../utils/colors"
 import { DEVICE } from "../utils/breakpoints"
 
@@ -101,6 +101,8 @@ const ColorDetails = styled.div`
       return `
       flex-basis: 80%;
       background: ${LINK_BACKGROUND_COLOR};
+      align-items: center;
+      padding: ${NORMAL}px 0;
     `
 
     return `  
@@ -111,26 +113,44 @@ const ColorDetails = styled.div`
 `
 
 const ColorName = styled.h3`
-  min-width: 40%;
-  padding: ${SMALL}px 0 0 ${SMALL}px;
+  ${({ secondary }) => {
+    // 1/5 of the content is this first section
+    if (secondary)
+      return `
+      flex-basis: 25%;
+      text-align: center;
+      margin: 0;
+    `
+
+    return `
+      min-width: 40%;
+      padding: ${SMALL}px 0 0 ${SMALL}px;
+    `
+  }}
 `
 
 const ColorDetailsContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: ${props => (props.secondary ? "row" : "column")};
+  justify-content: ${props => (props.secondary ? "space-around" : "center")};
+
+  ${({ secondary }) => secondary && "flex-basis: 75%;"}
+`
+
+const ColorDetail = styled.span`
+  ${({ secondary }) => secondary && "flex-basis: 33%;"}
 `
 
 const ColorSwatch = ({ title, hex, rgb, cmyk, pms, secondary }) => (
   <ColorSwatchBase secondary={secondary}>
     <ColorExample secondary={secondary} color={hex} />
     <ColorDetails secondary={secondary}>
-      <ColorName>{title}</ColorName>
-      <ColorDetailsContainer>
-        <span>HEX: {hex}</span>
-        <span>RGB: {rgb}</span>
-        <span>CMYK: {cmyk}</span>
-        <span>PMS: {pms}</span>
+      <ColorName secondary={secondary}>{title}</ColorName>
+      <ColorDetailsContainer secondary={secondary}>
+        <ColorDetail secondary={secondary}>HEX: {hex}</ColorDetail>
+        <ColorDetail secondary={secondary}>RGB: {rgb}</ColorDetail>
+        <ColorDetail secondary={secondary}>CMYK: {cmyk}</ColorDetail>
+        {secondary ? null : <ColorDetail>PMS: {pms}</ColorDetail>}
       </ColorDetailsContainer>
     </ColorDetails>
   </ColorSwatchBase>
