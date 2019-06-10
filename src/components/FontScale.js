@@ -79,7 +79,7 @@ const FontScale = ({
         The quick brown fox jumps over the lazy dog
       </FontExample>
       <FontDescription>
-        {size} - {description}
+        {size} - {fontWeight} - {description}
       </FontDescription>
     </FontScaleContainer>
   )
