@@ -119,7 +119,7 @@ const ColorName = styled.h3`
       return `
       flex-basis: 25%;
       text-align: center;
-      margin: 0;
+      margin: 0 ${TINY}px;
     `
 
     return `
@@ -134,11 +134,16 @@ const ColorDetailsContainer = styled.div`
   flex-direction: ${props => (props.secondary ? "row" : "column")};
   justify-content: ${props => (props.secondary ? "space-around" : "center")};
 
-  ${({ secondary }) => secondary && "flex-basis: 75%;"}
+  ${({ secondary }) =>
+    secondary &&
+    `
+      flex-wrap: wrap; 
+      flex-basis: 75%;
+    `}
 `
 
 const ColorDetail = styled.span`
-  ${({ secondary }) => secondary && "flex-basis: 33%;"}
+  ${({ secondary }) => secondary && "flex-basis: 200px; flex-grow: 1;"}
 `
 
 const ColorSwatch = ({ title, hex, rgb, cmyk, pms, secondary }) => (
