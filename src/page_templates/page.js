@@ -17,6 +17,7 @@ import {
   DownloadCard,
 } from "../components/DownloadCards"
 import { Font, FontUsageGuideline } from "../components/Font"
+import FontScale from "../components/FontScale"
 
 const BasePage = () => (
   <Layout title="Test Page">
@@ -29,6 +30,24 @@ const BasePage = () => (
     <Block title="Colors">
       <ColorSwatchDescription>A test description</ColorSwatchDescription>
       <ColorSwatchContainer>
+        <ColorSwatch
+          title="Aqua"
+          hex="#43d8f8"
+          rgb="18, 24, 32"
+          cmyk="81, 71, 58, 75"
+          pms="PMS Black 6 U"
+        />
+        <ColorSwatch title="Gray" hex="#8b8b8b" />
+        <ColorSwatch />
+        <ColorSwatch />
+        <ColorSwatch />
+      </ColorSwatchContainer>
+    </Block>
+
+    {/* SECONDARY COLOR SWATCH */}
+    <Block title="Colors Secondary">
+      <ColorSwatchDescription>A test description</ColorSwatchDescription>
+      <ColorSwatchContainer secondary>
         <ColorSwatch
           title="Aqua"
           hex="#43d8f8"
@@ -93,6 +112,7 @@ const BasePage = () => (
         fontFileName="the-font"
         sample="Aa"
         sampleSize="120px"
+        noNumbers
       >
         <FontUsageGuideline>Used for body</FontUsageGuideline>
         <FontUsageGuideline>Regular/Italic weights only</FontUsageGuideline>
@@ -103,12 +123,35 @@ const BasePage = () => (
         fontFileName="the-other-font"
         sample="AA"
         sampleSize="120px"
+        noUpper
         noLower
       >
         <FontUsageGuideline>Used for body</FontUsageGuideline>
         <FontUsageGuideline>No lower case letters</FontUsageGuideline>
-        <FontUsageGuideline>Generous line spacing</FontUsageGuideline>
+        <FontUsageGuideline>No upper case letters</FontUsageGuideline>
       </Font>
+    </Block>
+
+    {/* FONT SCALING */}
+    <Block title="Font Scaling">
+      <FontScale
+        fontName="The Other Font"
+        fontFileName="the-other-font"
+        fontWeight="normal"
+        letterSpacing="1.25px"
+        lineHeight="40px"
+        size="40px"
+        description="Super mega big"
+      />
+      <FontScale
+        fontName="The Other Font"
+        fontFileName="the-other-font"
+        fontWeight="normal"
+        letterSpacing="1.25px"
+        lineHeight="20px"
+        size="20px"
+        description="Super mega normal"
+      />
     </Block>
   </Layout>
 )

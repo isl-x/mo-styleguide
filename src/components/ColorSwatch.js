@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { SMALL } from "../utils/spacing"
+import { NORMAL, SMALL, TINY } from "../utils/spacing"
 import { LINK_BACKGROUND_COLOR } from "../utils/colors"
 import { DEVICE } from "../utils/breakpoints"
 
@@ -10,65 +10,162 @@ import { DEVICE } from "../utils/breakpoints"
 const ColorSwatchDescription = styled.p``
 
 /* SWATCH CONTAINER */
+const ColorSwatchContainerBase = styled.div`
+  ${({ secondary, colCount }) => {
+    if (secondary)
+      return `
+      display: flex;
+      flex-direction: column;
+    `
 
-const ColorSwatchContainer = styled.div`
-  display: grid;
-  grid-auto-rows: 300px;
-  margin: 0 auto;
-  grid-template-columns: ${props =>
-    `repeat(auto-fit, minmax(${100 / (props.colCount + 1)}%, 1fr))`};
-  grid-gap: ${SMALL}px;
-
-  @media ${DEVICE.TABLET_DOWN} {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
+    return `  
+      display: grid;
+      grid-auto-rows: 300px;
+      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(${100 / colCount +
+        1}%, 1fr));
+      grid-gap: ${SMALL}px;
+    
+      @media ${DEVICE.TABLET_DOWN} {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    `
+  }}
 `
 
-/* INDIVIDUAL SWATCH PALETTES */
+const ColorSwatchContainer = ({ secondary, colCount, children }) => {
+  // Add the secondary flag to all the child swatches
+  const modifiedChildren = React.Children.map(children, child => {
+    return React.cloneElement(child, {
+      secondary: secondary,
+    })
+  })
+  return (
+    <ColorSwatchContainerBase secondary={secondary} colCount={colCount}>
+      {modifiedChildren}
+    </ColorSwatchContainerBase>
+  )
+}
 
+/* INDIVIDUAL SWATCH PALETTES */
 const ColorSwatchBase = styled.div`
-  background: ${LINK_BACKGROUND_COLOR};
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props => (props.secondary ? "row" : "column")};
   justify-content: center;
-  align-items: center;
+
+  ${({ secondary }) => {
+    if (secondary)
+      return `
+        margin: ${TINY}px 0;
+
+        :first-of-type {
+          margin-top: 0;
+        }
+
+        :last-of-type {
+          margin-bottom: 0;
+        }
+      `
+
+    return `
+      background: ${LINK_BACKGROUND_COLOR};
+      align-items: center;
+    `
+  }}
 `
 
 const ColorExample = styled.div`
-  min-height: 60%;
-  min-width: 100%;
   background-color: ${props => props.color};
   content: "";
+
+  ${({ secondary }) => {
+    if (secondary)
+      return `
+      flex-basis: 20%;
+      margin-right: ${SMALL}px;
+    `
+
+    return `  
+      min-height: 60%;
+      min-width: 100%;
+    `
+  }}
 `
 
 const ColorDetails = styled.div`
-  min-width: 100%;
-  min-height: 40%;
   display: flex;
   flex-direction: row;
+
+  ${({ secondary }) => {
+    if (secondary)
+      return `
+      flex-basis: 80%;
+      background: ${LINK_BACKGROUND_COLOR};
+      align-items: center;
+      padding: ${NORMAL}px;
+
+      @media ${DEVICE.PHONE_ONLY} {
+        flex-wrap: wrap;
+      }
+    `
+
+    return `  
+      min-width: 100%;
+      min-height: 40%;
+    `
+  }}
 `
 
 const ColorName = styled.h3`
-  min-width: 40%;
-  padding: ${SMALL}px 0 0 ${SMALL}px;
+  ${({ secondary }) => {
+    // 1/4 of the content is this first section
+    if (secondary)
+      return `
+      flex-basis: 25%;
+      text-align: center;
+      margin-right: ${TINY}px;
+      margin-bottom: 0;
+
+      @media ${DEVICE.PHONE_ONLY} {
+        text-align: left;
+        margin-bottom: ${TINY}px;
+      }
+    `
+
+    return `
+      min-width: 40%;
+      padding: ${SMALL}px 0 0 ${SMALL}px;
+    `
+  }}
 `
 
 const ColorDetailsContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: ${props => (props.secondary ? "row" : "column")};
+  justify-content: ${props => (props.secondary ? "space-around" : "center")};
+
+  ${({ secondary }) =>
+    secondary &&
+    `
+      flex-wrap: wrap; 
+      flex-basis: 75%;
+    `}
 `
 
-const ColorSwatch = ({ title, hex, rgb, cmyk, pms }) => (
-  <ColorSwatchBase>
-    <ColorExample color={hex} />
-    <ColorDetails>
-      <ColorName>{title}</ColorName>
-      <ColorDetailsContainer>
-        <span>HEX: {hex}</span>
-        <span>RGB: {rgb}</span>
-        <span>CMYK: {cmyk}</span>
-        <span>PMS: {pms}</span>
+const ColorDetail = styled.span`
+  ${({ secondary }) => secondary && "flex-basis: 200px; flex-grow: 1;"}
+`
+
+const ColorSwatch = ({ title, hex, rgb, cmyk, pms, secondary }) => (
+  <ColorSwatchBase secondary={secondary}>
+    <ColorExample secondary={secondary} color={hex} />
+    <ColorDetails secondary={secondary}>
+      <ColorName secondary={secondary}>{title}</ColorName>
+      <ColorDetailsContainer secondary={secondary}>
+        <ColorDetail secondary={secondary}>HEX: {hex}</ColorDetail>
+        <ColorDetail secondary={secondary}>RGB: {rgb}</ColorDetail>
+        <ColorDetail secondary={secondary}>CMYK: {cmyk}</ColorDetail>
+        {secondary ? null : <ColorDetail>PMS: {pms}</ColorDetail>}
       </ColorDetailsContainer>
     </ColorDetails>
   </ColorSwatchBase>
