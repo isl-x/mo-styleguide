@@ -18,6 +18,7 @@ import SlideOutMenu from "../atoms/SlideOutMenu"
 
 const ContextualNavContainer = styled.div`
   height: 10vh;
+  min-height: 50px;
   width: 100%;
   top: 0;
   position: fixed;
