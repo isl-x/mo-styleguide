@@ -27,4 +27,4 @@ export const COLORS = {
  *    2. Type in a font below in USE_OTHER_FONT_BASE such as "helvetica" or "arial"
  *       to use a font that is provided in browser.
  */
-export const USE_OTHER_FONT_BASE = ""
+export const USE_OTHER_FONT_BASE = 'helvetica'
