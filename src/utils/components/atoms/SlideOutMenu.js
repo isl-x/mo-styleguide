@@ -9,7 +9,7 @@ import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
 } from "../../colors"
-import { NORMAL, TINY, SMALL, LARGE } from "../../spacing"
+import { NORMAL } from "../../spacing"
 import { XL } from "../../font-sizes"
 import Link from "./Link"
 import { DEVICE } from "../../breakpoints"
@@ -68,8 +68,8 @@ const Menu = styled.ul`
     z-index: ${HIGH_PRIORITY_Z_INDEX};
     transform: ${props =>
       props.currentPageIndex > 0
-        ? `translate(-20%, ${64 * props.currentPageIndex - 10}px)`
-        : "translate(-70%, -10px)"};
+        ? `translate(-60%, ${64 * props.currentPageIndex - 10}px)`
+        : "translate(-60%, -10px)"};
 
     @media ${DEVICE.TABLET_DOWN} {
       transform: ${props =>
@@ -89,7 +89,7 @@ const Menu = styled.ul`
     top: 0;
     left: 0;
     content: "";
-    transform: translateX(-70%);
+    transform: translateX(-60%);
 
     @media ${DEVICE.TABLET_DOWN} {
       transform: translateX(-20%);
