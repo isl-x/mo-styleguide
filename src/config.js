@@ -25,7 +25,7 @@ export const HOME_PAGE = {
      * linkText:   Whatever you'd like the visible text to say for the link and
      *             the resulting page title.
      */
-    { pageUrl: "/", filename: "ColorsIcon", linkText: "Colors" },
+    { pageUrl: "/example/", filename: "ColorsIcon", linkText: "Colors" },
     {
       pageUrl: "/example/",
       filename: "IllustrationIcon",

@@ -6,9 +6,10 @@ import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
 } from "../../colors"
-import { LARGE } from "../../spacing"
+import { LARGE, TINY } from "../../spacing"
 import Grid from "../atoms/Grid"
 import Link from "../atoms/Link"
+import { FaArrowLeft } from "react-icons/fa"
 
 const HeaderWrapper = styled.header`
   background-color: ${PRIMARY_BACKGROUND_COLOR};
@@ -20,7 +21,14 @@ const HeaderWrapper = styled.header`
 const Header = ({ siteSubText, siteMainText, isIndex }) => (
   <HeaderWrapper>
     <Grid>
-      {isIndex ? <span>{siteSubText}</span> : <Link to="/">{siteSubText}</Link>}
+      {isIndex ? (
+        <span>{siteSubText}</span>
+      ) : (
+        <Link to="/" style={{ display: "flex", alignItems: "center" }}>
+          <FaArrowLeft style={{ marginRight: TINY }} />
+          {siteSubText}
+        </Link>
+      )}
       <h1>{siteMainText}</h1>
     </Grid>
   </HeaderWrapper>

@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import Reset from "../atoms/Reset"
 import Grid from "../atoms/Grid"
-
 import Header from "../molecules/Header"
 import Footer from "../molecules/Footer"
 import ContextualNav from "../molecules/ContextualNav"
@@ -54,7 +53,7 @@ class Layout extends React.Component {
           siteSubText={
             isIndex
               ? SITE_METADATA.BRAND_NAME
-              : `<- Back to ${SITE_METADATA.SITE_TITLE}`
+              : `Back to ${SITE_METADATA.SITE_TITLE}`
           }
           isIndex={isIndex}
         />
