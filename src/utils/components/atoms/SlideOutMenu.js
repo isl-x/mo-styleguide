@@ -9,7 +9,7 @@ import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
 } from "../../colors"
-import { NORMAL } from "../../spacing"
+import { NORMAL, TINY, SMALL, LARGE } from "../../spacing"
 import { XL } from "../../font-sizes"
 import Link from "./Link"
 import { DEVICE } from "../../breakpoints"
@@ -56,6 +56,30 @@ const Menu = styled.ul`
   list-style: none;
   margin-left: 0;
 
+  /* Active state */
+  &::before {
+    left: 0;
+    position: absolute;
+    background-color: ${PRIMARY_FOREGROUND_COLOR};
+    opacity: 0.1;
+    width: 100%;
+    height: 60px; /* TODO: UPDATE THIS */
+    content: "";
+    z-index: ${HIGH_PRIORITY_Z_INDEX};
+    transform: ${props =>
+      props.currentPageIndex > 0
+        ? `translate(-20%, ${64 * props.currentPageIndex - 10}px)`
+        : "translate(-70%, -10px)"};
+
+    @media ${DEVICE.TABLET_DOWN} {
+      transform: ${props =>
+        props.currentPageIndex > 0
+          ? `translate(-20%, ${64 * props.currentPageIndex - 10}px)`
+          : "translate(-20%, -10px)"};
+    }
+  }
+
+  /* Background */
   &::after {
     position: absolute;
     display: inline-block;
@@ -81,7 +105,7 @@ const MenuItem = styled.li`
   margin-bottom: ${NORMAL}px;
 `
 
-const SlideOutMenu = ({ active }) => {
+const SlideOutMenu = ({ active, currentPageIndex }) => {
   const siteLinks = HOME_PAGE.HOME_PAGE_LINKS
 
   return (
@@ -98,7 +122,7 @@ const SlideOutMenu = ({ active }) => {
         <Grid>
           <MenuContainer style={active ? null : { display: "none" }}>
             <MenuSubText>Jump to</MenuSubText>
-            <Menu>
+            <Menu currentPageIndex={currentPageIndex}>
               {siteLinks &&
                 siteLinks.map((link, i) => (
                   <MenuItem key={i}>

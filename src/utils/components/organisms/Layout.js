@@ -43,11 +43,17 @@ class Layout extends React.Component {
       if (currentPageIndex - 1 >= 0)
         previousPage = siteLinks[currentPageIndex - 1]
     }
+    console.log(currentPageIndex)
 
     return (
       <LayoutWrapper>
         <Reset />
-        {isIndex ? null : <ContextualNav title={massagedTitle} />}
+        {isIndex ? null : (
+          <ContextualNav
+            title={massagedTitle}
+            currentPageIndex={currentPageIndex}
+          />
+        )}
         <Header
           siteMainText={massagedTitle}
           siteSubText={

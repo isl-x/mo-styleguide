@@ -220,11 +220,14 @@ class ContextualNav extends React.Component {
       blocks,
       current,
     } = this.state
-    const { title } = this.props
+    const { title, currentPageIndex } = this.props
 
     return (
       <ContextualNavContainer className={showing ? "showing" : null}>
-        <SlideOutMenu active={slideOutActive && showing} />
+        <SlideOutMenu
+          active={slideOutActive && showing}
+          currentPageIndex={currentPageIndex}
+        />
         <Grid>
           <NavContentContainer>
             <Hamburger active={slideOutActive} onClick={this.toggleSlideout} />
