@@ -56,6 +56,12 @@ const Menu = styled.ul`
   list-style: none;
   margin-left: 0;
 
+  /* Both min-width's are only slightly less than the Slide out defined below */
+  min-width: 30vw;
+  @media ${DEVICE.TABLET_DOWN} {
+    min-width: 75vw;
+  }
+
   /* Active state */
   /* NOTE:   Both the height and the translate 64 px are a bit magic
              number-y. They are both derived from the font-size (XL) 
@@ -111,7 +117,7 @@ const MenuItem = styled.li`
   margin-bottom: ${NORMAL}px;
 `
 
-const SlideOutMenu = ({ active, currentPageIndex }) => {
+const SlideOutMenu = ({ active, currentPageIndex, toggleSlideout }) => {
   const siteLinks = HOME_PAGE.HOME_PAGE_LINKS
 
   return (
@@ -124,6 +130,7 @@ const SlideOutMenu = ({ active, currentPageIndex }) => {
       ) : null}
       <SlideOutContainer
         style={active ? { transform: "translateX(0%)" } : null}
+        onClick={toggleSlideout}
       >
         <Grid>
           <MenuContainer style={active ? null : { display: "none" }}>
@@ -135,7 +142,9 @@ const SlideOutMenu = ({ active, currentPageIndex }) => {
               {siteLinks &&
                 siteLinks.map((link, i) => (
                   <MenuItem key={i}>
-                    <Link to={link.pageUrl}>{link.linkText}</Link>
+                    <Link to={link.pageUrl} style={{ display: "block" }}>
+                      {link.linkText}
+                    </Link>
                   </MenuItem>
                 ))}
             </Menu>

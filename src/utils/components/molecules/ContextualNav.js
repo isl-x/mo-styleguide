@@ -229,6 +229,7 @@ class ContextualNav extends React.Component {
         <SlideOutMenu
           active={slideOutActive && showing}
           currentPageIndex={currentPageIndex}
+          toggleSlideout={this.toggleSlideout}
         />
         <Grid>
           <NavContentContainer>
