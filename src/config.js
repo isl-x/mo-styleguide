@@ -21,20 +21,21 @@ export const HOME_PAGE = {
      *
      * pageUrl:    Should match the name of a file in your pages folder.
      *             i.e. "page.js" would be "/page/" (NOTE: Add trailing slash)
-     * imgsrc:     Needs to be a ".png" file in the assets folder.
+     * filename:   Any SVG in the assets/dynamic_icons folder.
      * linkText:   Whatever you'd like the visible text to say for the link and
      *             the resulting page title.
      */
-    { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Colors" },
+    { pageUrl: "/", filename: "ColorsIcon", linkText: "Colors" },
     {
       pageUrl: "/example/",
-      imgsrc: "gatsby-astronaut.png",
-      linkText: "Example",
+      filename: "IllustrationIcon",
+      linkText: "Illustration",
     },
-    { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test3" },
-    { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test4" },
-    { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test5" },
-    { pageUrl: "/", imgsrc: "gatsby-astronaut.png", linkText: "Test6" },
+    { pageUrl: "/", filename: "LayoutIcon", linkText: "Layout" },
+    { pageUrl: "/", filename: "LogoIcon", linkText: "Logo" },
+    { pageUrl: "/", filename: "PhotographyIcon", linkText: "Photography" },
+    { pageUrl: "/", filename: "TypographyIcon", linkText: "Typography" },
+    { pageUrl: "/", filename: "VoiceAndToneIcon", linkText: "Voice and Tone" },
   ],
   // Set the number of link columns on the home page
   // The site is responsive on smaller screens and thus not configurable
@@ -48,6 +49,8 @@ export const COLORS = {
   PRIMARY_BACKGROUND_COLOR: "#1d2c3c",
   // Basic (and other items) that goes on top of the PRIMARY_BACKGROUND_COLOR
   PRIMARY_FOREGROUND_COLOR: "#ffffff",
+  // Used to generate a pop of color throughout the site. Used as an accent
+  PRIMARY_HIGHLIGHT_COLOR: "#ffc9d4",
 
   /** SECONDARY REFERENCES **/
   PRIMARY_TEXT_COLOR: "#000",

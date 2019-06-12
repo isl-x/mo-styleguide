@@ -7,7 +7,7 @@ import { LINK_BACKGROUND_COLOR } from "../../colors"
 import { DEVICE } from "../../breakpoints"
 import Link from "../atoms/Link"
 
-import Image from "../../../components/Image"
+import DynamicSvg from "../../../components/DynamicSvg"
 
 /* LINK CONTAINER */
 
@@ -18,9 +18,10 @@ const SectionLinkContainer = styled.div`
   grid-template-columns: ${props =>
     `repeat(auto-fit, minmax(${100 / (props.colCount + 1)}%, 1fr))`};
   grid-gap: ${NORMAL}px;
+  align-items: center;
 
   @media ${DEVICE.TABLET_DOWN} {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 `
 
@@ -40,24 +41,24 @@ const SectionLinkWrapper = styled.div`
   padding: ${SMALL}px;
 `
 
-const SectionLink = ({ imgsrc, pageUrl, children }) => (
+const SectionLink = ({ filename, pageUrl, children }) => (
   <SectionLinkBase>
-    <SectionLinkWrapper>
-      <Link to={pageUrl}>
-        <Image imgsrc={imgsrc} />
+    <Link to={pageUrl} style={{ height: "100%", width: "100%" }}>
+      <SectionLinkWrapper>
+        <DynamicSvg filename={filename} />
         {children}
-      </Link>
-    </SectionLinkWrapper>
+      </SectionLinkWrapper>
+    </Link>
   </SectionLinkBase>
 )
 
 SectionLink.propTypes = {
-  imgsrc: PropTypes.string.isRequired,
+  filename: PropTypes.string.isRequired,
   pageUrl: PropTypes.string.isRequired,
   children: PropTypes.node,
 }
 SectionLink.defaultProps = {
-  imgsrc: "gatsby-astronaut.png",
+  filename: "ColorsIcon",
 }
 
 SectionLinkContainer.propTypes = {
