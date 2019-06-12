@@ -128,7 +128,10 @@ const SlideOutMenu = ({ active, currentPageIndex }) => {
         <Grid>
           <MenuContainer style={active ? null : { display: "none" }}>
             <MenuSubText>Jump to</MenuSubText>
-            <Menu currentPageIndex={currentPageIndex}>
+            <Menu currentPageIndex={currentPageIndex + 1}>
+              <MenuItem key="home">
+                <Link to={"/"}>Home</Link>
+              </MenuItem>
               {siteLinks &&
                 siteLinks.map((link, i) => (
                   <MenuItem key={i}>

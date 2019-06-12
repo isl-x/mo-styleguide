@@ -44,6 +44,7 @@ const Title = styled.h1`
   border-right: ${DIVIDER_BORDER};
   padding: 0 ${NORMAL}px;
   margin-right: ${NORMAL}px;
+  cursor: pointer;
 
   @media ${DEVICE.PHONE_ONLY} {
     ${S}
@@ -232,7 +233,9 @@ class ContextualNav extends React.Component {
         <Grid>
           <NavContentContainer>
             <Hamburger active={slideOutActive} onClick={this.toggleSlideout} />
-            <Title>{title}</Title>
+            <Title onClick={this.toggleSlideout} role="button">
+              {title}
+            </Title>
             <Dropdown
               className={dropdownActive ? "active" : null}
               ref="contextual-nav-dropdown"
