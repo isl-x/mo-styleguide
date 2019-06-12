@@ -47,7 +47,12 @@ class Layout extends React.Component {
     return (
       <LayoutWrapper>
         <Reset />
-        {isIndex ? null : <ContextualNav title={massagedTitle} />}
+        {isIndex ? null : (
+          <ContextualNav
+            title={massagedTitle}
+            currentPageIndex={currentPageIndex}
+          />
+        )}
         <Header
           siteMainText={massagedTitle}
           siteSubText={

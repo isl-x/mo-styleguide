@@ -34,6 +34,7 @@ const HamburgerBun = styled.span`
 
   &:last-of-type {
     transform-origin: 0% 100%;
+    margin-bottom: 0;
   }
 `
 

@@ -10,7 +10,7 @@ import {
   PRIMARY_FOREGROUND_COLOR,
 } from "../../colors"
 import { NORMAL, SMALL } from "../../spacing"
-import { S } from "../../font-sizes"
+import { S, M } from "../../font-sizes"
 import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
 import { DEVICE } from "../../breakpoints"
 import { DIVIDER_BORDER } from "../../borders"
@@ -40,9 +40,11 @@ const NavContentContainer = styled.div`
 `
 
 const Title = styled.h1`
+  ${M}
   border-right: ${DIVIDER_BORDER};
   padding: 0 ${NORMAL}px;
   margin-right: ${NORMAL}px;
+  cursor: pointer;
 
   @media ${DEVICE.PHONE_ONLY} {
     ${S}
@@ -118,7 +120,8 @@ class ContextualNav extends React.Component {
         if (
           target &&
           navRef &&
-          !(navRef.contains(target) || navRef === target)
+          !(navRef.contains(target) || navRef === target) &&
+          this.state.dropdownActive
         ) {
           this.setState({ dropdownActive: false })
           this.refs["contextual-nav-dropdown"].blur()
@@ -219,15 +222,21 @@ class ContextualNav extends React.Component {
       blocks,
       current,
     } = this.state
-    const { title } = this.props
+    const { title, currentPageIndex } = this.props
 
     return (
       <ContextualNavContainer className={showing ? "showing" : null}>
-        <SlideOutMenu active={slideOutActive && showing} />
+        <SlideOutMenu
+          active={slideOutActive && showing}
+          currentPageIndex={currentPageIndex}
+          toggleSlideout={this.toggleSlideout}
+        />
         <Grid>
           <NavContentContainer>
             <Hamburger active={slideOutActive} onClick={this.toggleSlideout} />
-            <Title>{title}</Title>
+            <Title onClick={this.toggleSlideout} role="button">
+              {title}
+            </Title>
             <Dropdown
               className={dropdownActive ? "active" : null}
               ref="contextual-nav-dropdown"
