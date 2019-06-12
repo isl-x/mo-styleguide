@@ -57,13 +57,19 @@ const Menu = styled.ul`
   margin-left: 0;
 
   /* Active state */
+  /* NOTE:   Both the height and the translate 64 px are a bit magic
+             number-y. They are both derived from the font-size (XL) 
+             and margin-bottom (MEDIUM) of each of the <li>'s.
+             The 10px offset Y is to help give the active state a centered
+             look.
+  */
   &::before {
     left: 0;
     position: absolute;
     background-color: ${PRIMARY_FOREGROUND_COLOR};
     opacity: 0.1;
     width: 100%;
-    height: 60px; /* TODO: UPDATE THIS */
+    height: 60px;
     content: "";
     z-index: ${HIGH_PRIORITY_Z_INDEX};
     transform: ${props =>
