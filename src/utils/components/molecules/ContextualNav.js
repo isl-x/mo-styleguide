@@ -10,7 +10,7 @@ import {
   PRIMARY_FOREGROUND_COLOR,
 } from "../../colors"
 import { NORMAL, SMALL } from "../../spacing"
-import { S } from "../../font-sizes"
+import { S, M } from "../../font-sizes"
 import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
 import { DEVICE } from "../../breakpoints"
 import { DIVIDER_BORDER } from "../../borders"
@@ -40,6 +40,7 @@ const NavContentContainer = styled.div`
 `
 
 const Title = styled.h1`
+  ${M}
   border-right: ${DIVIDER_BORDER};
   padding: 0 ${NORMAL}px;
   margin-right: ${NORMAL}px;

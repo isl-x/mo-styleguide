@@ -40,15 +40,6 @@ const CardHeader = styled.div`
   padding: ${TINY}px;
 `
 
-const CardImageContainer = styled.div`
-  filter: grayscale(100%);
-
-  ${CardBase}:hover &,
-  ${CardBase}:focus & {
-    filter: grayscale(0%);
-  }
-`
-
 const DownloadCard = ({ title, imgsrc, fileName }) => {
   const { edges } = useSiteFiles()
   const completeFile = edges
@@ -65,9 +56,9 @@ const DownloadCard = ({ title, imgsrc, fileName }) => {
         <span>{title}</span>
         <span>⬇</span>
       </CardHeader>
-      <CardImageContainer>
+      <div>
         <Image imgsrc={imgsrc} />
-      </CardImageContainer>
+      </div>
     </CardBase>
   )
 }
