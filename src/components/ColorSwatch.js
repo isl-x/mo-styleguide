@@ -27,7 +27,7 @@ const ColorSwatchContainerBase = styled.div`
       grid-gap: ${SMALL}px;
     
       @media ${DEVICE.TABLET_DOWN} {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
     `
   }}

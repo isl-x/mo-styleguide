@@ -32,7 +32,7 @@ export const HOME_PAGE = {
     },
     {
       pageUrl: "/typography/",
-      imgsrc: "gatsby-astronaut.png",
+      icon: "color",
       linkText: "Typography",
     },
     {
