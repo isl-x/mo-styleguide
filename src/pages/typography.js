@@ -42,7 +42,7 @@ const BasePage = () => (
 
 
     {/* FONT SCALING */}
-    <Block title="Font Scaling">
+    <Block title="Title Styles">
       <FontScale
         fontName="TheSans"
         fontFileName="the-other-font"
@@ -70,6 +70,8 @@ const BasePage = () => (
         size="40px"
         description="Title-Small"
       />
+    </Block>
+    <Block title="Body Styles">
       <FontScale
         fontName="TheSans"
         fontFileName="the-other-font"
@@ -88,6 +90,18 @@ const BasePage = () => (
         size="14px"
         description="Body-Small"
       />
+      <FontScale
+        fontName="EB-Garamond"
+        fontFileName="the-other-font"
+        fontWeight="Bold"
+        letterSpacing="0px"
+        lineHeight="1.2"
+        size="18px"
+        description="Body-Serif"
+      />
+
+    </Block>
+    <Block title="Label Styles">
       <FontScale
         fontName="TheSans"
         fontFileName="the-other-font"
@@ -109,29 +123,15 @@ const BasePage = () => (
         transform="uppercase"
       />
     </Block>
-    {/* DOWNLOAD CARDS */}
-    <Block title="Download Cards">
-      <DownloadCardsDescription>
-        This is the downloads cards block
-      </DownloadCardsDescription>
-      <DownloadCardsContainer columns={2}>
-        <DownloadCard
-          title="test"
-          imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
-        />
-        <DownloadCard
-          title="test"
-          imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
-        />
-        <DownloadCard
-          title="test"
-          imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
-        />
-      </DownloadCardsContainer>
+
+    <Block title="Type in use">
+      <Image imgsrc="TypeScaling.jpg" />
     </Block>
+
+    <Block title="Downloads">
+      <DownloadButton fileName="gatsby-astronaut">Download NYP Fonts</DownloadButton>
+    </Block>
+
   </Layout>
 )
 

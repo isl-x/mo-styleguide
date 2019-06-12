@@ -21,46 +21,17 @@ export const HOME_PAGE = {
      *
      * pageUrl:    Should match the name of a file in your pages folder.
      *             i.e. "page.js" would be "/page/" (NOTE: Add trailing slash)
-     * imgsrc:     Needs to be a ".png" file in the assets folder.
+     * filename:   Any SVG in the assets/dynamic_icons folder.
      * linkText:   Whatever you'd like the visible text to say for the link and
      *             the resulting page title.
      */
-    {
-      pageUrl: "/colors/",
-      imgsrc: "gatsby-astronaut.png",
-      linkText: "Color",
-    },
-    {
-      pageUrl: "/typography/",
-      icon: "color",
-      linkText: "Typography",
-    },
-    {
-      pageUrl: "/colors/",
-      imgsrc: "gatsby-astronaut.png",
-      linkText: "Layout",
-    },
-    {
-      pageUrl: "/colors/",
-      imgsrc: "gatsby-astronaut.png",
-      linkText: "Logo Usage",
-    },
-    {
-      pageUrl: "/colors/",
-      imgsrc: "gatsby-astronaut.png",
-      linkText: "Voice and Tone",
-    },
-    {
-      pageUrl: "/colors/",
-      imgsrc: "gatsby-astronaut.png",
-      linkText: "Photography",
-    },
-    {
-      pageUrl: "/colors/",
-      imgsrc: "gatsby-astronaut.png",
-      linkText: "Icons & Illustration",
-    },
-
+    { pageUrl: "/colors/", filename: "ColorsIcon", linkText: "Colors", innactive: "true"},
+    { pageUrl: "typography", filename: "TypographyIcon", linkText: "Typography" },
+    { pageUrl: "",filename: "IllustrationIcon",linkText: "Illustration", innactive: "true"},
+    { pageUrl: "/", filename: "LayoutIcon", linkText: "Layout", innactive: "true" },
+    { pageUrl: "/", filename: "LogoIcon", linkText: "Logo", innactive: "true" },
+    { pageUrl: "/", filename: "PhotographyIcon", linkText: "Photography", innactive: "true" },
+    { pageUrl: "/", filename: "VoiceAndToneIcon", linkText: "Voice and Tone", innactive: "true" },
   ],
   // Set the number of link columns on the home page
   // The site is responsive on smaller screens and thus not configurable
@@ -71,9 +42,11 @@ export const HOME_PAGE = {
 /*********************************** COLORS ***********************************/
 export const COLORS = {
   // Headers, footers, etc...
-  PRIMARY_BACKGROUND_COLOR: "black",
+  PRIMARY_BACKGROUND_COLOR: "#000",
   // Basic (and other items) that goes on top of the PRIMARY_BACKGROUND_COLOR
   PRIMARY_FOREGROUND_COLOR: "#ffffff",
+  // Used to generate a pop of color throughout the site. Used as an accent
+  PRIMARY_HIGHLIGHT_COLOR: "#e2231a",
 
   /** SECONDARY REFERENCES **/
   PRIMARY_TEXT_COLOR: "#000",

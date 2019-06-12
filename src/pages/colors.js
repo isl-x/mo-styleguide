@@ -123,6 +123,9 @@ const BasePage = () => (
         />
       </ColorSwatchContainer>
     </Block>
+    <Block title="">
+      <Image imgsrc="Color-Hierarchy.jpg" />
+    </Block>
 
     <Block title="Color Hierarchy">
       <Image imgsrc="Color-Hierarchy.jpg" />
@@ -162,15 +165,8 @@ const BasePage = () => (
       </ColorSwatchContainer>
     </Block>
 
-    {/* DOWNLOAD CARDS */}
-    <Block title="Resources">
-      <DownloadCardsContainer columns={2}>
-        <DownloadCard
-          title="Download the color pallete for adobe products"
-          imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
-        />
-      </DownloadCardsContainer>
+    <Block title="Downloads">
+      <DownloadButton fileName="gatsby-astronaut">Download NYP Color Palette</DownloadButton>
     </Block>
 
   </Layout>
