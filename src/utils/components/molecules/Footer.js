@@ -13,6 +13,7 @@ import { XS, S, M, L } from "../../font-sizes"
 import { DEVICE } from "../../breakpoints"
 import Link from "../atoms/Link"
 import { HOME_PAGE } from "../../../config"
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 
 const FooterWrapper = styled.footer`
   background-color: ${PRIMARY_BACKGROUND_COLOR};
@@ -64,7 +65,10 @@ const Footer = ({ previousPage, nextPage, isIndex }) => {
                 <FooterLinkContext textAlign="right">
                   Previous
                 </FooterLinkContext>
-                {`<- ${previousPage.linkText}`}
+                <FaArrowLeft
+                  style={{ verticalAlign: "top", marginRight: TINY }}
+                />
+                {`${previousPage.linkText}`}
               </Link>
             ) : (
               <div />
@@ -73,7 +77,10 @@ const Footer = ({ previousPage, nextPage, isIndex }) => {
             {nextPage ? (
               <Link to={nextPage.pageUrl}>
                 <FooterLinkContext>Next</FooterLinkContext>
-                {`${nextPage.linkText} ->`}
+                {`${nextPage.linkText}`}
+                <FaArrowRight
+                  style={{ verticalAlign: "top", marginLeft: TINY }}
+                />
               </Link>
             ) : (
               <div />
