@@ -36,6 +36,7 @@ const FontExample = styled.div`
   white-space: nowrap;
   overflow-x: hidden;
   overflow-y: hidden;
+  text-transform: ${props => props.transform};
 `
 
 const FontDescription = styled.span`
@@ -60,6 +61,7 @@ const FontScale = ({
   lineHeight,
   size,
   description,
+  transform,
 }) => {
   const { edges } = useSiteFiles()
   const completeFile = edges
@@ -75,6 +77,7 @@ const FontScale = ({
         letterSpacing={letterSpacing}
         lineHeight={lineHeight}
         size={size}
+        transform={transform}
       >
         The quick brown fox jumps over the lazy dog
       </FontExample>
@@ -93,6 +96,7 @@ FontScale.propTypes = {
   lineHeight: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  transform: PropTypes.string.isRequired,
 }
 
 FontScale.defaultProps = {}

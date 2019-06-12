@@ -53,7 +53,7 @@ const BasePage = () => (
       </ColorSwatchContainer>
     </Block>
     <Block title="Secondary Accent Colors">
-      <ColorSwatchContainer>
+      <ColorSwatchContainer secondary>
         <ColorSwatch
           title="Dark Blue"
           hex="#006ba6"
@@ -92,7 +92,7 @@ const BasePage = () => (
       </ColorSwatchContainer>
     </Block>
     <Block title="Grays">
-      <ColorSwatchContainer>
+      <ColorSwatchContainer secondary>
         <ColorSwatch
           title="G1—Extra Dark"
           hex="#63666a"
@@ -130,29 +130,47 @@ const BasePage = () => (
 
     <Block title="Extended palette">
       <ColorSwatchDescription>The extended palette consists of all the useable tints and shades of each color in the palette. They are all helpfully numbered for easy reference. Usage of these colors varies depending on the touch point, but they come in handy for illustrations and components in product.</ColorSwatchDescription>
-      <ColorSwatchContainer>
+      <ColorSwatchContainer secondary>
         <ColorSwatch
-          title="NYP Red"
-          hex="#e2231a"
+          title="Red-1"
+          hex="#AD1A13"
           rgb="18, 24, 32"
           cmyk="81, 71, 58, 75"
           pms="PMS 485"
         />
         <ColorSwatch
-          title="Black"
-          hex="#000"
-          rgb="0, 0, 0"
-          cmyk="20 , 20, 20, 90"
-          pms="PMS Black 6 U"
+          title="Red-2"
+          hex="#C71E16"
+          rgb="18, 24, 32"
+          cmyk="81, 71, 58, 75"
+          pms="PMS 485"
         />
         <ColorSwatch
-          title="White"
-          hex="#fff"
-          rgb="255, 255, 255"
-          cmyk="20 , 20, 20, 90"
-          pms="PMS White"
+          title="Red-3"
+          hex="#FA3D34"
+          rgb="18, 24, 32"
+          cmyk="81, 71, 58, 75"
+          pms="PMS 485"
+        />
+        <ColorSwatch
+          title="Red-4"
+          hex="#FF574F"
+          rgb="18, 24, 32"
+          cmyk="81, 71, 58, 75"
+          pms="PMS 485"
         />
       </ColorSwatchContainer>
+    </Block>
+
+    {/* DOWNLOAD CARDS */}
+    <Block title="Resources">
+      <DownloadCardsContainer columns={2}>
+        <DownloadCard
+          title="Download the color pallete for adobe products"
+          imgsrc="random-wide-image.png"
+          fileName="gatsby-astronaut"
+        />
+      </DownloadCardsContainer>
     </Block>
 
   </Layout>
