@@ -43,7 +43,6 @@ class Layout extends React.Component {
       if (currentPageIndex - 1 >= 0)
         previousPage = siteLinks[currentPageIndex - 1]
     }
-    console.log(currentPageIndex)
 
     return (
       <LayoutWrapper>

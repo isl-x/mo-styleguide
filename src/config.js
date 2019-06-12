@@ -27,7 +27,7 @@ export const HOME_PAGE = {
      */
     { pageUrl: "/example/", filename: "ColorsIcon", linkText: "Colors" },
     {
-      pageUrl: "/example/",
+      pageUrl: "/",
       filename: "IllustrationIcon",
       linkText: "Illustration",
     },

@@ -119,7 +119,8 @@ class ContextualNav extends React.Component {
         if (
           target &&
           navRef &&
-          !(navRef.contains(target) || navRef === target)
+          !(navRef.contains(target) || navRef === target) &&
+          this.state.dropdownActive
         ) {
           this.setState({ dropdownActive: false })
           this.refs["contextual-nav-dropdown"].blur()
