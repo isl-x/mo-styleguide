@@ -13,7 +13,7 @@ Wiki: [Setup your repo and run](https://github.com/istrategylabs/mo-styleguide/w
 ## Usage
 Wiki: 
    - [Lay of the land](https://github.com/istrategylabs/mo-styleguide/wiki/Start-New-Style-Guide#lay-of-the-land)
-   - [Adding Pages and Content](https://github.com/istrategylabs/mo-styleguide/wiki/Add-Pages-and-Blocks#add-pages)
+   - [Adding Pages and Content](https://github.com/istrategylabs/mo-styleguide/wiki/Add-Pages-and-Sections#add-pages)
 
 ## Deployment
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/istrategylabs/mo-styleguide)
