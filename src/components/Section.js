@@ -6,7 +6,7 @@ import slugify from "slugify"
 import { LARGE } from "../utils/spacing"
 import { NAV_OFFSET } from "../utils/components/molecules/ContextualNav"
 
-const BlockBase = styled.div`
+const SectionBase = styled.div`
   margin: ${LARGE}px 0;
 
   &:first-of-type {
@@ -25,8 +25,8 @@ const Anchor = styled.div`
   visibility: hidden;
 `
 
-const Block = ({ title, children }) => (
-  <BlockBase>
+const Section = ({ title, children }) => (
+  <SectionBase>
     <Anchor
       id={slugify(title, { lower: true })}
       data-type="block"
@@ -34,12 +34,12 @@ const Block = ({ title, children }) => (
     />
     <h2>{title}</h2>
     {children}
-  </BlockBase>
+  </SectionBase>
 )
 
-Block.propTypes = {
+Section.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node,
 }
 
-export default Block
+export default Section

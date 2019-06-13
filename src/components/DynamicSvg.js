@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import { PRIMARY_HIGHLIGHT_COLOR } from "../utils/colors"
@@ -23,6 +24,10 @@ const DynamicSvg = ({ filename }) => {
       <IconTag />
     </BaseDynamicSvg>
   )
+}
+
+DynamicSvg.propTypes = {
+  filename: PropTypes.string.isRequired,
 }
 
 export default DynamicSvg

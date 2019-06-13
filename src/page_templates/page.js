@@ -9,7 +9,7 @@ import {
 } from "../components/ColorSwatch"
 import Basic from "../components/Basic"
 import Image from "../components/Image"
-import Block from "../components/Block"
+import Section from "../components/Section"
 import DownloadButton from "../components/DownloadButton"
 import {
   DownloadCardsContainer,
@@ -18,16 +18,17 @@ import {
 } from "../components/DownloadCards"
 import { Font, FontUsageGuideline } from "../components/Font"
 import FontScale from "../components/FontScale"
+import Spacer from "../components/Spacer"
 
 const BasePage = () => (
   <Layout title="Test Page">
     <SEO title="Test Page" keywords={[`styleguide`, `design`, `base`]} />
-    {/* Put all blocks here 
+    {/* Put all sections here 
         Those that are shown below are meerly examples and are intended to be deleted as needed
     */}
 
     {/* COLOR SWATCH */}
-    <Block title="Colors">
+    <Section title="Colors">
       <ColorSwatchDescription>A test description</ColorSwatchDescription>
       <ColorSwatchContainer>
         <ColorSwatch
@@ -42,10 +43,10 @@ const BasePage = () => (
         <ColorSwatch />
         <ColorSwatch />
       </ColorSwatchContainer>
-    </Block>
+    </Section>
 
     {/* SECONDARY COLOR SWATCH */}
-    <Block title="Colors Secondary">
+    <Section title="Colors Secondary">
       <ColorSwatchDescription>A test description</ColorSwatchDescription>
       <ColorSwatchContainer secondary>
         <ColorSwatch
@@ -60,29 +61,37 @@ const BasePage = () => (
         <ColorSwatch />
         <ColorSwatch />
       </ColorSwatchContainer>
-    </Block>
+    </Section>
 
     {/* TEXT */}
-    <Block title="Placeholder for guideline">
+    <Section title="Placeholder for guideline">
       <Basic>
         This is an example of using text
+        {/* SPACER 
+            The <Spacer> component can be used in any section 
+            or literally anywhere desired. 
+            Possible values:
+            xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
+        */}
+        <Spacer normal />
         <Image imgsrc="random-wide-image.png" />
+        <Spacer normal />
         And having text continue after an image
       </Basic>
-    </Block>
+    </Section>
 
     {/* IMAGE */}
-    <Block title="Images">
+    <Section title="Images">
       <Image imgsrc="random-wide-image.png" />
-    </Block>
+    </Section>
 
     {/* DOWNLOAD BUTTON */}
-    <Block title="Downloads">
+    <Section title="Downloads">
       <DownloadButton fileName="gatsby-astronaut">Logos</DownloadButton>
-    </Block>
+    </Section>
 
     {/* DOWNLOAD CARDS */}
-    <Block title="Download Cards">
+    <Section title="Download Cards">
       <DownloadCardsDescription>
         This is the downloads cards block
       </DownloadCardsDescription>
@@ -103,10 +112,10 @@ const BasePage = () => (
           fileName="gatsby-astronaut"
         />
       </DownloadCardsContainer>
-    </Block>
+    </Section>
 
     {/* FONTS */}
-    <Block title="Fonts">
+    <Section title="Fonts">
       <Font
         fontName="The Font"
         fontFileName="the-font"
@@ -130,10 +139,10 @@ const BasePage = () => (
         <FontUsageGuideline>No lower case letters</FontUsageGuideline>
         <FontUsageGuideline>No upper case letters</FontUsageGuideline>
       </Font>
-    </Block>
+    </Section>
 
     {/* FONT SCALING */}
-    <Block title="Font Scaling">
+    <Section title="Font Scaling">
       <FontScale
         fontName="The Other Font"
         fontFileName="the-other-font"
@@ -152,7 +161,7 @@ const BasePage = () => (
         size="20px"
         description="Super mega normal"
       />
-    </Block>
+    </Section>
   </Layout>
 )
 
