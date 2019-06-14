@@ -31,11 +31,21 @@ export const HOME_PAGE = {
       filename: "IllustrationIcon",
       linkText: "Illustration",
     },
-    { pageUrl: "/", filename: "LayoutIcon", linkText: "Layout" },
-    { pageUrl: "/", filename: "LogoIcon", linkText: "Logo" },
-    { pageUrl: "/", filename: "PhotographyIcon", linkText: "Photography" },
-    { pageUrl: "/", filename: "TypographyIcon", linkText: "Typography" },
-    { pageUrl: "/", filename: "VoiceAndToneIcon", linkText: "Voice and Tone" },
+  ],
+  INACTIVE_HOME_PAGE_LINKS: [
+    /**
+     * All of the same rules as regular page links apply as above.
+     * Just don't supply a pageUrl
+     *
+     * These links will show at the end of all active links on the home page.
+     * If no inactive links. Just remove the links from this list, but leave
+     * INACTIVE_HOME_PAGE_LINKS: [] <- empty
+     */
+    { filename: "LayoutIcon", linkText: "Layout" },
+    { filename: "LogoIcon", linkText: "Logo" },
+    { filename: "PhotographyIcon", linkText: "Photography" },
+    { filename: "TypographyIcon", linkText: "Typography" },
+    { filename: "VoiceAndToneIcon", linkText: "Voice and Tone" },
   ],
   // Set the number of link columns on the home page
   // The site is responsive on smaller screens and thus not configurable

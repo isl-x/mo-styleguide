@@ -32,6 +32,7 @@ const SectionLinkBase = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: ${props => (props.inactive ? 0.5 : 1)};
 `
 
 // Used to style the link contents themselves
@@ -41,20 +42,30 @@ const SectionLinkWrapper = styled.div`
   padding: ${SMALL}px;
 `
 
-const SectionLink = ({ filename, pageUrl, children }) => (
-  <SectionLinkBase>
-    <Link to={pageUrl} style={{ height: "100%", width: "100%" }}>
-      <SectionLinkWrapper>
-        <DynamicSvg filename={filename} />
-        {children}
-      </SectionLinkWrapper>
-    </Link>
-  </SectionLinkBase>
-)
+const SectionLink = ({ filename, pageUrl, children }) => {
+  const body = (
+    <SectionLinkWrapper>
+      <DynamicSvg filename={filename} />
+      {children}
+    </SectionLinkWrapper>
+  )
+
+  return (
+    <SectionLinkBase inactive={!pageUrl}>
+      {pageUrl ? (
+        <Link to={pageUrl} style={{ height: "100%", width: "100%" }}>
+          {body}
+        </Link>
+      ) : (
+        body
+      )}
+    </SectionLinkBase>
+  )
+}
 
 SectionLink.propTypes = {
   filename: PropTypes.string.isRequired,
-  pageUrl: PropTypes.string.isRequired,
+  pageUrl: PropTypes.string,
   children: PropTypes.node,
 }
 SectionLink.defaultProps = {
