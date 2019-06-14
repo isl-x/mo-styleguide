@@ -38,7 +38,7 @@ export const HOME_PAGE = {
      * Just don't supply a pageUrl
      *
      * These links will show at the end of all active links on the home page.
-     * If no inactive links. Just remove the links from this list, but leave
+     * If no inactive links - just remove the links from this list, but leave
      * INACTIVE_HOME_PAGE_LINKS: [] <- empty
      */
     { filename: "LayoutIcon", linkText: "Layout" },
