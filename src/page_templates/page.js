@@ -16,7 +16,7 @@ import {
   DownloadCardsDescription,
   DownloadCard,
 } from "../components/DownloadCards"
-import { Font, FontUsageGuideline } from "../components/Font"
+import { Font, FontWeightSample } from "../components/Font"
 import FontScale from "../components/FontScale"
 import Spacer from "../components/Spacer"
 
@@ -119,25 +119,24 @@ const BasePage = () => (
       <Font
         fontName="The Font"
         fontFileName="the-font"
+        usageName="Primary"
         sample="Aa"
         sampleSize="120px"
-        noNumbers
       >
-        <FontUsageGuideline>Used for body</FontUsageGuideline>
-        <FontUsageGuideline>Regular/Italic weights only</FontUsageGuideline>
-        <FontUsageGuideline>Generous line spacing</FontUsageGuideline>
+        <FontWeightSample label="Thin" noWeightNumbers />
+        <FontWeightSample weight={400} label="Medium" />
+        <FontWeightSample weight={600} label="Strong" />
       </Font>
       <Font
         fontName="The Other Font"
         fontFileName="the-other-font"
+        usageName="Secondary"
         sample="AA"
         sampleSize="120px"
-        noUpper
-        noLower
       >
-        <FontUsageGuideline>Used for body</FontUsageGuideline>
-        <FontUsageGuideline>No lower case letters</FontUsageGuideline>
-        <FontUsageGuideline>No upper case letters</FontUsageGuideline>
+        <FontWeightSample weight={100} label="Thin" noNumbers />
+        <FontWeightSample weight={400} label="Medium" />
+        <FontWeightSample weight="bold" label="Strong" />
       </Font>
     </Section>
 
