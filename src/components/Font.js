@@ -2,10 +2,12 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { PRIMARY_TEXT_COLOR, PRIMARY_HIGHLIGHT_COLOR } from "../utils/colors"
+import { PRIMARY_HIGHLIGHT_COLOR, WHITE } from "../utils/colors"
 import { NORMAL, TINY, MEDIUM, SMALL } from "../utils/spacing"
 import { DEVICE } from "../utils/breakpoints"
 import { useSiteFiles } from "../utils/hooks"
+import { M, XS } from "../utils/font-sizes"
+import { FaDownload } from "react-icons/fa"
 
 /** BASE CONTAINER FOR THE BLOCK **/
 const FontContainer = styled.div`
@@ -59,29 +61,38 @@ FontSample.propTypes = {
 }
 
 /** DOWNLOAD **/
-const DownloadButton = styled.div`
+const DownloadButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
   border-style: solid;
   border-color: green;
   border-width: 0 0 1px 1px;
+  cursor: pointer;
 `
 
 const DownloadText = styled.div`
-  padding: ${SMALL}px;
-  flex-basis: 75%;
+  ${XS}
+  padding: ${TINY}px;
+  flex-basis: 80%;
+  text-transform: uppercase;
+  text-align: center;
 `
 
 const DownloadIconContainer = styled.span`
   background-color: ${PRIMARY_HIGHLIGHT_COLOR};
+  color: ${WHITE};
   text-align: center;
-  flex-basis: 25%;
+  flex-basis: 20%;
   padding: ${SMALL}px;
 `
 
 /** GUIDELINES AND EXAMPLES (RIGHT SIDE OF BLOCK) **/
 const FontWeightSampleBase = styled.div``
+
+const FontName = styled.h1`
+  font-family: ${props => `${props.fontName}`};
+`
 
 const FontDetails = styled.div`
   padding: ${MEDIUM}px;
@@ -90,8 +101,10 @@ const FontDetails = styled.div`
 `
 
 const FontExampleContainer = styled.div`
+  ${M}
   font-family: ${props => `${props.fontName}`};
   font-weight: ${props => (props.weight ? props.weight : "normal")};
+  letter-spacing: 10px;
   margin-bottom: ${NORMAL}px;
 `
 
@@ -153,12 +166,14 @@ const Font = ({
           <FontType>{usageName}</FontType>
         </FontSampleContainer>
         <DownloadButton>
-          <DownloadText>Download me!</DownloadText>
-          <DownloadIconContainer>V</DownloadIconContainer>
+          <DownloadText>Download Font</DownloadText>
+          <DownloadIconContainer>
+            <FaDownload />
+          </DownloadIconContainer>
         </DownloadButton>
       </div>
       <FontDetails>
-        <h1>{fontName}</h1>
+        <FontName fontName={fontName}>{fontName}</FontName>
         {modifiedChildren}
         <div />
       </FontDetails>

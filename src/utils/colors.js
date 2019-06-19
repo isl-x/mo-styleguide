@@ -9,3 +9,4 @@ export const LINK_BACKGROUND_COLOR = COLORS.LINK_BACKGROUND_COLOR
 
 // Generics
 export const BLACK = "#000"
+export const WHITE = "#fff"
