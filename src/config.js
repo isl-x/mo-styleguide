@@ -60,7 +60,7 @@ export const COLORS = {
   // Basic (and other items) that goes on top of the PRIMARY_BACKGROUND_COLOR
   PRIMARY_FOREGROUND_COLOR: "#ffffff",
   // Used to generate a pop of color throughout the site. Used as an accent
-  PRIMARY_HIGHLIGHT_COLOR: "#ffc9d4",
+  PRIMARY_HIGHLIGHT_COLOR: "blue",
 
   /** SECONDARY REFERENCES **/
   PRIMARY_TEXT_COLOR: "#000",
