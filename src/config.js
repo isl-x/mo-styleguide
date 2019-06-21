@@ -8,7 +8,7 @@ export const SITE_METADATA = {
   // of the site itself
   SITE_TITLE: "Styleguide",
   SITE_DESCRIPTION: `Come find all the guidelines your heart desires`,
-  BRAND_NAME: "Lorem Ipsum Brand",
+  BRAND_NAME: "Capital One Ventures",
   AUTHOR: "ISL",
 }
 
@@ -25,12 +25,12 @@ export const HOME_PAGE = {
      * linkText:   Whatever you'd like the visible text to say for the link and
      *             the resulting page title.
      */
-    { pageUrl: "/example/", filename: "ColorsIcon", linkText: "Colors" },
-    {
-      pageUrl: "/",
-      filename: "IllustrationIcon",
-      linkText: "Illustration",
-    },
+    { pageUrl: "/logo/", filename: "LogoIcon", linkText: "Logo" },
+    { pageUrl: "/type/", filename: "TypographyIcon", linkText: "Typography" },
+    { pageUrl: "/color/", filename: "ColorsIcon", linkText: "Color Palette" },
+    { pageUrl: "/graphics/", filename: "IllustrationIcon", linkText: "Icons & Graphics" },
+    { pageUrl: "/photography/", filename: "PhotographyIcon", linkText: "Photography" },
+    { pageUrl: "/position/", filename: "VoiceAndToneIcon", linkText: "Brand Position" },
   ],
   INACTIVE_HOME_PAGE_LINKS: [
     /**
@@ -41,11 +41,7 @@ export const HOME_PAGE = {
      * If no inactive links - just remove the links from this list, but leave
      * INACTIVE_HOME_PAGE_LINKS: [] <- empty
      */
-    { filename: "LayoutIcon", linkText: "Layout" },
-    { filename: "LogoIcon", linkText: "Logo" },
-    { filename: "PhotographyIcon", linkText: "Photography" },
-    { filename: "TypographyIcon", linkText: "Typography" },
-    { filename: "VoiceAndToneIcon", linkText: "Voice and Tone" },
+    
   ],
   // Set the number of link columns on the home page
   // The site is responsive on smaller screens and thus not configurable
@@ -56,11 +52,11 @@ export const HOME_PAGE = {
 /*********************************** COLORS ***********************************/
 export const COLORS = {
   // Headers, footers, etc...
-  PRIMARY_BACKGROUND_COLOR: "#1d2c3c",
+  PRIMARY_BACKGROUND_COLOR: "#255F82",
   // Basic (and other items) that goes on top of the PRIMARY_BACKGROUND_COLOR
-  PRIMARY_FOREGROUND_COLOR: "#ffffff",
+  PRIMARY_FOREGROUND_COLOR: "#f8f8f8",
   // Used to generate a pop of color throughout the site. Used as an accent
-  PRIMARY_HIGHLIGHT_COLOR: "blue",
+  PRIMARY_HIGHLIGHT_COLOR: "#F1392E",
 
   /** SECONDARY REFERENCES **/
   PRIMARY_TEXT_COLOR: "#000",
