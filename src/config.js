@@ -25,13 +25,13 @@ export const HOME_PAGE = {
      * linkText:   Whatever you'd like the visible text to say for the link and
      *             the resulting page title.
      */
-    { pageUrl: "/colors/", filename: "ColorsIcon", linkText: "Colors", innactive: "true"},
+    { pageUrl: "/colors/", filename: "ColorsIcon", linkText: "Colors"},
     { pageUrl: "typography", filename: "TypographyIcon", linkText: "Typography" },
-    { pageUrl: "",filename: "IllustrationIcon",linkText: "Illustration", innactive: "true"},
-    { pageUrl: "/", filename: "LayoutIcon", linkText: "Layout", innactive: "true" },
-    { pageUrl: "/", filename: "LogoIcon", linkText: "Logo", innactive: "true" },
-    { pageUrl: "/", filename: "PhotographyIcon", linkText: "Photography", innactive: "true" },
-    { pageUrl: "/", filename: "VoiceAndToneIcon", linkText: "Voice and Tone", innactive: "true" },
+    { pageUrl: "/",filename: "IllustrationIcon",linkText: "Illustration", inactive: "true"},
+    { pageUrl: "/", filename: "LayoutIcon", linkText: "Layout", inactive: "true" },
+    { pageUrl: "/", filename: "LogoIcon", linkText: "Logo", inactive: "true" },
+    { pageUrl: "/", filename: "PhotographyIcon", linkText: "Photography", inactive: "true" },
+    { pageUrl: "/", filename: "VoiceAndToneIcon", linkText: "Voice and Tone", inactive: "true" },
   ],
   // Set the number of link columns on the home page
   // The site is responsive on smaller screens and thus not configurable

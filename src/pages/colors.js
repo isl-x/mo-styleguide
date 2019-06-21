@@ -52,6 +52,7 @@ const BasePage = () => (
         />
       </ColorSwatchContainer>
     </Block>
+
     <Block title="Secondary Accent Colors">
       <ColorSwatchContainer secondary>
         <ColorSwatch
@@ -122,9 +123,9 @@ const BasePage = () => (
           pms="PMS 485"
         />
       </ColorSwatchContainer>
-    </Block>
-    <Block title="">
-      <Image imgsrc="Color-Hierarchy.jpg" />
+
+       <Image imgsrc="Color-Hierarchy.jpg" />
+
     </Block>
 
     <Block title="Color Hierarchy">
