@@ -2,12 +2,19 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { PRIMARY_HIGHLIGHT_COLOR, WHITE } from "../utils/colors"
+import {
+  PRIMARY_HIGHLIGHT_COLOR,
+  WHITE,
+  GREY,
+  PRIMARY_TEXT_COLOR,
+} from "../utils/colors"
 import { NORMAL, TINY, MEDIUM, SMALL } from "../utils/spacing"
 import { DEVICE } from "../utils/breakpoints"
 import { useSiteFiles } from "../utils/hooks"
-import { M, XS } from "../utils/font-sizes"
+import { M, XXS, XXL } from "../utils/font-sizes"
 import { FaDownload } from "react-icons/fa"
+
+const BORDER_WIDTH = "2px"
 
 /** BASE CONTAINER FOR THE BLOCK **/
 const FontContainer = styled.div`
@@ -39,9 +46,9 @@ FontContainer.propTypes = {
 /** LARGE SAMPLE TEXT STYLES **/
 const FontSampleContainer = styled.div`
   padding: ${MEDIUM}px;
-  border-color: green;
+  border-color: ${GREY};
   border-style: solid;
-  border-width: 1px 0 1px 1px;
+  border-width: ${BORDER_WIDTH} 0 ${BORDER_WIDTH} ${BORDER_WIDTH};
   text-align: center;
 `
 
@@ -61,19 +68,10 @@ FontSample.propTypes = {
 }
 
 /** DOWNLOAD **/
-const DownloadButton = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-style: solid;
-  border-color: green;
-  border-width: 0 0 1px 1px;
-  cursor: pointer;
-`
-
 const DownloadText = styled.div`
-  ${XS}
+  ${XXS}
   padding: ${TINY}px;
+  opacity: .6;
   flex-basis: 80%;
   text-transform: uppercase;
   text-align: center;
@@ -87,16 +85,44 @@ const DownloadIconContainer = styled.span`
   padding: ${SMALL}px;
 `
 
+const DownloadButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-color: ${GREY};
+  border-width: 0 0 ${BORDER_WIDTH} ${BORDER_WIDTH};
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: ${GREY};
+
+    ${DownloadText} {
+      opacity: 1;
+    }
+  }
+`
+
 /** GUIDELINES AND EXAMPLES (RIGHT SIDE OF BLOCK) **/
-const FontWeightSampleBase = styled.div``
+const FontWeightSampleBase = styled.div`
+  margin: ${MEDIUM}px 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+`
 
 const FontName = styled.h1`
+  ${XXL}
   font-family: ${props => `${props.fontName}`};
 `
 
 const FontDetails = styled.div`
   padding: ${MEDIUM}px;
-  border: 1px solid green;
+  border: ${BORDER_WIDTH} solid ${GREY};
   width: 100%;
 `
 
@@ -104,12 +130,14 @@ const FontExampleContainer = styled.div`
   ${M}
   font-family: ${props => `${props.fontName}`};
   font-weight: ${props => (props.weight ? props.weight : "normal")};
-  letter-spacing: 10px;
+  letter-spacing: 15px;
   margin-bottom: ${NORMAL}px;
+  margin-top: ${SMALL}px;
 `
 
 FontExampleContainer.propTypes = {
   fontName: PropTypes.string.isRequired,
+  weight: PropTypes.string,
 }
 
 const FontExample = styled.p`
@@ -165,7 +193,11 @@ const Font = ({
           </FontSample>
           <FontType>{usageName}</FontType>
         </FontSampleContainer>
-        <DownloadButton>
+        <DownloadButton
+          role="button"
+          download
+          href={completeFile ? completeFile.node.publicURL : null}
+        >
           <DownloadText>Download Font</DownloadText>
           <DownloadIconContainer>
             <FaDownload />
@@ -175,7 +207,6 @@ const Font = ({
       <FontDetails>
         <FontName fontName={fontName}>{fontName}</FontName>
         {modifiedChildren}
-        <div />
       </FontDetails>
     </FontContainer>
   )
