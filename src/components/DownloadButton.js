@@ -9,6 +9,7 @@ import {
 import { S } from "../utils/font-sizes"
 import { SMALL } from "../utils/spacing"
 import { useSiteFiles } from "../utils/hooks"
+import { FaDownload } from "react-icons/fa"
 
 const DownloadBase = styled.a`
   ${S}
@@ -42,7 +43,7 @@ const DownloadButton = ({ children, fileName }) => {
       href={completeFile ? completeFile.node.publicURL : null}
     >
       <span>{children}</span>
-      <span>:)</span>
+      <FaDownload />
     </DownloadBase>
   )
 }
