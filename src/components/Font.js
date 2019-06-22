@@ -2,16 +2,11 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import {
-  PRIMARY_HIGHLIGHT_COLOR,
-  WHITE,
-  GREY,
-  PRIMARY_TEXT_COLOR,
-} from "../utils/colors"
+import { PRIMARY_HIGHLIGHT_COLOR, WHITE, GREY } from "../utils/colors"
 import { NORMAL, TINY, MEDIUM, SMALL } from "../utils/spacing"
 import { DEVICE } from "../utils/breakpoints"
 import { useSiteFiles } from "../utils/hooks"
-import { M, XXS, XXL } from "../utils/font-sizes"
+import { M, XXS, XXL, XS } from "../utils/font-sizes"
 import { FaDownload } from "react-icons/fa"
 
 const BORDER_WIDTH = "2px"
@@ -50,6 +45,10 @@ const FontSampleContainer = styled.div`
   border-style: solid;
   border-width: ${BORDER_WIDTH} 0 ${BORDER_WIDTH} ${BORDER_WIDTH};
   text-align: center;
+
+  @media ${DEVICE.PHONE_ONLY} {
+    border-width: ${BORDER_WIDTH};
+  }
 `
 
 const FontSample = styled.div`
@@ -104,6 +103,10 @@ const DownloadButton = styled.a`
       opacity: 1;
     }
   }
+
+  @media ${DEVICE.PHONE_ONLY} {
+    display: none;
+  }
 `
 
 /** GUIDELINES AND EXAMPLES (RIGHT SIDE OF BLOCK) **/
@@ -124,6 +127,11 @@ const FontDetails = styled.div`
   padding: ${MEDIUM}px;
   border: ${BORDER_WIDTH} solid ${GREY};
   width: 100%;
+  min-width: 0;
+
+  @media ${DEVICE.PHONE_ONLY} {
+    border: none;
+  }
 `
 
 const FontExampleContainer = styled.div`
@@ -133,11 +141,15 @@ const FontExampleContainer = styled.div`
   letter-spacing: 15px;
   margin-bottom: ${NORMAL}px;
   margin-top: ${SMALL}px;
+
+  @media ${DEVICE.PHONE_ONLY} {
+    ${XS}
+  }
 `
 
 FontExampleContainer.propTypes = {
   fontName: PropTypes.string.isRequired,
-  weight: PropTypes.string,
+  weight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }
 
 const FontExample = styled.p`
