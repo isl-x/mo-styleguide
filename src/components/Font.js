@@ -178,6 +178,23 @@ const FontWeightSample = ({
   </FontWeightSampleBase>
 )
 
+FontWeightSample.propTypes = {
+  label: PropTypes.string.isRequired,
+  weight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  fontName: PropTypes.string,
+  noUpper: PropTypes.bool,
+  noLower: PropTypes.bool,
+  noNumbers: PropTypes.bool,
+  noWeightNumbers: PropTypes.bool,
+}
+
+FontWeightSample.defaultProps = {
+  noUpper: false,
+  noLower: false,
+  noNumbers: false,
+  noWeightNumbers: false,
+}
+
 const Font = ({
   fontName,
   fontFileName,
@@ -227,6 +244,7 @@ const Font = ({
 Font.propTypes = {
   fontName: PropTypes.string.isRequired,
   fontFileName: PropTypes.string.isRequired,
+  usageName: PropTypes.string.isRequired,
   sample: PropTypes.string.isRequired,
   sampleSize: PropTypes.string,
   children: PropTypes.oneOfType([
@@ -239,16 +257,10 @@ Font.propTypes = {
       })
     ),
   ]),
-  noUpper: PropTypes.bool,
-  noLower: PropTypes.bool,
-  noNumbers: PropTypes.bool,
 }
 
 Font.defaultProps = {
   sampleSize: "120px",
-  noUpper: false,
-  noLower: false,
-  noNumbers: false,
 }
 
 export { Font, FontWeightSample }

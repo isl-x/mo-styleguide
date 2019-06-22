@@ -124,7 +124,7 @@ const BasePage = () => (
         sampleSize="120px"
       >
         <FontWeightSample label="Thin" noWeightNumbers />
-        <FontWeightSample weight={400} label="Medium" />
+        <FontWeightSample weight={400} label="Medium" noUpper />
         <FontWeightSample weight={600} label="Strong" />
       </Font>
       <Font
@@ -135,7 +135,7 @@ const BasePage = () => (
         sampleSize="120px"
       >
         <FontWeightSample weight={100} label="Thin" noNumbers />
-        <FontWeightSample weight={400} label="Medium" />
+        <FontWeightSample weight={400} label="Medium" noLower />
         <FontWeightSample weight="bold" label="Strong" />
       </Font>
     </Section>
