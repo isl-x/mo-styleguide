@@ -34,31 +34,31 @@ const BasePage = () => (
       </DownloadCardsDescription>
       <DownloadCardsContainer columns={2}>
         <DownloadCard
-          title="test"
-          imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
+          title="Full Color"
+          imgsrc="Logo_Full-Color.png"
+          fileName="Full-Color"
         />
         <DownloadCard
-          title="test"
-          imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
+          title="White Text"
+          imgsrc="Logo_White-Text.png"
+          fileName="White-Text"
         />
         <DownloadCard
-          title="test"
-          imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
+          title="All White"
+          imgsrc="Logo_All-White.png"
+          fileName="All-White"
         />
         <DownloadCard
-          title="test"
-          imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
+          title="Core Blue 60"
+          imgsrc="Logo_Blue.png"
+          fileName="Core-Blue-60"
         />
       </DownloadCardsContainer>
     </Section>
 
     {/* DOWNLOAD BUTTON */}
-    <Section title="Downloads">
-      <DownloadButton fileName="gatsby-astronaut">Logos</DownloadButton>
+    <Section title="Download the Ventures Logo Guidelines">
+      <DownloadButton fileName="C1V_BrandGuidelines_Logo">Logo Guidelines</DownloadButton>
     </Section>
 
   </Layout>

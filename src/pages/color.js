@@ -28,57 +28,65 @@ const BasePage = () => (
     */}
 
     {/* COLOR SWATCH */}
-    <Section title="Colors">
+    <Section title="Primary Colors">
       <ColorSwatchDescription>A test description</ColorSwatchDescription>
       <ColorSwatchContainer>
         <ColorSwatch
           title="Core Blue 40"
           hex="#255F82"
-          rgb="18, 24, 32"
-          cmyk="81, 71, 58, 75"
-          pms="PMS Black 6 U"
+          rgb="37, 95, 130"
+          cmyk="89, 59, 31, 10"
         />
         <ColorSwatch 
           title="Gray 10" 
-          hex="#F4F4F4" 
+          hex="#F4F4F4"
+          rgb="244, 244, 244"
+          cmyk="3, 2, 2, 0" 
         />
 
       </ColorSwatchContainer>
     </Section>
 
     {/* SECONDARY COLOR SWATCH */}
-    <Section title="Colors Secondary">
+    <Section title="Secondary Colors">
       <ColorSwatchDescription>A test description</ColorSwatchDescription>
       <ColorSwatchContainer secondary>
         <ColorSwatch
           title="Light Blue 3"
           hex="#78D0EB"
-          rgb="18, 24, 32"
-          cmyk="81, 71, 58, 75"
-          pms="PMS Black 6 U"
+          rgb="120, 208, 235"
+          cmyk="48, 0, 5, 0"
         />
         <ColorSwatch 
           title="Core Blue 30" 
           hex="#598AAA" 
+          rgb="89, 138, 170"
+          cmyk="69, 37, 21, 1"
         />
         <ColorSwatch 
           title="Core Blue 60" 
           hex="#10253F"
+          rgb="16, 37, 63"
+          cmyk="96, 82, 47, 52"
         />
         <ColorSwatch 
           title="Red 50" 
           hex="#CC2427"
+          rgb="204, 36, 39"
+          cmyk="13, 99, 98, 3"
         />
         <ColorSwatch 
           title="Boom" 
           hex="#F1392E"
+          rgb="241, 57, 46"
+          cmyk="0, 92, 90, 0"
         />
       </ColorSwatchContainer>
     </Section>
 
     {/* DOWNLOAD BUTTON */}
-    <Section title="Download">
-      <DownloadButton fileName="gatsby-astronaut">Color Palette</DownloadButton>
+    <Section title="Download the Ventures Color Palette">
+      <DownloadButton fileName="C1V_Swatches">Color Palette</DownloadButton>
     </Section>
 
   </Layout>
