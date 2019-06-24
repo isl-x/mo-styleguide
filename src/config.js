@@ -26,7 +26,7 @@ export const HOME_PAGE = {
      *             the resulting page title.
      */
     { pageUrl: "/logo/", filename: "LogoIcon", linkText: "Logo" },
-    { pageUrl: "/type/", filename: "TypographyIcon", linkText: "Typography" },
+    { pageUrl: "/typography/", filename: "TypographyIcon", linkText: "Typography" },
     { pageUrl: "/color/", filename: "ColorsIcon", linkText: "Color Palette" },
     { pageUrl: "/graphics/", filename: "IllustrationIcon", linkText: "Icons & Graphics" },
     { pageUrl: "/photography/", filename: "PhotographyIcon", linkText: "Photography" },
