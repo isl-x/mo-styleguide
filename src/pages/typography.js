@@ -28,7 +28,7 @@ const BasePage = () => (
     */}
 
     {/* FONTS */}
-    <Section title="Fonts">
+    <Section title="">
       <Font
         fontName="Polaris"
         fontFileName="Polaris-Bold"

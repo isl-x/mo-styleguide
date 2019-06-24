@@ -28,9 +28,8 @@ const BasePage = () => (
     */}
 
     {/* DOWNLOAD CARDS */}
-    <Section title="Download Cards">
+    <Section title="Shapes & Textures">
       <DownloadCardsDescription>
-        This is the downloads cards block
       </DownloadCardsDescription>
       <DownloadCardsContainer columns={2}>
         <DownloadCard

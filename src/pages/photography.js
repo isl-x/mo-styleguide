@@ -28,23 +28,17 @@ const BasePage = () => (
     */}
 
     {/* DOWNLOAD CARDS */}
-    <Section title="Download Cards">
+    <Section title="">
       <DownloadCardsDescription>
-        This is the downloads cards block
       </DownloadCardsDescription>
       <DownloadCardsContainer columns={2}>
         <DownloadCard
-          title="test"
+          title="Environmental Photography"
           imgsrc="random-wide-image.png"
           fileName="gatsby-astronaut"
         />
         <DownloadCard
-          title="test"
-          imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
-        />
-        <DownloadCard
-          title="test"
+          title="Landscape Photography"
           imgsrc="random-wide-image.png"
           fileName="gatsby-astronaut"
         />
@@ -52,7 +46,7 @@ const BasePage = () => (
     </Section>
 
         {/* DOWNLOAD BUTTON */}
-        <Section title="Downloads">
+        <Section title="Download Image Guidelines">
       <DownloadButton fileName="gatsby-astronaut">Logos</DownloadButton>
     </Section>
 

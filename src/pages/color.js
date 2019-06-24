@@ -29,7 +29,7 @@ const BasePage = () => (
 
     {/* COLOR SWATCH */}
     <Section title="Primary Colors">
-      <ColorSwatchDescription>A test description</ColorSwatchDescription>
+      <ColorSwatchDescription></ColorSwatchDescription>
       <ColorSwatchContainer>
         <ColorSwatch
           title="Core Blue 40"
@@ -49,7 +49,7 @@ const BasePage = () => (
 
     {/* SECONDARY COLOR SWATCH */}
     <Section title="Secondary Colors">
-      <ColorSwatchDescription>A test description</ColorSwatchDescription>
+      <ColorSwatchDescription></ColorSwatchDescription>
       <ColorSwatchContainer secondary>
         <ColorSwatch
           title="Light Blue 3"

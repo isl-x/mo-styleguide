@@ -28,9 +28,8 @@ const BasePage = () => (
     */}
 
     {/* DOWNLOAD CARDS */}
-    <Section title="Download Cards">
+    <Section title="">
       <DownloadCardsDescription>
-        This is the downloads cards block
       </DownloadCardsDescription>
       <DownloadCardsContainer columns={2}>
         <DownloadCard
@@ -58,7 +57,7 @@ const BasePage = () => (
 
     {/* DOWNLOAD BUTTON */}
     <Section title="Download the Ventures Logo Guidelines">
-      <DownloadButton fileName="C1V_BrandGuidelines_Logo">Logo Guidelines</DownloadButton>
+      <DownloadButton fileName="C1V_BrandGuidelines_Logo">Logo Guide</DownloadButton>
     </Section>
 
   </Layout>
