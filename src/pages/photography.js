@@ -78,7 +78,7 @@ const BasePage = () => (
         />
         <DownloadCard
           title="Example Photography"
-          imgsrc="random-wide-image.png"
+          imgsrc="Example_Hero.jpg"
           fileName="Example_Photos"
         />
       </DownloadCardsContainer>
