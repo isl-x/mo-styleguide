@@ -73,7 +73,7 @@ const BasePage = () => (
       <DownloadCardsContainer columns={2}>
         <DownloadCard
           title="Hero Photography"
-          imgsrc="random-wide-image.png"
+          imgsrc="Hero-Thumb.jpg"
           fileName="hero-photos"
         />
         <DownloadCard
