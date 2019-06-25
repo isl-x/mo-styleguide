@@ -26,9 +26,9 @@ const BasePage = () => (
     {/* Put all sections here 
         Those that are shown below are meerly examples and are intended to be deleted as needed
     */}
-
+    
     {/* DOWNLOAD CARDS */}
-    <Section title="">
+    <Section title="Download Logo Files">
       <DownloadCardsDescription>
       </DownloadCardsDescription>
       <DownloadCardsContainer columns={2}>
