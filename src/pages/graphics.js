@@ -27,6 +27,21 @@ const BasePage = () => (
         Those that are shown below are meerly examples and are intended to be deleted as needed
     */}
 
+ {/* TEXT */}
+ <Section title="Graphic Library">
+      <Basic>
+      Capital One Ventures employs a variety of graphics and textures to add depth and personality to our aesthetic.
+      From dotted geometric lines to organic shapes, our visuals  should feel modern and energetic. Hints of subtle grain will peek into our texture library, warming up our aesthetic with
+      natural touches. These graphical elements should be utilized sparingly to reinforce our clean visual aesthetic.
+        {/* SPACER 
+            The <Spacer> component can be used in any section 
+            or literally anywhere desired. 
+            Possible values:
+            xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
+        */}
+      </Basic>
+    </Section>
+
     {/* DOWNLOAD CARDS */}
     <Section title="Shapes & Textures">
       <DownloadCardsDescription>
