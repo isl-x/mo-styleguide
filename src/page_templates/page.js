@@ -19,6 +19,7 @@ import {
 import { Font, FontWeightSample } from "../components/Font"
 import FontScale from "../components/FontScale"
 import Spacer from "../components/Spacer"
+import FiftyFifty from "../components/FiftyFifty"
 
 const BasePage = () => (
   <Layout title="Test Page">
@@ -160,6 +161,11 @@ const BasePage = () => (
         size="20px"
         description="Super mega normal"
       />
+    </Section>
+
+    {/* FIFTY FIFTY TEXT IMAGE */}
+    <Section title="Fifty Fifty Text Split">
+      <FiftyFifty>Yays</FiftyFifty>
     </Section>
   </Layout>
 )
