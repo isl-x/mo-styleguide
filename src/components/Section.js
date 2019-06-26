@@ -25,14 +25,14 @@ const Anchor = styled.div`
   visibility: hidden;
 `
 
-const Section = ({ title, children }) => (
+const Section = ({ title, children, hidden }) => (
   <SectionBase>
     <Anchor
       id={slugify(title, { lower: true })}
       data-type="block"
       data-title={title}
     />
-    <h2>{title}</h2>
+    {!hidden ? <h2>{title}</h2> : null}
     {children}
   </SectionBase>
 )
