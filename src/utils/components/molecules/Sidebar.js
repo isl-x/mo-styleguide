@@ -6,6 +6,7 @@ import { PRIMARY_BACKGROUND_COLOR, WHITE, GREY } from "../../colors"
 import { LARGE, MEDIUM } from "../../spacing"
 import Image from "../../../components/Image"
 import { OPAQUE_FONT } from "../../font-styles"
+import { L } from "../../font-sizes"
 
 /** BASE **/
 const Sidebar = styled.aside`
@@ -36,6 +37,11 @@ const SidebarContent = styled.div`
   padding-top: ${LARGE}px;
   color: ${WHITE};
   border-top: 1px solid ${GREY};
+
+  span {
+    ${L}
+    font-weight: bold;
+  }
 
   p {
     ${OPAQUE_FONT}

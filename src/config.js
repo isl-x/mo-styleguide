@@ -91,7 +91,7 @@ export const COLORS = {
 
   /** SECONDARY REFERENCES **/
   PRIMARY_TEXT_COLOR: "#000",
-  // The background color for the links on the Home page
+  // The background color for color swatches
   LINK_BACKGROUND_COLOR: "#eef2f7",
 }
 

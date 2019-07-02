@@ -31,7 +31,7 @@ const IndexPage = () => {
       <Sidebar>
         <SidebarImage imgsrc="isl-logo.png" />
         <SidebarContent>
-          <h1>{SITE_METADATA.SITE_TITLE}</h1>
+          <span>{SITE_METADATA.SITE_TITLE}</span>
           <p>{SITE_METADATA.SITE_DESCRIPTION}</p>
         </SidebarContent>
       </Sidebar>
@@ -44,7 +44,7 @@ const IndexPage = () => {
               pageUrl={link.pageUrl}
               filename={link.filename}
             >
-              <h2>{link.linkText}</h2>
+              <span>{link.linkText}</span>
               <p>{link.descriptiveText}</p>
             </SectionLink>
           ))}

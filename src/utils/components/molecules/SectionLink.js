@@ -4,6 +4,8 @@ import styled from "styled-components"
 
 import Link from "../atoms/Link"
 import { MEDIUM } from "../../spacing"
+import { OPAQUE_FONT } from "../../font-styles"
+import { L, XL } from "../../font-sizes"
 
 /* LINK CONTAINER */
 const SectionLinkContainer = styled.main`
@@ -15,6 +17,15 @@ const SectionLinkContainer = styled.main`
 const SectionLinkBase = styled.div`
   margin-bottom: ${MEDIUM}px;
   opacity: ${props => (props.inactive ? 0.3 : 1)};
+
+  span {
+    ${XL}
+    font-weight: bold;
+  }
+
+  p {
+    ${OPAQUE_FONT}
+  }
 `
 
 const SectionLink = ({ pageUrl, children }) => {
