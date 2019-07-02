@@ -12,7 +12,6 @@ import { DIVIDER_BORDER } from "../../borders"
 import { XS, S, M, L } from "../../font-sizes"
 import { DEVICE } from "../../breakpoints"
 import Link from "../atoms/Link"
-import { HOME_PAGE } from "../../../config"
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 
 const FooterWrapper = styled.footer`
@@ -50,56 +49,46 @@ const FooterDivider = styled.div`
   height: 3rem;
 `
 
-const Footer = ({ previousPage, nextPage, isIndex }) => {
-  const indexFooterText = HOME_PAGE.HOME_PAGE_FOOTER_TEXT
-
+const Footer = ({ previousPage, nextPage }) => {
   return (
     <FooterWrapper>
       <Grid>
-        {isIndex ? (
-          indexFooterText
-        ) : (
-          <FooterContents>
-            {previousPage ? (
-              <Link to={previousPage.pageUrl}>
-                <FooterLinkContext textAlign="right">
-                  Previous
-                </FooterLinkContext>
-                <FaArrowLeft
-                  style={{ verticalAlign: "top", marginRight: TINY }}
-                />
-                {`${previousPage.linkText}`}
-              </Link>
-            ) : (
-              <div />
-            )}
-            <FooterDivider />
-            {nextPage ? (
-              <Link to={nextPage.pageUrl}>
-                <FooterLinkContext>Next</FooterLinkContext>
-                {`${nextPage.linkText}`}
-                <FaArrowRight
-                  style={{ verticalAlign: "top", marginLeft: TINY }}
-                />
-              </Link>
-            ) : (
-              <div />
-            )}
-          </FooterContents>
-        )}
+        <FooterContents>
+          {previousPage ? (
+            <Link to={previousPage.pageUrl}>
+              <FooterLinkContext textAlign="right">Previous</FooterLinkContext>
+              <FaArrowLeft
+                style={{ verticalAlign: "top", marginRight: TINY }}
+              />
+              {`${previousPage.linkText}`}
+            </Link>
+          ) : (
+            <div />
+          )}
+          <FooterDivider />
+          {nextPage ? (
+            <Link to={nextPage.pageUrl}>
+              <FooterLinkContext>Next</FooterLinkContext>
+              {`${nextPage.linkText}`}
+              <FaArrowRight
+                style={{ verticalAlign: "top", marginLeft: TINY }}
+              />
+            </Link>
+          ) : (
+            <div />
+          )}
+        </FooterContents>
       </Grid>
     </FooterWrapper>
   )
 }
 
 Footer.propTypes = {
-  isIndex: PropTypes.bool,
   previousPage: PropTypes.object,
   nextPage: PropTypes.object,
 }
 
 Footer.defaultProps = {
-  isIndex: false,
   previousPage: null,
   nextPage: null,
 }

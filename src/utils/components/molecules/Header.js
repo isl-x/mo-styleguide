@@ -18,17 +18,13 @@ const HeaderWrapper = styled.header`
   color: ${PRIMARY_FOREGROUND_COLOR};
 `
 
-const Header = ({ siteSubText, siteMainText, isIndex }) => (
+const Header = ({ siteSubText, siteMainText }) => (
   <HeaderWrapper>
     <Grid>
-      {isIndex ? (
-        <span>{siteSubText}</span>
-      ) : (
-        <Link to="/" style={{ display: "flex", alignItems: "center" }}>
-          <FaArrowLeft style={{ marginRight: TINY }} />
-          {siteSubText}
-        </Link>
-      )}
+      <Link to="/" style={{ display: "flex", alignItems: "center" }}>
+        <FaArrowLeft style={{ marginRight: TINY }} />
+        {siteSubText}
+      </Link>
       <h1>{siteMainText}</h1>
     </Grid>
   </HeaderWrapper>
@@ -37,13 +33,11 @@ const Header = ({ siteSubText, siteMainText, isIndex }) => (
 Header.propTypes = {
   siteMainText: PropTypes.string,
   siteSubText: PropTypes.string,
-  isIndex: PropTypes.bool,
 }
 
 Header.defaultProps = {
   siteMainText: ``,
   siteSubText: ``,
-  isIndex: false,
 }
 
 export default Header

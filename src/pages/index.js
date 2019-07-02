@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 
 import Layout from "../utils/components/organisms/Layout"
 import SEO from "../utils/components/atoms/Seo"
@@ -6,23 +7,49 @@ import {
   SectionLinkContainer,
   SectionLink,
 } from "../utils/components/molecules/SectionLink"
-import { HOME_PAGE } from "../config"
+import { HOME_PAGE, SITE_METADATA } from "../config"
+import {
+  Sidebar,
+  SidebarImage,
+  SidebarContent,
+} from "../utils/components/molecules/Sidebar"
+import { LARGE } from "../utils/spacing"
+import Label from "../components/atoms/Label"
+
+const ContentWrapper = styled.div`
+  flex-basis: 70%;
+  padding: ${LARGE}px;
+`
 
 const IndexPage = () => {
   const links = HOME_PAGE.HOME_PAGE_LINKS
   const inactive_links = HOME_PAGE.INACTIVE_HOME_PAGE_LINKS
-  const colCount = HOME_PAGE.HOME_PAGE_DESKTOP_COLUMN_COUNT
 
   return (
     <Layout isIndex>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <SectionLinkContainer colCount={colCount}>
-        {links.concat(inactive_links).map((link, i) => (
-          <SectionLink key={i} pageUrl={link.pageUrl} filename={link.filename}>
-            {link.linkText}
-          </SectionLink>
-        ))}
-      </SectionLinkContainer>
+      <Sidebar>
+        <SidebarImage imgsrc="isl-logo.png" />
+        <SidebarContent>
+          <h1>{SITE_METADATA.SITE_TITLE}</h1>
+          <p>{SITE_METADATA.SITE_DESCRIPTION}</p>
+        </SidebarContent>
+      </Sidebar>
+      <ContentWrapper>
+        <Label>Contents</Label>
+        <SectionLinkContainer>
+          {links.concat(inactive_links).map((link, i) => (
+            <SectionLink
+              key={i}
+              pageUrl={link.pageUrl}
+              filename={link.filename}
+            >
+              <h2>{link.linkText}</h2>
+              <p>{link.descriptiveText}</p>
+            </SectionLink>
+          ))}
+        </SectionLinkContainer>
+      </ContentWrapper>
     </Layout>
   )
 }

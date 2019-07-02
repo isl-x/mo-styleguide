@@ -7,7 +7,7 @@ export const SITE_METADATA = {
   // All of these values are used in many ways, but more broadly are just descriptors
   // of the site itself
   SITE_TITLE: "Styleguide",
-  SITE_DESCRIPTION: `Come find all the guidelines your heart desires`,
+  SITE_DESCRIPTION: `This is a statement about what a style guide is and why you need to use it. It should probably be 1-2 sentences up to three or four lines.`,
   BRAND_NAME: "Lorem Ipsum Brand",
   AUTHOR: "ISL",
 }
@@ -24,12 +24,19 @@ export const HOME_PAGE = {
      * filename:   Any SVG in the assets/dynamic_icons folder.
      * linkText:   Whatever you'd like the visible text to say for the link and
      *             the resulting page title.
+     * descriptiveText:   Used to describe what can be found at the link for the home page
      */
-    { pageUrl: "/example/", filename: "ColorsIcon", linkText: "Colors" },
+    {
+      pageUrl: "/example/",
+      filename: "ColorsIcon",
+      linkText: "Colors",
+      descriptiveText: "This is text describing this link",
+    },
     {
       pageUrl: "/",
       filename: "IllustrationIcon",
       linkText: "Illustration",
+      descriptiveText: "This is text describing this link",
     },
   ],
   INACTIVE_HOME_PAGE_LINKS: [
@@ -41,11 +48,31 @@ export const HOME_PAGE = {
      * If no inactive links - just remove the links from this list, but leave
      * INACTIVE_HOME_PAGE_LINKS: [] <- empty
      */
-    { filename: "LayoutIcon", linkText: "Layout" },
-    { filename: "LogoIcon", linkText: "Logo" },
-    { filename: "PhotographyIcon", linkText: "Photography" },
-    { filename: "TypographyIcon", linkText: "Typography" },
-    { filename: "VoiceAndToneIcon", linkText: "Voice and Tone" },
+    {
+      filename: "LayoutIcon",
+      linkText: "Layout",
+      descriptiveText: "This is text describing this link",
+    },
+    {
+      filename: "LogoIcon",
+      linkText: "Logo",
+      descriptiveText: "This is text describing this link",
+    },
+    {
+      filename: "PhotographyIcon",
+      linkText: "Photography",
+      descriptiveText: "This is text describing this link",
+    },
+    {
+      filename: "TypographyIcon",
+      linkText: "Typography",
+      descriptiveText: "This is text describing this link",
+    },
+    {
+      filename: "VoiceAndToneIcon",
+      linkText: "Voice and Tone",
+      descriptiveText: "This is text describing this link",
+    },
   ],
   // Set the number of link columns on the home page
   // The site is responsive on smaller screens and thus not configurable
