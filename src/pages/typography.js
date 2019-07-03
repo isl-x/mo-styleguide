@@ -116,6 +116,11 @@ const BasePage = () => (
         description="Label"
       />
     </Section>
+
+    {/* DOWNLOAD BUTTON */}
+    <Section title="Download All Fonts">
+      <DownloadButton fileName="Font_Package">Font Package</DownloadButton>
+    </Section>
   </Layout>
 )
 
