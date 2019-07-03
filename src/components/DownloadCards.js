@@ -40,18 +40,18 @@ const CardHeader = styled.div`
   padding: ${TINY}px;
 `
 
-const DownloadCard = ({ title, imgsrc, fileName }) => {
-  const { edges } = useSiteFiles()
-  const completeFile = edges
-    ? edges.find(file => file.node.name === fileName)
-    : null
+const DownloadCard = ({ title, imgsrc, fileName, externalFileLink }) => {
+  let fileLink = ""
+  if (fileName) {
+    const { edges } = useSiteFiles()
+    const completeFile = edges
+      ? edges.find(file => file.node.name === fileName)
+      : null
+    fileLink = completeFile.node.publicURL
+  } else if (externalFileLink) fileLink = externalFileLink
 
   return (
-    <CardBase
-      role="button"
-      download
-      href={completeFile ? completeFile.node.publicURL : null}
-    >
+    <CardBase role="button" download href={fileLink}>
       <CardHeader>
         <span>{title}</span>
         <span>⬇</span>
@@ -66,7 +66,8 @@ const DownloadCard = ({ title, imgsrc, fileName }) => {
 DownloadCard.propTypes = {
   title: PropTypes.string.isRequired,
   imgsrc: PropTypes.string.isRequired,
-  fileName: PropTypes.string.isRequired,
+  fileName: PropTypes.string,
+  externalFileLink: PropTypes.string,
 }
 
 DownloadCardsContainer.propTypes = {
