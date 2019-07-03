@@ -52,7 +52,7 @@ const BasePage = () => (
             xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
         */}
         <Spacer normal />
-        <Image imgsrc="random-wide-image.png" />
+        <Image imgsrc="Headshot_Photos_Examples.png" />
         <Spacer normal />
       </Basic>
     </Section>
@@ -67,7 +67,7 @@ const BasePage = () => (
             xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
         */}
         <Spacer normal />
-        <Image imgsrc="random-wide-image.png" />
+        <Image imgsrc="hero_photography_example.png" />
         <Spacer normal />
       </Basic>
     </Section>
@@ -80,7 +80,7 @@ const BasePage = () => (
         <DownloadCard
           title="Hero Photography"
           imgsrc="Hero-Thumb.jpg"
-          fileName="hero-photos"
+          fileName="Hero-Photos"
         />
         <DownloadCard
           title="Example Photography"
@@ -88,11 +88,6 @@ const BasePage = () => (
           fileName="Example_Photos"
         />
       </DownloadCardsContainer>
-    </Section>
-
-        {/* DOWNLOAD BUTTON */}
-        <Section title="Download Image Guidelines">
-      <DownloadButton fileName="gatsby-astronaut">Logos</DownloadButton>
     </Section>
 
   </Layout>

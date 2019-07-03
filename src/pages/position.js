@@ -21,22 +21,40 @@ import FontScale from "../components/FontScale"
 import Spacer from "../components/Spacer"
 
 const BasePage = () => (
-  <Layout title="Brand Position">
+  <Layout title="Position & Guidelines">
     <SEO title="Brand Position" keywords={[`styleguide`, `design`, `base`]} />
     {/* Put all sections here 
         Those that are shown below are meerly examples and are intended to be deleted as needed
     */}
 
+    {/* TEXT */}
+    <Section title="Our Charter">
+      <Basic>
+      Capital One Ventures allies leading startups
+      with Capital One, a financial industry leader in
+      data and technology, creating opportunities for
+      both companies to change banking for good.
+      </Basic>
+    </Section>
+
+    <Section title="Our Vision">
+      <Basic>
+      When we fulfill our mission, we will have
+      brought the most innovative and promising
+      data, technology and digital solutions to
+      market — transforming banking as we know it.
+      </Basic>
+    </Section>
 
     {/* DOWNLOAD CARDS */}
-    <Section title="">
+    <Section title="Download Full Brand Guidelines">
       <DownloadCardsDescription>
       </DownloadCardsDescription>
       <DownloadCardsContainer columns={2}>
         <DownloadCard
-          title="Brand Position PDF"
-          imgsrc="Position_Photo.png"
-          fileName="C1V_BrandGuidelines_Position"
+          title=""
+          imgsrc="Guidelines_Cover.png"
+          fileName="C1V_BrandGuidelines"
         />
       </DownloadCardsContainer>
     </Section>
