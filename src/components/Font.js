@@ -8,6 +8,7 @@ import { DEVICE } from "../utils/breakpoints"
 import { useSiteFiles } from "../utils/hooks"
 import { M, XXS, XXL, XS } from "../utils/font-sizes"
 import { FaDownload } from "react-icons/fa"
+import { OPAQUE_FONT } from "../utils/font-styles"
 
 const BORDER_WIDTH = "2px"
 
@@ -69,8 +70,8 @@ FontSample.propTypes = {
 /** DOWNLOAD **/
 const DownloadText = styled.div`
   ${XXS}
+  ${OPAQUE_FONT}
   padding: ${TINY}px;
-  opacity: .6;
   flex-basis: 80%;
   text-transform: uppercase;
   text-align: center;

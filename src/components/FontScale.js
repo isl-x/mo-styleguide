@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { useSiteFiles } from "../utils/hooks"
 import { MEDIUM, TINY } from "../utils/spacing"
 import { PRIMARY_TEXT_COLOR } from "../utils/colors"
+import { OPAQUE_FONT } from "../utils/font-styles"
 
 const FontScaleContainer = styled.div`
   border-color: ${PRIMARY_TEXT_COLOR};
@@ -40,7 +41,7 @@ const FontExample = styled.div`
 
 const FontDescription = styled.span`
   margin-top: ${TINY}px;
-  opacity: 0.6;
+  ${OPAQUE_FONT}
 `
 
 FontExample.propTypes = {

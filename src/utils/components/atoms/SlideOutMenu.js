@@ -14,6 +14,7 @@ import { XL } from "../../font-sizes"
 import Link from "./Link"
 import { DEVICE } from "../../breakpoints"
 import { HOME_PAGE } from "../../../config"
+import { OPAQUE_FONT } from "../../font-styles"
 
 const BodyStyles = createGlobalStyle`
     html {
@@ -48,7 +49,7 @@ const MenuSubText = styled.p`
   z-index: ${HIGH_PRIORITY_Z_INDEX};
   position: relative;
   color: ${PRIMARY_FOREGROUND_COLOR};
-  opacity: 0.6;
+  ${OPAQUE_FONT}
   margin-bottom: ${NORMAL}px;
 `
 

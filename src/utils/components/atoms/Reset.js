@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components"
 import { PRIMARY_TEXT_COLOR } from "../../colors"
 import { PRIMARY_WOFF, HEADERS_WOFF } from "../../fonts"
 import { USE_OTHER_FONT_BASE } from "../../../config"
+import { TINY } from "../../spacing"
 
 const Reset = createGlobalStyle`
     @font-face {
@@ -257,7 +258,7 @@ const Reset = createGlobalStyle`
         padding-left: 0;
         padding-right: 0;
         padding-top: 0;
-        margin-bottom: 1.45rem;
+        margin-bottom: ${TINY}px;
         color: inherit;
         font-family: ${USE_OTHER_FONT_BASE ? USE_OTHER_FONT_BASE : "Headers"};
         font-weight: bold;
@@ -326,7 +327,6 @@ const Reset = createGlobalStyle`
         font-family: ${USE_OTHER_FONT_BASE ? USE_OTHER_FONT_BASE : "Headers"};
         font-weight: bold;
         text-rendering: optimizeLegibility;
-        font-size: 0.78405rem;
         line-height: 1.1;
     }
     hgroup {
@@ -387,11 +387,12 @@ const Reset = createGlobalStyle`
         margin-left: 0;
         margin-right: 0;
         margin-top: 0;
+        margin-bottom: 0;
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;
         padding-top: 0;
-        margin-bottom: 1.45rem;
+        line-height: 2rem;
     }
     figure {
         margin-left: 0;

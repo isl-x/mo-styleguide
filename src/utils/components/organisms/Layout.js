@@ -8,12 +8,17 @@ import Header from "../molecules/Header"
 import Footer from "../molecules/Footer"
 import ContextualNav from "../molecules/ContextualNav"
 import { HOME_PAGE, SITE_METADATA } from "../../../config"
+import { DEVICE } from "../../breakpoints"
 
 const LayoutWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props => (props.isIndex ? "row" : "column")};
   justify-content: space-between;
   min-height: 100vh;
+
+  @media ${DEVICE.TABLET_DOWN} {
+    flex-direction: column;
+  }
 `
 
 class Layout extends React.Component {
@@ -45,31 +50,26 @@ class Layout extends React.Component {
     }
 
     return (
-      <LayoutWrapper>
+      <LayoutWrapper isIndex={isIndex}>
         <Reset />
-        {isIndex ? null : (
-          <ContextualNav
-            title={massagedTitle}
-            currentPageIndex={currentPageIndex}
-          />
+        {isIndex ? (
+          children
+        ) : (
+          <>
+            <ContextualNav
+              title={massagedTitle}
+              currentPageIndex={currentPageIndex}
+            />
+            <Header
+              siteMainText={massagedTitle}
+              siteSubText={`Back to ${SITE_METADATA.SITE_TITLE}`}
+            />
+            <Grid headerFooterOffset>
+              <main>{children}</main>
+            </Grid>
+            <Footer nextPage={nextPage} previousPage={previousPage} />
+          </>
         )}
-        <Header
-          siteMainText={massagedTitle}
-          siteSubText={
-            isIndex
-              ? SITE_METADATA.BRAND_NAME
-              : `Back to ${SITE_METADATA.SITE_TITLE}`
-          }
-          isIndex={isIndex}
-        />
-        <Grid headerFooterOffset>
-          <main>{children}</main>
-        </Grid>
-        <Footer
-          nextPage={nextPage}
-          previousPage={previousPage}
-          isIndex={isIndex}
-        />
       </LayoutWrapper>
     )
   }

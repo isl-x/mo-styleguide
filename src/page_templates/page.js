@@ -19,6 +19,7 @@ import {
 import { Font, FontWeightSample } from "../components/Font"
 import FontScale from "../components/FontScale"
 import Spacer from "../components/Spacer"
+import FiftyFifty from "../components/FiftyFifty"
 
 const BasePage = () => (
   <Layout title="Test Page">
@@ -160,6 +161,27 @@ const BasePage = () => (
         size="20px"
         description="Super mega normal"
       />
+    </Section>
+
+    {/* FIFTY FIFTY TEXT IMAGE */}
+    <Section hidden title="Fifty Fifty Text Split">
+      <FiftyFifty imgRight={true} imgsrc="random-wide-image.png">
+        {/* For consistency in contextual nav, make sure Section title matches the h2 here */}
+        <h2>Fifty Fifty Text Split</h2>
+        <p>
+          Vivamus magna justo, lacinia eget consectetur sed, convallis at
+          tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit
+          amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac
+          lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+          Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+          Nulla quis lorem ut libero malesuada feugiat. Vestibulum ante ipsum
+          primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+          Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet
+          ligula. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo
+          eget malesuada. Sed porttitor lectus nibh. Vivamus magna justo,
+          lacinia eget consectetur sed, convallis at tellus.
+        </p>
+      </FiftyFifty>
     </Section>
   </Layout>
 )

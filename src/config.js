@@ -24,13 +24,30 @@ export const HOME_PAGE = {
      * filename:   Any SVG in the assets/dynamic_icons folder.
      * linkText:   Whatever you'd like the visible text to say for the link and
      *             the resulting page title.
+     * descriptiveText:   Used to describe what can be found at the link for the home page
      */
     { pageUrl: "/logo/", filename: "LogoIcon", linkText: "Logo" },
-    { pageUrl: "/typography/", filename: "TypographyIcon", linkText: "Typography" },
+    {
+      pageUrl: "/typography/",
+      filename: "TypographyIcon",
+      linkText: "Typography",
+    },
     { pageUrl: "/color/", filename: "ColorsIcon", linkText: "Color Palette" },
-    { pageUrl: "/graphics/", filename: "IllustrationIcon", linkText: "Icons & Graphics" },
-    { pageUrl: "/photography/", filename: "PhotographyIcon", linkText: "Photography" },
-    { pageUrl: "/position/", filename: "VoiceAndToneIcon", linkText: "Position & Guidelines" },
+    {
+      pageUrl: "/graphics/",
+      filename: "IllustrationIcon",
+      linkText: "Icons & Graphics",
+    },
+    {
+      pageUrl: "/photography/",
+      filename: "PhotographyIcon",
+      linkText: "Photography",
+    },
+    {
+      pageUrl: "/position/",
+      filename: "VoiceAndToneIcon",
+      linkText: "Position & Guidelines",
+    },
   ],
   INACTIVE_HOME_PAGE_LINKS: [
     /**
@@ -41,7 +58,6 @@ export const HOME_PAGE = {
      * If no inactive links - just remove the links from this list, but leave
      * INACTIVE_HOME_PAGE_LINKS: [] <- empty
      */
-    
   ],
   // Set the number of link columns on the home page
   // The site is responsive on smaller screens and thus not configurable
@@ -60,7 +76,7 @@ export const COLORS = {
 
   /** SECONDARY REFERENCES **/
   PRIMARY_TEXT_COLOR: "#000",
-  // The background color for the links on the Home page
+  // The background color for color swatches
   LINK_BACKGROUND_COLOR: "#eef2f7",
 }
 
