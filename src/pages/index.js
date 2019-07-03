@@ -29,7 +29,7 @@ const IndexPage = () => {
     <Layout isIndex>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <Sidebar>
-        <SidebarImage imgsrc="isl-logo.png" />
+        <SidebarImage imgsrc={SITE_METADATA.LOGO} />
         <SidebarContent>
           <span>{SITE_METADATA.SITE_TITLE}</span>
           <p>{SITE_METADATA.SITE_DESCRIPTION}</p>

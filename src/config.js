@@ -10,6 +10,7 @@ export const SITE_METADATA = {
   SITE_DESCRIPTION: `This is a statement about what a style guide is and why you need to use it. It should probably be 1-2 sentences up to three or four lines.`,
   BRAND_NAME: "Lorem Ipsum Brand",
   AUTHOR: "ISL",
+  LOGO: "isl-logo.png",
 }
 
 /*********************************** HOME PAGE ***********************************/
