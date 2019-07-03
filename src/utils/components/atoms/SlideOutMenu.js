@@ -134,7 +134,7 @@ const SlideOutMenu = ({ active, currentPageIndex, toggleSlideout }) => {
         onClick={toggleSlideout}
       >
         <Grid>
-          <MenuContainer style={active ? null : { display: "none" }}>
+          <MenuContainer>
             <MenuSubText>Jump to</MenuSubText>
             <Menu currentPageIndex={currentPageIndex + 1}>
               <MenuItem key="home">

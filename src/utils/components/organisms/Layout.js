@@ -62,7 +62,7 @@ class Layout extends React.Component {
             />
             <Header
               siteMainText={massagedTitle}
-              siteSubText={`Back to ${SITE_METADATA.SITE_TITLE}`}
+              siteSubText={SITE_METADATA.SITE_TITLE}
             />
             <Grid headerFooterOffset>
               <main>{children}</main>

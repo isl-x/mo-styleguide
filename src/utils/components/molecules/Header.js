@@ -6,14 +6,13 @@ import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
 } from "../../colors"
-import { LARGE, TINY } from "../../spacing"
+import { XLARGE } from "../../spacing"
 import Grid from "../atoms/Grid"
-import Link from "../atoms/Link"
-import { FaArrowLeft } from "react-icons/fa"
+import { OpaqueLabel } from "../../../components/atoms/Labels"
 
 const HeaderWrapper = styled.header`
   background-color: ${PRIMARY_BACKGROUND_COLOR};
-  padding: ${LARGE}px 0;
+  padding: ${XLARGE}px 0;
   width: 100%;
   color: ${PRIMARY_FOREGROUND_COLOR};
 `
@@ -21,10 +20,7 @@ const HeaderWrapper = styled.header`
 const Header = ({ siteSubText, siteMainText }) => (
   <HeaderWrapper>
     <Grid>
-      <Link to="/" style={{ display: "flex", alignItems: "center" }}>
-        <FaArrowLeft style={{ marginRight: TINY }} />
-        {siteSubText}
-      </Link>
+      <OpaqueLabel>{siteSubText}</OpaqueLabel>
       <h1>{siteMainText}</h1>
     </Grid>
   </HeaderWrapper>
