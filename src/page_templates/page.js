@@ -91,6 +91,13 @@ const BasePage = () => (
       <DownloadButton fileName="gatsby-astronaut">Logos</DownloadButton>
     </Section>
 
+    {/* EXTERNAL DOWNLOAD BUTTON */}
+    <Section title="External Download">
+      <DownloadButton externalFileLink="http://islprojects.com/capital-one/ventures/example_photos.zip">
+        External
+      </DownloadButton>
+    </Section>
+
     {/* DOWNLOAD CARDS */}
     <Section title="Download Cards">
       <DownloadCardsDescription>
@@ -110,7 +117,7 @@ const BasePage = () => (
         <DownloadCard
           title="test"
           imgsrc="random-wide-image.png"
-          fileName="gatsby-astronaut"
+          externalFileLink="http://islprojects.com/capital-one/ventures/example_photos.zip"
         />
       </DownloadCardsContainer>
     </Section>

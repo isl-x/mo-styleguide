@@ -30,18 +30,18 @@ const DownloadBase = styled.a`
   }
 `
 
-const DownloadButton = ({ children, fileName }) => {
-  const { edges } = useSiteFiles()
-  const completeFile = edges
-    ? edges.find(file => file.node.name === fileName)
-    : null
+const DownloadButton = ({ children, fileName, externalFileLink }) => {
+  let fileLink = ""
+  if (fileName) {
+    const { edges } = useSiteFiles()
+    const completeFile = edges
+      ? edges.find(file => file.node.name === fileName)
+      : null
+    fileLink = completeFile.node.publicURL
+  } else if (externalFileLink) fileLink = externalFileLink
 
   return (
-    <DownloadBase
-      role="button"
-      download
-      href={completeFile ? completeFile.node.publicURL : null}
-    >
+    <DownloadBase role="button" download href={fileLink}>
       <span>{children}</span>
       <FaDownload />
     </DownloadBase>
@@ -50,7 +50,8 @@ const DownloadButton = ({ children, fileName }) => {
 
 DownloadButton.propTypes = {
   children: PropTypes.node.isRequired,
-  fileName: PropTypes.string.isRequired,
+  fileName: PropTypes.string,
+  externalFileLink: PropTypes.string,
 }
 
 export default DownloadButton
