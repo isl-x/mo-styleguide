@@ -10,6 +10,7 @@ export const SITE_METADATA = {
   SITE_DESCRIPTION: `Come find all the guidelines your heart desires`,
   BRAND_NAME: "Capital One Ventures",
   AUTHOR: "ISL",
+  LOGO: "isl-logo.png",
 }
 
 /*********************************** HOME PAGE ***********************************/
