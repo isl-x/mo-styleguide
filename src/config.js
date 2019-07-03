@@ -30,7 +30,7 @@ export const HOME_PAGE = {
     { pageUrl: "/color/", filename: "ColorsIcon", linkText: "Color Palette" },
     { pageUrl: "/graphics/", filename: "IllustrationIcon", linkText: "Icons & Graphics" },
     { pageUrl: "/photography/", filename: "PhotographyIcon", linkText: "Photography" },
-    { pageUrl: "/position/", filename: "VoiceAndToneIcon", linkText: "Brand Position" },
+    { pageUrl: "/position/", filename: "VoiceAndToneIcon", linkText: "Position & Guidelines" },
   ],
   INACTIVE_HOME_PAGE_LINKS: [
     /**
@@ -46,7 +46,7 @@ export const HOME_PAGE = {
   // Set the number of link columns on the home page
   // The site is responsive on smaller screens and thus not configurable
   HOME_PAGE_DESKTOP_COLUMN_COUNT: 4,
-  HOME_PAGE_FOOTER_TEXT: `Footer lorem ipsum`,
+  HOME_PAGE_FOOTER_TEXT: `Created by ISL`,
 }
 
 /*********************************** COLORS ***********************************/
