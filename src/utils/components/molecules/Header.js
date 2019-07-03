@@ -6,13 +6,13 @@ import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
 } from "../../colors"
-import { XLARGE } from "../../spacing"
+import { XXXLARGE } from "../../spacing"
 import Grid from "../atoms/Grid"
 import { OpaqueLabel } from "../../../components/atoms/Labels"
 
 const HeaderWrapper = styled.header`
   background-color: ${PRIMARY_BACKGROUND_COLOR};
-  padding: ${XLARGE}px 0;
+  padding: ${XXXLARGE}px 0;
   width: 100%;
   color: ${PRIMARY_FOREGROUND_COLOR};
 `

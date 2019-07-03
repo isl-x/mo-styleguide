@@ -15,6 +15,7 @@ import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
 import { DEVICE } from "../../breakpoints"
 import { DIVIDER_BORDER } from "../../borders"
 import SlideOutMenu from "../atoms/SlideOutMenu"
+import getBlocks from "../../blockUtils"
 
 const ContextualNavContainer = styled.div`
   height: 10vh;
@@ -135,14 +136,7 @@ class ContextualNav extends React.Component {
       }, 250)
     )
 
-    // Populate the list of items in the visible dropdown for the nav
-    const blockElements = document.querySelectorAll('[data-type="block"]')
-    if (blockElements) {
-      const blocks = Array.from(blockElements).map(el => {
-        return { title: el.dataset.title, id: el.id }
-      })
-      this.setState({ blocks: blocks })
-    }
+    this.setState({ blocks: getBlocks() })
   }
 
   componentWillUnmount() {

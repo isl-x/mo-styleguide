@@ -1,3 +1,4 @@
-import { PRIMARY_FOREGROUND_COLOR } from "./colors"
+import { PRIMARY_FOREGROUND_COLOR, PRIMARY_HIGHLIGHT_COLOR } from "./colors"
 
 export const DIVIDER_BORDER = `solid 2px ${PRIMARY_FOREGROUND_COLOR}`
+export const HIGHLIGHT_BORDER = `solid 4px ${PRIMARY_HIGHLIGHT_COLOR}`

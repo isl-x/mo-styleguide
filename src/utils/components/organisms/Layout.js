@@ -9,6 +9,8 @@ import Footer from "../molecules/Footer"
 import ContextualNav from "../molecules/ContextualNav"
 import { HOME_PAGE, SITE_METADATA } from "../../../config"
 import { DEVICE } from "../../breakpoints"
+import HeaderIntroNav from "../atoms/HeaderIntroNav"
+import { MEDIUM } from "../../spacing"
 
 const LayoutWrapper = styled.div`
   display: flex;
@@ -19,6 +21,10 @@ const LayoutWrapper = styled.div`
   @media ${DEVICE.TABLET_DOWN} {
     flex-direction: column;
   }
+`
+
+const Main = styled.main`
+  margin-top: ${MEDIUM}px;
 `
 
 class Layout extends React.Component {
@@ -65,7 +71,8 @@ class Layout extends React.Component {
               siteSubText={SITE_METADATA.SITE_TITLE}
             />
             <Grid headerFooterOffset>
-              <main>{children}</main>
+              <HeaderIntroNav />
+              <Main>{children}</Main>
             </Grid>
             <Footer nextPage={nextPage} previousPage={previousPage} />
           </>
