@@ -17,7 +17,6 @@ const Sidebar = styled.aside`
 
 /** IMAGE **/
 const SideBarImageContainer = styled.div`
-  max-width: 20vh;
   padding-bottom: ${LARGE}px;
 `
 
