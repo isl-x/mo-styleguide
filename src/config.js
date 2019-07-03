@@ -7,10 +7,10 @@ export const SITE_METADATA = {
   // All of these values are used in many ways, but more broadly are just descriptors
   // of the site itself
   SITE_TITLE: "Styleguide",
-  SITE_DESCRIPTION: `Come find all the guidelines your heart desires`,
+  SITE_DESCRIPTION: `We created this style guide as a central location where we house a live inventory of our brand guidelines & assets. Anyone working with Capital One Ventures is encouraged to stay familiar with this style guide and help ensure that it is kept up-to-date.`,
   BRAND_NAME: "Capital One Ventures",
   AUTHOR: "ISL",
-  LOGO: "isl-logo.png",
+  LOGO: "C1V_logo_home.png",
 }
 
 /*********************************** HOME PAGE ***********************************/
@@ -69,7 +69,7 @@ export const HOME_PAGE = {
 /*********************************** COLORS ***********************************/
 export const COLORS = {
   // Headers, footers, etc...
-  PRIMARY_BACKGROUND_COLOR: "#255F82",
+  PRIMARY_BACKGROUND_COLOR: "#10253F",
   // Basic (and other items) that goes on top of the PRIMARY_BACKGROUND_COLOR
   PRIMARY_FOREGROUND_COLOR: "#f8f8f8",
   // Used to generate a pop of color throughout the site. Used as an accent
