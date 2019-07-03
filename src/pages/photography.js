@@ -51,6 +51,9 @@ const BasePage = () => (
             Possible values:
             xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
         */}
+        <Spacer normal />
+        <Image imgsrc="random-wide-image.png" />
+        <Spacer normal />
       </Basic>
     </Section>
 
@@ -63,6 +66,9 @@ const BasePage = () => (
             Possible values:
             xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
         */}
+        <Spacer normal />
+        <Image imgsrc="random-wide-image.png" />
+        <Spacer normal />
       </Basic>
     </Section>
 

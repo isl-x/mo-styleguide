@@ -40,7 +40,7 @@ const BasePage = () => (
             xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
         */}
          <Spacer normal />
-        <Image imgsrc="random-wide-image.png" />
+        <Image imgsrc="Graphic_Elements.png" />
       </Basic>
     </Section>
 
