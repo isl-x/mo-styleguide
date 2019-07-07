@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import { PRIMARY_TEXT_COLOR } from "../../colors"
+import { PRIMARY_TEXT_COLOR, GREY } from "../../colors"
 import { PRIMARY_WOFF, HEADERS_WOFF } from "../../fonts"
 import { USE_OTHER_FONT_BASE } from "../../../config"
 import { TINY } from "../../spacing"
@@ -16,6 +16,9 @@ const Reset = createGlobalStyle`
         font-style: normal;
         font-weight: normal;
         src: url(${HEADERS_WOFF}) format('woff');
+    }
+    *:focus {
+        outline: 6px solid ${GREY};
     }
 
     html {

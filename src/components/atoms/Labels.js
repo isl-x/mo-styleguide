@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import { S, XS } from "../../utils/font-sizes"
+import { S, XXS } from "../../utils/font-sizes"
 import { PRIMARY_HIGHLIGHT_COLOR } from "../../utils/colors"
 import { MEDIUM, TINY } from "../../utils/spacing"
 
@@ -19,9 +19,10 @@ const HighlightLabel = styled.span`
 
 const OpaqueLabel = styled.span`
   ${baseStyles}
-  ${XS}
+  ${XXS}
   opacity: 0.5;
-  margin-bottom: ${TINY}px;
+  margin-bottom: ${props =>
+    props.marginBottom ? props.marginBottom : `${TINY}px`};
 `
 
 export { HighlightLabel, OpaqueLabel }

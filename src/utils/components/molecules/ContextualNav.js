@@ -8,6 +8,7 @@ import Hamburger from "../atoms/Hamburger"
 import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
+  WHITE,
 } from "../../colors"
 import { NORMAL, SMALL, LARGE } from "../../spacing"
 import { S, M } from "../../font-sizes"
@@ -102,6 +103,17 @@ const DropdownContents = styled.ul`
 
 const DropdownItem = styled.li`
   padding: ${SMALL}px;
+  position: relative;
+`
+
+const ActiveDropdownItem = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: ${WHITE};
+  opacity: 0.1;
 `
 
 export const NAV_OFFSET = 100
@@ -256,6 +268,9 @@ class ContextualNav extends React.Component {
                         onClick={this.onClickOrKeyPress.bind(this, i)}
                         onKeyPress={this.onClickOrKeyPress.bind(this, i)}
                       >
+                        {block === blocks[current] ? (
+                          <ActiveDropdownItem />
+                        ) : null}
                         {block.title}
                       </DropdownItem>
                     )
