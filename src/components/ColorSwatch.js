@@ -20,13 +20,17 @@ const ColorSwatchContainerBase = styled.div`
 
     return `  
       display: grid;
-      grid-auto-rows: 300px;
+      grid-auto-rows: 400px;
       margin: 0 auto;
       grid-template-columns: repeat(auto-fit, minmax(${100 / colCount +
         1}%, 1fr));
       grid-gap: ${SMALL}px;
     
-      @media ${DEVICE.TABLET_DOWN} {
+      @media ${DEVICE.TABLET_ONLY} {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      @media ${DEVICE.PHONE_ONLY} {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
     `
@@ -142,18 +146,26 @@ const ColorName = styled.h3`
 const ColorDetailsContainer = styled.div`
   display: flex;
   flex-direction: ${props => (props.secondary ? "row" : "column")};
-  justify-content: ${props => (props.secondary ? "space-around" : "center")};
+  justify-content: ${props =>
+    props.secondary ? "space-around" : "flex-start"};
 
-  ${({ secondary }) =>
-    secondary &&
-    `
-      flex-wrap: wrap; 
-      flex-basis: 75%;
-    `}
+  ${({ secondary }) => {
+    if (secondary)
+      return `
+        flex-wrap: wrap; 
+        flex-basis: 75%;
+      `
+
+    return `padding-top: ${SMALL}px`
+  }}
 `
 
 const ColorDetail = styled.span`
   ${({ secondary }) => secondary && "flex-basis: 200px; flex-grow: 1;"}
+`
+
+const ColorDetailValue = styled.span`
+  user-select: all;
 `
 
 const ColorSwatch = ({ title, hex, rgb, cmyk, pms, secondary }) => (
@@ -162,10 +174,36 @@ const ColorSwatch = ({ title, hex, rgb, cmyk, pms, secondary }) => (
     <ColorDetails secondary={secondary}>
       <ColorName secondary={secondary}>{title}</ColorName>
       <ColorDetailsContainer secondary={secondary}>
-        <ColorDetail secondary={secondary}>HEX: {hex}</ColorDetail>
-        <ColorDetail secondary={secondary}>RGB: {rgb}</ColorDetail>
-        <ColorDetail secondary={secondary}>CMYK: {cmyk}</ColorDetail>
-        {secondary ? null : <ColorDetail>PMS: {pms}</ColorDetail>}
+        <ColorDetail secondary={secondary}>
+          {hex ? (
+            <>
+              HEX: <ColorDetailValue>{hex}</ColorDetailValue>
+            </>
+          ) : null}
+        </ColorDetail>
+        <ColorDetail secondary={secondary}>
+          {rgb ? (
+            <>
+              RGB: <ColorDetailValue>{rgb}</ColorDetailValue>
+            </>
+          ) : null}
+        </ColorDetail>
+        <ColorDetail secondary={secondary}>
+          {cmyk ? (
+            <>
+              CMYK: <ColorDetailValue>{cmyk}</ColorDetailValue>
+            </>
+          ) : null}
+        </ColorDetail>
+        {secondary ? null : (
+          <ColorDetail>
+            {pms ? (
+              <>
+                PMS: <ColorDetailValue>{pms}</ColorDetailValue>
+              </>
+            ) : null}
+          </ColorDetail>
+        )}
       </ColorDetailsContainer>
     </ColorDetails>
   </ColorSwatchBase>
@@ -181,9 +219,6 @@ ColorSwatch.propTypes = {
 ColorSwatch.defaultProps = {
   title: "Black",
   hex: "#000",
-  rbg: "-",
-  cmyk: "-",
-  pms: "-",
 }
 
 ColorSwatchContainer.propTypes = {

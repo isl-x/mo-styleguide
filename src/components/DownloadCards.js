@@ -4,13 +4,7 @@ import styled from "styled-components"
 
 import { SMALL, TINY } from "../utils/spacing"
 import { DEVICE } from "../utils/breakpoints"
-import {
-  PRIMARY_BACKGROUND_COLOR,
-  PRIMARY_FOREGROUND_COLOR,
-  WHITE,
-  BLACK,
-  PRIMARY_TEXT_COLOR,
-} from "../utils/colors"
+import { WHITE, PRIMARY_TEXT_COLOR } from "../utils/colors"
 import { SECTION_BORDER as SB } from "../utils/borders"
 import Image from "./Image"
 import { useSiteFiles } from "../utils/hooks"
