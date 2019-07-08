@@ -126,12 +126,11 @@ const ColorName = styled.h3`
     if (secondary)
       return `
       flex-basis: 25%;
-      text-align: center;
-      margin-right: ${TINY}px;
+      text-align: left;
+      padding-right: ${TINY}px;
       margin-bottom: 0;
 
       @media ${DEVICE.PHONE_ONLY} {
-        text-align: left;
         margin-bottom: ${TINY}px;
       }
     `
