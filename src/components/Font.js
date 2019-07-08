@@ -18,7 +18,7 @@ const FontContainer = styled.div`
   flex-direction: row;
   margin-bottom: ${NORMAL}px;
 
-  @media ${DEVICE.PHONE_ONLY} {
+  @media ${DEVICE.TABLET_DOWN} {
     flex-direction: column;
   }
 
@@ -41,13 +41,15 @@ FontContainer.propTypes = {
 
 /** LARGE SAMPLE TEXT STYLES **/
 const FontSampleContainer = styled.div`
+  width: 300px;
   padding: ${MEDIUM}px;
   border-color: ${GREY};
   border-style: solid;
   border-width: ${BORDER_WIDTH} 0 ${BORDER_WIDTH} ${BORDER_WIDTH};
   text-align: center;
 
-  @media ${DEVICE.PHONE_ONLY} {
+  @media ${DEVICE.TABLET_DOWN} {
+    width: 100%;
     border-width: ${BORDER_WIDTH};
   }
 `
@@ -105,7 +107,7 @@ const DownloadButton = styled.a`
     }
   }
 
-  @media ${DEVICE.PHONE_ONLY} {
+  @media ${DEVICE.TABLET_DOWN} {
     display: none;
   }
 `
@@ -130,7 +132,7 @@ const FontDetails = styled.div`
   width: 100%;
   min-width: 0;
 
-  @media ${DEVICE.PHONE_ONLY} {
+  @media ${DEVICE.TABLET_DOWN} {
     border: none;
   }
 `
@@ -140,8 +142,6 @@ const FontExampleContainer = styled.div`
   font-family: ${props => `${props.fontName}`};
   font-weight: ${props => (props.weight ? props.weight : "normal")};
   letter-spacing: 15px;
-  margin-bottom: ${NORMAL}px;
-  margin-top: ${SMALL}px;
 
   @media ${DEVICE.PHONE_ONLY} {
     ${XS}
@@ -155,6 +155,17 @@ FontExampleContainer.propTypes = {
 
 const FontExample = styled.p`
   margin-bottom: ${TINY}px;
+
+  :last-of-type {
+    margin-bottom: 0;
+  }
+`
+
+const Label = styled.h5`
+  ${XXS}
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 `
 
 const FontWeightSample = ({
@@ -167,10 +178,10 @@ const FontWeightSample = ({
   noWeightNumbers,
 }) => (
   <FontWeightSampleBase>
-    <span>
+    <Label>
       {label}
       {weight && !noWeightNumbers ? ` - ${weight}` : null}
-    </span>
+    </Label>
     <FontExampleContainer fontName={fontName} weight={weight}>
       {noUpper ? null : <FontExample>ABCDEFGHIJKLMNOPQRSTUVWXYZ</FontExample>}
       {noLower ? null : <FontExample>abcdefghijklmnopqrstuvwxyz</FontExample>}

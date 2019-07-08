@@ -11,7 +11,7 @@ import {
   WHITE,
 } from "../../colors"
 import { NORMAL, SMALL, LARGE } from "../../spacing"
-import { S, M } from "../../font-sizes"
+import { M } from "../../font-sizes"
 import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
 import { DEVICE } from "../../breakpoints"
 import { DIVIDER_BORDER } from "../../borders"
