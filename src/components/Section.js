@@ -3,11 +3,18 @@ import React from "react"
 import styled from "styled-components"
 import slugify from "slugify"
 
-import { LARGE } from "../utils/spacing"
+import { LARGE, MEDIUM } from "../utils/spacing"
 import { NAV_OFFSET } from "../utils/components/molecules/ContextualNav"
+import { SECTION_BORDER as SB } from "../utils/borders"
 
 const SectionBase = styled.div`
   margin: ${LARGE}px 0;
+
+  ${({ centered }) =>
+    centered &&
+    `text-align: center; 
+     padding-top: ${MEDIUM}px;
+     border-top: ${SB.WIDTH} ${SB.STYLE} ${SB.COLOR};`}
 
   &:first-of-type {
     margin-top: 0;
@@ -25,8 +32,8 @@ const Anchor = styled.div`
   visibility: hidden;
 `
 
-const Section = ({ title, children, hidden }) => (
-  <SectionBase>
+const Section = ({ title, children, hidden, centered }) => (
+  <SectionBase centered={centered}>
     <Anchor
       id={slugify(title, { lower: true })}
       data-type="block"

@@ -10,6 +10,7 @@ import { M, XXS, XXL, XS } from "../utils/font-sizes"
 import { OPAQUE_FONT } from "../utils/font-styles"
 import ArrowToBottom from "../utils/components/atoms/ArrowToBottom"
 import { SECTION_BORDER as SB } from "../utils/borders"
+import { LABEL_BASE_STYLES } from "./atoms/Labels"
 
 /** BASE CONTAINER FOR THE BLOCK **/
 const FontContainer = styled.div`
@@ -72,9 +73,9 @@ FontSample.propTypes = {
 const DownloadText = styled.div`
   ${XXS}
   ${OPAQUE_FONT}
+  ${LABEL_BASE_STYLES}
   padding: ${TINY}px;
   width: 100%;
-  text-transform: uppercase;
   text-align: center;
 `
 
@@ -162,9 +163,7 @@ const FontExample = styled.p`
 
 const Label = styled.h5`
   ${XXS}
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  ${LABEL_BASE_STYLES}
 `
 
 const FontWeightSample = ({

@@ -87,12 +87,12 @@ const BasePage = () => (
     </Section>
 
     {/* DOWNLOAD BUTTON */}
-    <Section title="Downloads">
+    <Section centered title="Downloads">
       <DownloadButton fileName="gatsby-astronaut">Logos</DownloadButton>
     </Section>
 
     {/* EXTERNAL DOWNLOAD BUTTON */}
-    <Section title="External Download">
+    <Section centered title="External Download">
       <DownloadButton externalFileLink="http://islprojects.com/capital-one/ventures/example_photos.zip">
         External
       </DownloadButton>

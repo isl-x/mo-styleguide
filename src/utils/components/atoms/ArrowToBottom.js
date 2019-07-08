@@ -4,8 +4,8 @@ import React from "react"
 const ArrowToBottom = ({ fill }) => (
   <svg
     fill={fill}
-    height="25px"
-    width="25px"
+    height="20px"
+    width="20px"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 384 512"
   >
