@@ -23,7 +23,7 @@ const DownloadBase = styled.button`
   align-items: center;
   padding: ${SMALL}px;
   margin: ${MEDIUM}px auto 0;
-  width: 10rem;
+  min-width: 10rem;
   background: ${PRIMARY_FOREGROUND_COLOR};
   border: 2px solid ${PRIMARY_BACKGROUND_COLOR};
   transition: all 0.2s;
@@ -39,6 +39,7 @@ const DownloadBase = styled.button`
 const DownloadText = styled.span`
   ${XXS}
   ${LABEL_BASE_STYLES}
+  padding-right: ${SMALL}px;
 `
 
 const DownloadButton = ({ children, fileName, externalFileLink }) => {
