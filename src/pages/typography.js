@@ -27,6 +27,21 @@ const BasePage = () => (
         Those that are shown below are meerly examples and are intended to be deleted as needed
     */}
 
+ {/* TEXT */}
+ <Section title="">
+      <Basic>
+        {/* SPACER 
+            The <Spacer> component can be used in any section 
+            or literally anywhere desired. 
+            Possible values:
+            xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
+        */}
+        <Spacer normal />
+        <Image imgsrc="type_hierarchy.png" />
+        <Spacer normal />
+      </Basic>
+    </Section>
+
     {/* FONTS */}
     <Section title="">
       <Font

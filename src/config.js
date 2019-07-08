@@ -47,7 +47,7 @@ export const HOME_PAGE = {
     {
       pageUrl: "/position/",
       filename: "VoiceAndToneIcon",
-      linkText: "Position & Guidelines",
+      linkText: "Position & Brand Playbook",
     },
   ],
   INACTIVE_HOME_PAGE_LINKS: [

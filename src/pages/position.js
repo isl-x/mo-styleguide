@@ -21,7 +21,7 @@ import FontScale from "../components/FontScale"
 import Spacer from "../components/Spacer"
 
 const BasePage = () => (
-  <Layout title="Position & Guidelines">
+  <Layout title="Position & Brand Playbook">
     <SEO title="Brand Position" keywords={[`styleguide`, `design`, `base`]} />
     {/* Put all sections here 
         Those that are shown below are meerly examples and are intended to be deleted as needed

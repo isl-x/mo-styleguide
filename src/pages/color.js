@@ -51,12 +51,17 @@ const BasePage = () => (
           cmyk="89, 59, 31, 10"
         />
         <ColorSwatch 
+          title="Core Blue 60" 
+          hex="#10253F"
+          rgb="16, 37, 63"
+          cmyk="96, 82, 47, 52" 
+        />
+        <ColorSwatch 
           title="Gray 10" 
           hex="#F4F4F4"
           rgb="244, 244, 244"
           cmyk="3, 2, 2, 0" 
         />
-
       </ColorSwatchContainer>
     </Section>
 
@@ -75,12 +80,6 @@ const BasePage = () => (
           hex="#598AAA" 
           rgb="89, 138, 170"
           cmyk="69, 37, 21, 1"
-        />
-        <ColorSwatch 
-          title="Core Blue 60" 
-          hex="#10253F"
-          rgb="16, 37, 63"
-          cmyk="96, 82, 47, 52"
         />
         <ColorSwatch 
           title="Red 50" 
