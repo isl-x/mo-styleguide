@@ -68,7 +68,7 @@ const Dropdown = styled.div`
   align-items: center;
 
   &::after {
-    margin-left: ${SMALL}px;
+    margin: 0 ${SMALL}px 0;
     border-radius: 2px;
     border-bottom: 3px solid ${PRIMARY_FOREGROUND_COLOR};
     border-right: 3px solid ${PRIMARY_FOREGROUND_COLOR};

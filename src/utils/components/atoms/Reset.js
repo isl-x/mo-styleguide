@@ -18,7 +18,7 @@ const Reset = createGlobalStyle`
         src: url(${HEADERS_WOFF}) format('woff');
     }
     *:focus {
-        outline: 6px solid ${GREY};
+        outline: 4px solid ${GREY};
     }
 
     html {
@@ -390,7 +390,7 @@ const Reset = createGlobalStyle`
         margin-left: 0;
         margin-right: 0;
         margin-top: 0;
-        margin-bottom: 0;
+        margin-bottom: ${TINY}px;
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;

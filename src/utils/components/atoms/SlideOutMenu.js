@@ -138,12 +138,18 @@ const SlideOutMenu = ({ active, currentPageIndex, toggleSlideout }) => {
             <MenuSubText>Jump to</MenuSubText>
             <Menu currentPageIndex={currentPageIndex + 1}>
               <MenuItem key="home">
-                <Link to={"/"}>Home</Link>
+                <Link tabIndex={active ? 0 : -1} to={"/"}>
+                  Home
+                </Link>
               </MenuItem>
               {siteLinks &&
                 siteLinks.map((link, i) => (
                   <MenuItem key={i}>
-                    <Link to={link.pageUrl} style={{ display: "block" }}>
+                    <Link
+                      tabIndex={active ? 0 : -1}
+                      to={link.pageUrl}
+                      style={{ display: "block" }}
+                    >
                       {link.linkText}
                     </Link>
                   </MenuItem>
