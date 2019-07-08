@@ -30,7 +30,8 @@ const BasePage = () => (
     {/* TEXT */}
     <Section title="Color Strategy">
       <Basic>
-      Capital One Ventures is clean and approachable, a mostly blue color palette with pops of bright red to draw attention and add energy.
+        Capital One Ventures is clean and approachable, a mostly blue color
+        palette with pops of bright red to draw attention and add energy.
         {/* SPACER 
             The <Spacer> component can be used in any section 
             or literally anywhere desired. 
@@ -42,7 +43,7 @@ const BasePage = () => (
 
     {/* COLOR SWATCH */}
     <Section title="Primary Colors">
-      <ColorSwatchDescription></ColorSwatchDescription>
+      <ColorSwatchDescription />
       <ColorSwatchContainer>
         <ColorSwatch
           title="Core Blue 40"
@@ -50,24 +51,24 @@ const BasePage = () => (
           rgb="37, 95, 130"
           cmyk="89, 59, 31, 10"
         />
-        <ColorSwatch 
-          title="Core Blue 60" 
+        <ColorSwatch
+          title="Core Blue 60"
           hex="#10253F"
           rgb="16, 37, 63"
-          cmyk="96, 82, 47, 52" 
+          cmyk="96, 82, 47, 52"
         />
-        <ColorSwatch 
-          title="Gray 10" 
+        <ColorSwatch
+          title="Gray 10"
           hex="#F4F4F4"
           rgb="244, 244, 244"
-          cmyk="3, 2, 2, 0" 
+          cmyk="3, 2, 2, 0"
         />
       </ColorSwatchContainer>
     </Section>
 
     {/* SECONDARY COLOR SWATCH */}
     <Section title="Secondary Colors">
-      <ColorSwatchDescription></ColorSwatchDescription>
+      <ColorSwatchDescription />
       <ColorSwatchContainer secondary>
         <ColorSwatch
           title="Light Blue 3"
@@ -75,20 +76,20 @@ const BasePage = () => (
           rgb="120, 208, 235"
           cmyk="48, 0, 5, 0"
         />
-        <ColorSwatch 
-          title="Core Blue 30" 
-          hex="#598AAA" 
+        <ColorSwatch
+          title="Core Blue 30"
+          hex="#598AAA"
           rgb="89, 138, 170"
           cmyk="69, 37, 21, 1"
         />
-        <ColorSwatch 
-          title="Red 50" 
+        <ColorSwatch
+          title="Red 50"
           hex="#CC2427"
           rgb="204, 36, 39"
           cmyk="13, 99, 98, 3"
         />
-        <ColorSwatch 
-          title="Boom" 
+        <ColorSwatch
+          title="Boom"
           hex="#F1392E"
           rgb="241, 57, 46"
           cmyk="0, 92, 90, 0"
@@ -97,10 +98,9 @@ const BasePage = () => (
     </Section>
 
     {/* DOWNLOAD BUTTON */}
-    <Section title="Download the Ventures Color Palette">
+    <Section centered title="Download the Ventures Color Palette">
       <DownloadButton fileName="C1V_Swatches">Color Palette</DownloadButton>
     </Section>
-
   </Layout>
 )
 

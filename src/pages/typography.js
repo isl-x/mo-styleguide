@@ -27,8 +27,8 @@ const BasePage = () => (
         Those that are shown below are meerly examples and are intended to be deleted as needed
     */}
 
- {/* TEXT */}
- <Section title="">
+    {/* TEXT */}
+    <Section title="">
       <Basic>
         {/* SPACER 
             The <Spacer> component can be used in any section 
@@ -62,7 +62,7 @@ const BasePage = () => (
       >
         <FontWeightSample weight="regular" label="regular" />
       </Font>
-      
+
       <Font
         fontName="GT Pressura Mono"
         fontFileName="GT-Pressura-Mono-Bold"
@@ -133,7 +133,7 @@ const BasePage = () => (
     </Section>
 
     {/* DOWNLOAD BUTTON */}
-    <Section title="Download All Fonts">
+    <Section centered title="Download All Fonts">
       <DownloadButton fileName="Font_Package">Font Package</DownloadButton>
     </Section>
   </Layout>
