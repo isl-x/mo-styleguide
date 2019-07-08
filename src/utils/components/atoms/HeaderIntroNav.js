@@ -7,6 +7,7 @@ import { HIGHLIGHT_BORDER } from "../../borders"
 import { OpaqueLabel } from "../../../components/atoms/Labels"
 import { MEDIUM, SMALL } from "../../spacing"
 import { HIGHEST_PRIORITY_Z_INDEX } from "../../z-index"
+import { DEVICE } from "../../breakpoints"
 
 const HeaderBase = styled.div`
   max-height: 300px;
@@ -21,6 +22,10 @@ const HeaderBase = styled.div`
   position: relative;
   z-index: ${HIGHEST_PRIORITY_Z_INDEX};
   overflow-y: scroll;
+
+  @media ${DEVICE.TABLET_DOWN} {
+    display: none;
+  }
 `
 
 const Links = styled.ul`

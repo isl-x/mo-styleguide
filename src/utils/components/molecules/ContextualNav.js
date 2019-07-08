@@ -55,7 +55,7 @@ const Title = styled.h1`
   cursor: pointer;
 
   @media ${DEVICE.PHONE_ONLY} {
-    ${S}
+    display: none;
   }
 `
 
@@ -66,6 +66,10 @@ const Dropdown = styled.div`
   min-width: ${DROPDOWN_MIN_W};
   display: flex;
   align-items: center;
+
+  @media ${DEVICE.PHONE_ONLY} {
+    margin-left: ${NORMAL}px;
+  }
 
   &::after {
     margin: 0 ${SMALL}px 0;

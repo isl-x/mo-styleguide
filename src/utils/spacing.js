@@ -1,3 +1,4 @@
+export const XTINY = 4
 export const TINY = 8
 export const SMALL = 16
 export const NORMAL = 24
