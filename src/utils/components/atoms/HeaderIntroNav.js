@@ -40,6 +40,7 @@ const Links = styled.ul`
 `
 
 const LinkButton = styled.button`
+  cursor: pointer;
   border: none;
   padding: 0;
   background: none;
