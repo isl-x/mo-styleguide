@@ -153,7 +153,7 @@ FontExampleContainer.propTypes = {
   weight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }
 
-const FontExample = styled.p`
+const FontExample = styled.section`
   margin-bottom: ${TINY}px;
 
   :last-of-type {
