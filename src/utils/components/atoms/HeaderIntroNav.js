@@ -10,18 +10,16 @@ import { HIGHEST_PRIORITY_Z_INDEX } from "../../z-index"
 import { DEVICE } from "../../breakpoints"
 
 const HeaderBase = styled.div`
-  max-height: 300px;
   width: 20vw;
   max-width: 300px;
   background: ${WHITE};
   ${BOX_SHADOW}
   margin-top: -15rem;
+  margin-left: auto;
   padding: ${MEDIUM}px;
-  float: right;
   border-top: ${HIGHLIGHT_BORDER};
   position: relative;
   z-index: ${HIGHEST_PRIORITY_Z_INDEX};
-  overflow-y: scroll;
 
   @media ${DEVICE.TABLET_DOWN} {
     display: none;

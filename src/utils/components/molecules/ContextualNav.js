@@ -71,6 +71,10 @@ const Dropdown = styled.div`
     margin-left: ${NORMAL}px;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   &::after {
     margin: 0 ${SMALL}px 0;
     border-radius: 2px;
@@ -216,7 +220,7 @@ class ContextualNav extends React.Component {
       }
     })
 
-    const showNavDetails = (window.scrollY || window.pageYOffset) > NAV_OFFSET
+    const showNavDetails = (window.scrollY || window.pageYOffset) > 300
     if (!showNavDetails) this.refs["contextual-nav-dropdown"].blur()
     this.setState({
       current,

@@ -8,7 +8,10 @@ import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
   WHITE,
+  BLACK,
+  PRIMARY_TEXT_COLOR,
 } from "../utils/colors"
+import { SECTION_BORDER as SB } from "../utils/borders"
 import Image from "./Image"
 import { useSiteFiles } from "../utils/hooks"
 import ArrowToBottom from "../utils/components/atoms/ArrowToBottom"
@@ -32,11 +35,17 @@ const DownloadCardsContainer = styled.div`
 /** DOWNLOAD CARD GRID ITEM **/
 const CardBase = styled.a`
   text-decoration: none;
-  color: ${PRIMARY_FOREGROUND_COLOR};
+  color: ${PRIMARY_TEXT_COLOR};
+  border: ${SB.WIDTH} ${SB.STYLE} ${SB.COLOR};
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 `
 
 const CardHeader = styled.div`
-  background: ${PRIMARY_BACKGROUND_COLOR};
+  background: ${WHITE};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,7 +66,7 @@ const DownloadCard = ({ title, imgsrc, fileName, externalFileLink }) => {
     <CardBase role="button" download href={fileLink}>
       <CardHeader>
         <span>{title}</span>
-        <ArrowToBottom fill={WHITE} />
+        <ArrowToBottom />
       </CardHeader>
       <div>
         <Image imgsrc={imgsrc} />

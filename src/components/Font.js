@@ -9,8 +9,7 @@ import { useSiteFiles } from "../utils/hooks"
 import { M, XXS, XXL, XS } from "../utils/font-sizes"
 import { OPAQUE_FONT } from "../utils/font-styles"
 import ArrowToBottom from "../utils/components/atoms/ArrowToBottom"
-
-const BORDER_WIDTH = "2px"
+import { SECTION_BORDER as SB } from "../utils/borders"
 
 /** BASE CONTAINER FOR THE BLOCK **/
 const FontContainer = styled.div`
@@ -43,14 +42,14 @@ FontContainer.propTypes = {
 const FontSampleContainer = styled.div`
   width: 300px;
   padding: ${MEDIUM}px;
-  border-color: ${GREY};
-  border-style: solid;
-  border-width: ${BORDER_WIDTH} 0 ${BORDER_WIDTH} ${BORDER_WIDTH};
+  border-color: ${SB.COLOR};
+  border-style: ${SB.STYLE};
+  border-width: ${SB.WIDTH} 0 ${SB.WIDTH} ${SB.WIDTH};
   text-align: center;
 
   @media ${DEVICE.TABLET_DOWN} {
     width: 100%;
-    border-width: ${BORDER_WIDTH};
+    border-width: ${SB.WIDTH};
   }
 `
 
@@ -91,9 +90,9 @@ const DownloadButton = styled.a`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-style: solid;
-  border-color: ${GREY};
-  border-width: 0 0 ${BORDER_WIDTH} ${BORDER_WIDTH};
+  border-style: ${SB.STYLE};
+  border-color: ${SB.COLOR};
+  border-width: 0 0 ${SB.WIDTH} ${SB.WIDTH};
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -128,7 +127,7 @@ const FontName = styled.h1`
 
 const FontDetails = styled.div`
   padding: ${MEDIUM}px;
-  border: ${BORDER_WIDTH} solid ${GREY};
+  border: ${SB.WIDTH} ${SB.STYLE} ${SB.COLOR};
   width: 100%;
   min-width: 0;
 
