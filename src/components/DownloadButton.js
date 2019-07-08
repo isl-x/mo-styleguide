@@ -6,18 +6,23 @@ import {
   PRIMARY_FOREGROUND_COLOR,
   PRIMARY_BACKGROUND_COLOR,
 } from "../utils/colors"
-import { S } from "../utils/font-sizes"
-import { SMALL } from "../utils/spacing"
+import { S, XXS } from "../utils/font-sizes"
+import { SMALL, MEDIUM } from "../utils/spacing"
 import { useSiteFiles } from "../utils/hooks"
-import { FaDownload } from "react-icons/fa"
+import ArrowToBottom from "../utils/components/atoms/ArrowToBottom"
+import { LABEL_BASE_STYLES } from "./atoms/Labels"
 
-const DownloadBase = styled.a`
+const DownloadBase = styled.button`
   ${S}
   text-decoration: none;
+  cursor: pointer;
   color: inherit;
+  fill: ${PRIMARY_BACKGROUND_COLOR};
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: ${SMALL}px;
+  margin: ${MEDIUM}px auto 0;
   width: 10rem;
   background: ${PRIMARY_FOREGROUND_COLOR};
   border: 2px solid ${PRIMARY_BACKGROUND_COLOR};
@@ -25,9 +30,15 @@ const DownloadBase = styled.a`
 
   &:hover,
   &:focus {
+    fill: ${PRIMARY_FOREGROUND_COLOR};
     color: ${PRIMARY_FOREGROUND_COLOR};
     background-color: ${PRIMARY_BACKGROUND_COLOR};
   }
+`
+
+const DownloadText = styled.span`
+  ${XXS}
+  ${LABEL_BASE_STYLES}
 `
 
 const DownloadButton = ({ children, fileName, externalFileLink }) => {
@@ -42,8 +53,8 @@ const DownloadButton = ({ children, fileName, externalFileLink }) => {
 
   return (
     <DownloadBase role="button" download href={fileLink}>
-      <span>{children}</span>
-      <FaDownload />
+      <DownloadText>{children}</DownloadText>
+      <ArrowToBottom />
     </DownloadBase>
   )
 }

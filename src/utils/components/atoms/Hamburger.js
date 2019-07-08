@@ -3,14 +3,20 @@ import styled from "styled-components"
 
 import { PRIMARY_FOREGROUND_COLOR } from "../../colors"
 import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
+import { DEVICE } from "../../breakpoints"
+import { XTINY } from "../../spacing"
 
 const HamburgerButton = styled.a`
   display: inline-block;
   position: relative;
   cursor: pointer;
   z-index: ${HIGH_PRIORITY_Z_INDEX};
-  padding: 1rem;
+  padding: 0 1rem;
   margin: -1rem;
+
+  @media ${DEVICE.PHONE_ONLY} {
+    padding: 0 ${XTINY}px;
+  }
 `
 
 const HamburgerBun = styled.span`

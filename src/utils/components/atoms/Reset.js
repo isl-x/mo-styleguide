@@ -3,6 +3,8 @@ import { PRIMARY_TEXT_COLOR } from "../../colors"
 import { PRIMARY_WOFF, HEADERS_WOFF } from "../../fonts"
 import { USE_OTHER_FONT_BASE } from "../../../config"
 import { TINY } from "../../spacing"
+import { HIGHLIGHT_BORDER } from "../../borders"
+import { S } from "../../font-sizes"
 
 const Reset = createGlobalStyle`
     @font-face {
@@ -16,6 +18,9 @@ const Reset = createGlobalStyle`
         font-style: normal;
         font-weight: normal;
         src: url(${HEADERS_WOFF}) format('woff');
+    }
+    *:focus {
+        outline: ${HIGHLIGHT_BORDER}
     }
 
     html {
@@ -383,16 +388,21 @@ const Reset = createGlobalStyle`
         padding-top: 0;
         margin-bottom: 1.45rem;
     }
+    section {
+        line-height: 1.5rem;
+    }
     p {
+        ${S}
+        max-width: 90%;
         margin-left: 0;
         margin-right: 0;
         margin-top: 0;
-        margin-bottom: 0;
+        margin-bottom: ${TINY}px;
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;
         padding-top: 0;
-        line-height: 2rem;
+        line-height: 1.5rem;
     }
     figure {
         margin-left: 0;

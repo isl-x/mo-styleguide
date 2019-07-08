@@ -39,7 +39,7 @@ const BasePage = () => (
           cmyk="81, 71, 58, 75"
           pms="PMS Black 6 U"
         />
-        <ColorSwatch title="Gray" hex="#8b8b8b" />
+        <ColorSwatch title="Gray" hex="#8b8b8b" rgb="18, 24, 32" />
         <ColorSwatch />
         <ColorSwatch />
         <ColorSwatch />
@@ -57,7 +57,7 @@ const BasePage = () => (
           cmyk="81, 71, 58, 75"
           pms="PMS Black 6 U"
         />
-        <ColorSwatch title="Gray" hex="#8b8b8b" />
+        <ColorSwatch title="Gray" hex="#8b8b8b" rgb="18, 24, 32" />
         <ColorSwatch />
         <ColorSwatch />
         <ColorSwatch />
@@ -87,12 +87,12 @@ const BasePage = () => (
     </Section>
 
     {/* DOWNLOAD BUTTON */}
-    <Section title="Downloads">
+    <Section centered title="Downloads">
       <DownloadButton fileName="gatsby-astronaut">Logos</DownloadButton>
     </Section>
 
     {/* EXTERNAL DOWNLOAD BUTTON */}
-    <Section title="External Download">
+    <Section centered title="External Download">
       <DownloadButton externalFileLink="http://islprojects.com/capital-one/ventures/example_photos.zip">
         External
       </DownloadButton>

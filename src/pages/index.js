@@ -14,7 +14,7 @@ import {
   SidebarContent,
 } from "../utils/components/molecules/Sidebar"
 import { LARGE } from "../utils/spacing"
-import Label from "../components/atoms/Label"
+import { HighlightLabel } from "../components/atoms/Labels"
 
 const ContentWrapper = styled.div`
   flex-basis: 70%;
@@ -36,7 +36,7 @@ const IndexPage = () => {
         </SidebarContent>
       </Sidebar>
       <ContentWrapper>
-        <Label>Contents</Label>
+        <HighlightLabel>Contents</HighlightLabel>
         <SectionLinkContainer>
           {links.concat(inactive_links).map((link, i) => (
             <SectionLink

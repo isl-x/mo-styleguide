@@ -7,10 +7,10 @@ import { NORMAL, TINY, MEDIUM, SMALL } from "../utils/spacing"
 import { DEVICE } from "../utils/breakpoints"
 import { useSiteFiles } from "../utils/hooks"
 import { M, XXS, XXL, XS } from "../utils/font-sizes"
-import { FaDownload } from "react-icons/fa"
 import { OPAQUE_FONT } from "../utils/font-styles"
-
-const BORDER_WIDTH = "2px"
+import ArrowToBottom from "../utils/components/atoms/ArrowToBottom"
+import { SECTION_BORDER as SB } from "../utils/borders"
+import { LABEL_BASE_STYLES } from "./atoms/Labels"
 
 /** BASE CONTAINER FOR THE BLOCK **/
 const FontContainer = styled.div`
@@ -18,7 +18,7 @@ const FontContainer = styled.div`
   flex-direction: row;
   margin-bottom: ${NORMAL}px;
 
-  @media ${DEVICE.PHONE_ONLY} {
+  @media ${DEVICE.TABLET_DOWN} {
     flex-direction: column;
   }
 
@@ -41,14 +41,16 @@ FontContainer.propTypes = {
 
 /** LARGE SAMPLE TEXT STYLES **/
 const FontSampleContainer = styled.div`
+  width: 300px;
   padding: ${MEDIUM}px;
-  border-color: ${GREY};
-  border-style: solid;
-  border-width: ${BORDER_WIDTH} 0 ${BORDER_WIDTH} ${BORDER_WIDTH};
+  border-color: ${SB.COLOR};
+  border-style: ${SB.STYLE};
+  border-width: ${SB.WIDTH} 0 ${SB.WIDTH} ${SB.WIDTH};
   text-align: center;
 
-  @media ${DEVICE.PHONE_ONLY} {
-    border-width: ${BORDER_WIDTH};
+  @media ${DEVICE.TABLET_DOWN} {
+    width: 100%;
+    border-width: ${SB.WIDTH};
   }
 `
 
@@ -71,27 +73,27 @@ FontSample.propTypes = {
 const DownloadText = styled.div`
   ${XXS}
   ${OPAQUE_FONT}
+  ${LABEL_BASE_STYLES}
   padding: ${TINY}px;
-  flex-basis: 80%;
-  text-transform: uppercase;
+  width: 100%;
   text-align: center;
 `
 
 const DownloadIconContainer = styled.span`
+  display: flex;
   background-color: ${PRIMARY_HIGHLIGHT_COLOR};
-  color: ${WHITE};
+  fill: ${WHITE};
   text-align: center;
-  flex-basis: 20%;
   padding: ${SMALL}px;
 `
 
 const DownloadButton = styled.a`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  border-style: solid;
-  border-color: ${GREY};
-  border-width: 0 0 ${BORDER_WIDTH} ${BORDER_WIDTH};
+  border-style: ${SB.STYLE};
+  border-color: ${SB.COLOR};
+  border-width: 0 0 ${SB.WIDTH} ${SB.WIDTH};
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -105,7 +107,7 @@ const DownloadButton = styled.a`
     }
   }
 
-  @media ${DEVICE.PHONE_ONLY} {
+  @media ${DEVICE.TABLET_DOWN} {
     display: none;
   }
 `
@@ -126,11 +128,11 @@ const FontName = styled.h1`
 
 const FontDetails = styled.div`
   padding: ${MEDIUM}px;
-  border: ${BORDER_WIDTH} solid ${GREY};
+  border: ${SB.WIDTH} ${SB.STYLE} ${SB.COLOR};
   width: 100%;
   min-width: 0;
 
-  @media ${DEVICE.PHONE_ONLY} {
+  @media ${DEVICE.TABLET_DOWN} {
     border: none;
   }
 `
@@ -140,8 +142,6 @@ const FontExampleContainer = styled.div`
   font-family: ${props => `${props.fontName}`};
   font-weight: ${props => (props.weight ? props.weight : "normal")};
   letter-spacing: 15px;
-  margin-bottom: ${NORMAL}px;
-  margin-top: ${SMALL}px;
 
   @media ${DEVICE.PHONE_ONLY} {
     ${XS}
@@ -153,8 +153,17 @@ FontExampleContainer.propTypes = {
   weight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }
 
-const FontExample = styled.p`
+const FontExample = styled.section`
   margin-bottom: ${TINY}px;
+
+  :last-of-type {
+    margin-bottom: 0;
+  }
+`
+
+const Label = styled.h5`
+  ${XXS}
+  ${LABEL_BASE_STYLES}
 `
 
 const FontWeightSample = ({
@@ -167,10 +176,10 @@ const FontWeightSample = ({
   noWeightNumbers,
 }) => (
   <FontWeightSampleBase>
-    <span>
+    <Label>
       {label}
       {weight && !noWeightNumbers ? ` - ${weight}` : null}
-    </span>
+    </Label>
     <FontExampleContainer fontName={fontName} weight={weight}>
       {noUpper ? null : <FontExample>ABCDEFGHIJKLMNOPQRSTUVWXYZ</FontExample>}
       {noLower ? null : <FontExample>abcdefghijklmnopqrstuvwxyz</FontExample>}
@@ -230,7 +239,7 @@ const Font = ({
         >
           <DownloadText>Download Font</DownloadText>
           <DownloadIconContainer>
-            <FaDownload />
+            <ArrowToBottom />
           </DownloadIconContainer>
         </DownloadButton>
       </div>

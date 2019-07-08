@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Link from "../atoms/Link"
 import { MEDIUM } from "../../spacing"
 import { OPAQUE_FONT } from "../../font-styles"
-import { L, XL } from "../../font-sizes"
+import { XL } from "../../font-sizes"
 
 /* LINK CONTAINER */
 const SectionLinkContainer = styled.main`

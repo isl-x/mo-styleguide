@@ -4,13 +4,13 @@ import styled from "styled-components"
 
 import { useSiteFiles } from "../utils/hooks"
 import { MEDIUM, TINY } from "../utils/spacing"
-import { PRIMARY_TEXT_COLOR } from "../utils/colors"
 import { OPAQUE_FONT } from "../utils/font-styles"
+import { SECTION_BORDER as SB } from "../utils/borders"
 
 const FontScaleContainer = styled.div`
-  border-color: ${PRIMARY_TEXT_COLOR};
-  border-style: solid;
-  border-width: 1px 1px 0 1px;
+  border-color: ${SB.COLOR};
+  border-style: ${SB.STYLE};
+  border-width: ${SB.WIDTH} ${SB.WIDTH} 0 ${SB.WIDTH};
   padding: ${MEDIUM}px;
   min-height: 150px;
   display: flex;
@@ -18,7 +18,7 @@ const FontScaleContainer = styled.div`
   justify-content: center;
 
   :last-of-type {
-    border-width: 1px;
+    border-width: ${SB.WIDTH};
   }
 `
 
