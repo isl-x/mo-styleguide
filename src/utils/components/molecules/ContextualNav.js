@@ -8,28 +8,24 @@ import Hamburger from "../atoms/Hamburger"
 import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
+  WHITE,
 } from "../../colors"
-import { NORMAL, SMALL } from "../../spacing"
+import { NORMAL, SMALL, LARGE } from "../../spacing"
 import { S, M } from "../../font-sizes"
 import { HIGH_PRIORITY_Z_INDEX } from "../../z-index"
 import { DEVICE } from "../../breakpoints"
 import { DIVIDER_BORDER } from "../../borders"
 import SlideOutMenu from "../atoms/SlideOutMenu"
+import getBlocks from "../../blockUtils"
 
 const ContextualNavContainer = styled.div`
   height: 10vh;
-  min-height: 50px;
+  max-height: ${LARGE}px;
   width: 100%;
   top: 0;
   position: fixed;
   background-color: ${PRIMARY_BACKGROUND_COLOR};
-  transform: translateY(-100%);
-  transition: 0.3s transform;
   z-index: ${HIGH_PRIORITY_Z_INDEX};
-
-  &.showing {
-    transform: translateY(0);
-  }
 `
 
 const NavContentContainer = styled.div`
@@ -37,6 +33,18 @@ const NavContentContainer = styled.div`
   align-items: center;
   height: 100%;
   color: ${PRIMARY_FOREGROUND_COLOR};
+`
+
+const NavDetails = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: 0.3s transform;
+  transform: translateY(-100%);
+
+  &.showing {
+    transform: translateY(0);
+  }
 `
 
 const Title = styled.h1`
@@ -51,7 +59,7 @@ const Title = styled.h1`
   }
 `
 
-const DROPDOWN_MIN_W = "5rem"
+const DROPDOWN_MIN_W = "10rem"
 const Dropdown = styled.div`
   cursor: pointer;
   height: 100%;
@@ -60,7 +68,7 @@ const Dropdown = styled.div`
   align-items: center;
 
   &::after {
-    margin-left: ${SMALL}px;
+    margin: 0 ${SMALL}px 0;
     border-radius: 2px;
     border-bottom: 3px solid ${PRIMARY_FOREGROUND_COLOR};
     border-right: 3px solid ${PRIMARY_FOREGROUND_COLOR};
@@ -95,6 +103,17 @@ const DropdownContents = styled.ul`
 
 const DropdownItem = styled.li`
   padding: ${SMALL}px;
+  position: relative;
+`
+
+const ActiveDropdownItem = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: ${WHITE};
+  opacity: 0.1;
 `
 
 export const NAV_OFFSET = 100
@@ -129,14 +148,7 @@ class ContextualNav extends React.Component {
       }, 250)
     )
 
-    // Populate the list of items in the visible dropdown for the nav
-    const blockElements = document.querySelectorAll('[data-type="block"]')
-    if (blockElements) {
-      const blocks = Array.from(blockElements).map(el => {
-        return { title: el.dataset.title, id: el.id }
-      })
-      this.setState({ blocks: blocks })
-    }
+    this.setState({ blocks: getBlocks() })
   }
 
   componentWillUnmount() {
@@ -200,13 +212,13 @@ class ContextualNav extends React.Component {
       }
     })
 
-    const showNav = (window.scrollY || window.pageYOffset) > NAV_OFFSET
-    if (!showNav) this.refs["contextual-nav-dropdown"].blur()
+    const showNavDetails = (window.scrollY || window.pageYOffset) > NAV_OFFSET
+    if (!showNavDetails) this.refs["contextual-nav-dropdown"].blur()
     this.setState({
       current,
-      showing: showNav,
+      showing: showNavDetails,
       dropdownActive: dropdownActive
-        ? showNav === false
+        ? showNavDetails === false
           ? false
           : dropdownActive
         : dropdownActive,
@@ -225,42 +237,47 @@ class ContextualNav extends React.Component {
     const { title, currentPageIndex } = this.props
 
     return (
-      <ContextualNavContainer className={showing ? "showing" : null}>
+      <ContextualNavContainer>
         <SlideOutMenu
-          active={slideOutActive && showing}
+          active={slideOutActive}
           currentPageIndex={currentPageIndex}
           toggleSlideout={this.toggleSlideout}
         />
         <Grid>
           <NavContentContainer>
             <Hamburger active={slideOutActive} onClick={this.toggleSlideout} />
-            <Title onClick={this.toggleSlideout} role="button">
-              {title}
-            </Title>
-            <Dropdown
-              className={dropdownActive ? "active" : null}
-              ref="contextual-nav-dropdown"
-              tabIndex={showing ? 0 : -1}
-              onClick={this.openDropdown}
-              onFocus={this.openDropdown}
-            >
-              {blocks[current] ? blocks[current].title : null}
-              <DropdownContents>
-                {blocks.map((block, i) => {
-                  return (
-                    <DropdownItem
-                      key={i}
-                      tabIndex={0}
-                      data-target={block.id}
-                      onClick={this.onClickOrKeyPress.bind(this, i)}
-                      onKeyPress={this.onClickOrKeyPress.bind(this, i)}
-                    >
-                      {block.title}
-                    </DropdownItem>
-                  )
-                })}
-              </DropdownContents>
-            </Dropdown>
+            <NavDetails className={showing ? "showing" : null}>
+              <Title onClick={this.toggleSlideout} role="button">
+                {title}
+              </Title>
+              <Dropdown
+                className={dropdownActive ? "active" : null}
+                ref="contextual-nav-dropdown"
+                tabIndex={showing ? 0 : -1}
+                onClick={this.openDropdown}
+                onFocus={this.openDropdown}
+              >
+                {blocks[current] ? blocks[current].title : null}
+                <DropdownContents>
+                  {blocks.map((block, i) => {
+                    return (
+                      <DropdownItem
+                        key={i}
+                        tabIndex={0}
+                        data-target={block.id}
+                        onClick={this.onClickOrKeyPress.bind(this, i)}
+                        onKeyPress={this.onClickOrKeyPress.bind(this, i)}
+                      >
+                        {block === blocks[current] ? (
+                          <ActiveDropdownItem />
+                        ) : null}
+                        {block.title}
+                      </DropdownItem>
+                    )
+                  })}
+                </DropdownContents>
+              </Dropdown>
+            </NavDetails>
           </NavContentContainer>
         </Grid>
       </ContextualNavContainer>

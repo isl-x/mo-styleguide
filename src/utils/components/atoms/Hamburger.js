@@ -9,7 +9,7 @@ const HamburgerButton = styled.a`
   position: relative;
   cursor: pointer;
   z-index: ${HIGH_PRIORITY_Z_INDEX};
-  padding: 1rem;
+  padding: 0 1rem;
   margin: -1rem;
 `
 
