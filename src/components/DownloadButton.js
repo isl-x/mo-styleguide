@@ -9,7 +9,7 @@ import {
 import { S } from "../utils/font-sizes"
 import { SMALL } from "../utils/spacing"
 import { useSiteFiles } from "../utils/hooks"
-import { FaDownload } from "react-icons/fa"
+import ArrowToBottom from "../utils/components/atoms/ArrowToBottom"
 
 const DownloadBase = styled.a`
   ${S}
@@ -17,6 +17,7 @@ const DownloadBase = styled.a`
   color: inherit;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: ${SMALL}px;
   width: 10rem;
   background: ${PRIMARY_FOREGROUND_COLOR};
@@ -43,7 +44,7 @@ const DownloadButton = ({ children, fileName, externalFileLink }) => {
   return (
     <DownloadBase role="button" download href={fileLink}>
       <span>{children}</span>
-      <FaDownload />
+      <ArrowToBottom />
     </DownloadBase>
   )
 }

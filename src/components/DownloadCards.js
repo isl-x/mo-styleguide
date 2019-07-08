@@ -7,9 +7,11 @@ import { DEVICE } from "../utils/breakpoints"
 import {
   PRIMARY_BACKGROUND_COLOR,
   PRIMARY_FOREGROUND_COLOR,
+  WHITE,
 } from "../utils/colors"
 import Image from "./Image"
 import { useSiteFiles } from "../utils/hooks"
+import ArrowToBottom from "../utils/components/atoms/ArrowToBottom"
 
 /** TEXT **/
 const DownloadCardsDescription = styled.p``
@@ -37,6 +39,7 @@ const CardHeader = styled.div`
   background: ${PRIMARY_BACKGROUND_COLOR};
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: ${TINY}px;
 `
 
@@ -54,7 +57,7 @@ const DownloadCard = ({ title, imgsrc, fileName, externalFileLink }) => {
     <CardBase role="button" download href={fileLink}>
       <CardHeader>
         <span>{title}</span>
-        <span>⬇</span>
+        <ArrowToBottom fill={WHITE} />
       </CardHeader>
       <div>
         <Image imgsrc={imgsrc} />

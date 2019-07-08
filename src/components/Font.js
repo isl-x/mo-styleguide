@@ -7,8 +7,8 @@ import { NORMAL, TINY, MEDIUM, SMALL } from "../utils/spacing"
 import { DEVICE } from "../utils/breakpoints"
 import { useSiteFiles } from "../utils/hooks"
 import { M, XXS, XXL, XS } from "../utils/font-sizes"
-import { FaDownload } from "react-icons/fa"
 import { OPAQUE_FONT } from "../utils/font-styles"
+import ArrowToBottom from "../utils/components/atoms/ArrowToBottom"
 
 const BORDER_WIDTH = "2px"
 
@@ -74,22 +74,22 @@ const DownloadText = styled.div`
   ${XXS}
   ${OPAQUE_FONT}
   padding: ${TINY}px;
-  flex-basis: 80%;
+  width: 100%;
   text-transform: uppercase;
   text-align: center;
 `
 
 const DownloadIconContainer = styled.span`
+  display: flex;
   background-color: ${PRIMARY_HIGHLIGHT_COLOR};
-  color: ${WHITE};
+  fill: ${WHITE};
   text-align: center;
-  flex-basis: 20%;
   padding: ${SMALL}px;
 `
 
 const DownloadButton = styled.a`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-style: solid;
   border-color: ${GREY};
@@ -241,7 +241,7 @@ const Font = ({
         >
           <DownloadText>Download Font</DownloadText>
           <DownloadIconContainer>
-            <FaDownload />
+            <ArrowToBottom />
           </DownloadIconContainer>
         </DownloadButton>
       </div>
