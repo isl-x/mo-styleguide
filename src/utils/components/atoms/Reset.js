@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components"
-import { PRIMARY_TEXT_COLOR, GREY } from "../../colors"
+import { PRIMARY_TEXT_COLOR } from "../../colors"
 import { PRIMARY_WOFF, HEADERS_WOFF } from "../../fonts"
 import { USE_OTHER_FONT_BASE } from "../../../config"
 import { TINY } from "../../spacing"
+import { HIGHLIGHT_BORDER } from "../../borders"
 
 const Reset = createGlobalStyle`
     @font-face {
@@ -18,7 +19,7 @@ const Reset = createGlobalStyle`
         src: url(${HEADERS_WOFF}) format('woff');
     }
     *:focus {
-        outline: 4px solid ${GREY};
+        outline: ${HIGHLIGHT_BORDER}
     }
 
     html {
