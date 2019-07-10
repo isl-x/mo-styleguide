@@ -28,7 +28,7 @@ const BasePage = () => (
     */}
 
     {/* TEXT */}
-    <Section title="">
+    <Section title="Font System">
       <Basic>
         {/* SPACER 
             The <Spacer> component can be used in any section 
@@ -37,13 +37,13 @@ const BasePage = () => (
             xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
         */}
         <Spacer normal />
-        <Image imgsrc="type_hierarchy.png" />
+        <Image imgsrc="type_system.png" />
         <Spacer normal />
       </Basic>
     </Section>
 
     {/* FONTS */}
-    <Section title="">
+    <Section title="Brand Fonts">
       <Font
         fontName="Polaris"
         fontFileName="Polaris-Bold"

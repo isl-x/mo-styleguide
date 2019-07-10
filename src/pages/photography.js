@@ -86,7 +86,7 @@ const BasePage = () => (
     </Section>
 
     {/* DOWNLOAD CARDS */}
-    <Section title="">
+    <Section title="Download Sample Photos">
       <DownloadCardsDescription />
       <DownloadCardsContainer columns={2}>
         <DownloadCard
