@@ -16,4 +16,4 @@ Wiki:
    - [Adding Pages and Content](https://github.com/istrategylabs/mo-styleguide/wiki/Add-Pages-and-Sections#add-pages)
 
 ## Deployment
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/istrategylabs/mo-styleguide)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
