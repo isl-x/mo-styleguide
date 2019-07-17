@@ -18,4 +18,8 @@ Wiki:
 ## Deployment
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://github.com/istrategylabs/mo-styleguide/wiki/Publish-Style-Guide-for-review)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=FILL_ME_IN)
+
+NOTE: Deploying to Heroku by clicking the above button requires the '?template=FILL_ME_IN' value to be updated
+in the README to the URL for the repository looking to be deployed.
+Also, the Heroku dyno is using a Free tier so the app may take a second to load periodically.
