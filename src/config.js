@@ -29,13 +29,11 @@ export const HOME_PAGE = {
      */
     {
       pageUrl: "/example/",
-      filename: "ColorsIcon",
       linkText: "Colors",
       descriptiveText: "This is text describing this link",
     },
     {
       pageUrl: "/",
-      filename: "IllustrationIcon",
       linkText: "Illustration",
       descriptiveText: "This is text describing this link",
     },
@@ -50,27 +48,22 @@ export const HOME_PAGE = {
      * INACTIVE_HOME_PAGE_LINKS: [] <- empty
      */
     {
-      filename: "LayoutIcon",
       linkText: "Layout",
       descriptiveText: "This is text describing this link",
     },
     {
-      filename: "LogoIcon",
       linkText: "Logo",
       descriptiveText: "This is text describing this link",
     },
     {
-      filename: "PhotographyIcon",
       linkText: "Photography",
       descriptiveText: "This is text describing this link",
     },
     {
-      filename: "TypographyIcon",
       linkText: "Typography",
       descriptiveText: "This is text describing this link",
     },
     {
-      filename: "VoiceAndToneIcon",
       linkText: "Voice and Tone",
       descriptiveText: "This is text describing this link",
     },

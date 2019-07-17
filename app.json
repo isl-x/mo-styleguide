@@ -1,6 +1,12 @@
 {
   "name": "Styleguide Base",
   "description": "A base style guide that can be re-tooled as needed",
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
   "buildpacks": [
     {
       "url": "heroku/nodejs"

@@ -26,6 +26,9 @@ const BasePage = () => (
     <SEO title="Test Page" keywords={[`styleguide`, `design`, `base`]} />
     {/* Put all sections here 
         Those that are shown below are meerly examples and are intended to be deleted as needed
+
+        DEVELOPER NOTE: Please be sure to update the wiki here (https://github.com/istrategylabs/mo-styleguide/wiki/Add-Pages-and-Sections)
+                        should the API for using any blocks change.
     */}
 
     {/* COLOR SWATCH */}
