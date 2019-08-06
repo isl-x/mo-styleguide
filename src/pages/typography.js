@@ -23,16 +23,16 @@ import Spacer from "../components/Spacer"
 const BasePage = () => (
   <Layout title="Typography">
     <SEO title="Typography" keywords={[`styleguide`, `design`, `base`]} />
-    {/* Put all sections here 
+    {/* Put all sections here
         Those that are shown below are meerly examples and are intended to be deleted as needed
     */}
 
     {/* TEXT */}
     <Section title="Font System">
       <Basic>
-        {/* SPACER 
-            The <Spacer> component can be used in any section 
-            or literally anywhere desired. 
+        {/* SPACER
+            The <Spacer> component can be used in any section
+            or literally anywhere desired.
             Possible values:
             xxxlarge, xxlarge, xlarge, large, medium, normal, small, tiny
         */}

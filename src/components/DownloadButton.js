@@ -12,7 +12,7 @@ import { useSiteFiles } from "../utils/hooks"
 import ArrowToBottom from "../utils/components/atoms/ArrowToBottom"
 import { LABEL_BASE_STYLES } from "./atoms/Labels"
 
-const DownloadBase = styled.button`
+const DownloadBase = styled.a`
   ${S}
   text-decoration: none;
   cursor: pointer;
@@ -23,7 +23,8 @@ const DownloadBase = styled.button`
   align-items: center;
   padding: ${SMALL}px;
   margin: ${MEDIUM}px auto 0;
-  min-width: 10rem;
+  min-width: 15rem;
+  max-width: 35vw;
   background: ${PRIMARY_FOREGROUND_COLOR};
   border: 2px solid ${PRIMARY_BACKGROUND_COLOR};
   transition: all 0.2s;
